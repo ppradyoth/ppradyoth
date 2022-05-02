@@ -24,6 +24,6 @@
 <br><br><br>
 
 
-<p>[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ppradyoth)]</p>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ppradyoth&show_icons=true&locale=en" alt="ppradyoth" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ppradyoth&show_icons=true&locale=en" alt="ppradyoth" /></p>

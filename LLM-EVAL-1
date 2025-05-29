@@ -25,6 +25,8 @@ Building on Eugene Yan’s research, this talk explores real-world evaluations w
 
 This approach isn’t just theoretical. In this talk, we’ll explore real examples and pilot experiments where LLMs are being used as objective, rubric-aligned evaluators, bringing consistency, speed, and scale to internal quality checks—without replacing human oversight.
 
+LLMs used as evaluators are showing impressive real-world impact. For example, GLIDER, a 3B parameter model, achieved 91.3% agreement with human judgment across 685 domains. GPT-4-based G-Eval reached a 0.514 Spearman correlation, outperforming traditional NLG metrics. In enterprise QA, this means scalable, consistent reviews of code, docs, and models. However, LLMs still struggle with numeric range tasks and complex software engineering scenarios, solving only ~10–20% of real-world freelance tech tasks. The key is pairing LLMs’ efficiency with human oversight to drive smarter, compliant evaluations.
+
 Attendees will walk away with:
 
 🔧 Techniques to prompt LLMs for evaluation tasks using structured rubrics, comparative scoring, and checklist-based reasoning

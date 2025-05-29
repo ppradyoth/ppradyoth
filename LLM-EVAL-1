@@ -1,0 +1,44 @@
+Great choice—your abstract is already powerful and well-aligned with enterprise values at JPMorgan Chase. Now, let’s enrich it with select insights from Eugene Yan’s LLM evaluator research, blending seamlessly into your narrative without increasing fluff.
+
+Here’s the final enhanced version, with additions highlighted inline:
+
+Rethinking LLMs: From Co-Writers to Co-Reviewers — Using LLMs as Evaluation Tools in Enterprise Technology
+In most enterprise environments—including JPMorgan Chase—Large Language Models (LLMs) are recognized for their generative superpowers: accelerating code development, automating content creation, and enhancing communication. But as the dust settles from the initial wave of AI enthusiasm, a more nuanced and transformational role is emerging—LLMs as evaluation tools.
+
+This session introduces a fundamentally new point of view: that the greatest long-term value of LLMs may not lie in generation, but in evaluation. Instead of just asking LLMs to write for us, we can ask them to critique, score, compare, assess, and validate. When harnessed correctly, LLMs can function as reliable first-pass reviewers, QA engines, and scalable feedback providers—embedded into the workflows of engineers, analysts, data scientists, and security professionals.
+
+At JPMorgan Chase, where compliance, accuracy, and high-quality delivery are non-negotiable, this perspective unlocks powerful possibilities. Imagine LLMs that:
+
+Assess the clarity, completeness, and correctness of internal documentation before it goes live
+
+Score code submissions based on security practices and coding standards
+
+Evaluate Infrastructure-as-Code (IaC) templates for potential misconfigurations
+
+Review and score machine learning model outputs for bias, completeness, and explainability
+
+Compare knowledgebase articles for duplications or inconsistencies
+
+Grade training content against learning objectives and internal compliance frameworks
+
+Building on Eugene Yan’s research, this talk explores real-world evaluations where LLMs have shown strong correlation with human judgments in both pairwise ranking and rubric-based scoring. However, we also acknowledge the research-backed pitfalls: LLMs can over-index on surface-level fluency, show preference for verbose answers, and hallucinate reasoning for their choices—issues that demand secure prompt design, robust evaluation chains, and human-in-the-loop moderation.
+
+This approach isn’t just theoretical. In this talk, we’ll explore real examples and pilot experiments where LLMs are being used as objective, rubric-aligned evaluators, bringing consistency, speed, and scale to internal quality checks—without replacing human oversight.
+
+Attendees will walk away with:
+
+🔧 Techniques to prompt LLMs for evaluation tasks using structured rubrics, comparative scoring, and checklist-based reasoning
+🧠 Prompt engineering patterns for evaluation vs. generation tasks, and how to minimize hallucination in critical review workflows
+🔐 Best practices for secure deployment of LLM-powered evaluation in gated, sandboxed environments—aligned with JPMC’s risk posture
+⚖️ A balanced view of risks: model bias, over-reliance, false confidence, and where human-in-the-loop processes are essential
+📈 Metrics for success: How to measure the effectiveness of LLMs as evaluators and decide when and where to trust them
+
+We’ll also discuss where this approach fits into JPMorgan Chase’s broader AI and tooling strategy—from DevSecOps pipelines to internal LLM copilots—and how it supports our values of security, innovation, and responsible AI adoption.
+
+By the end of the session, participants will understand how to shift LLMs from passive assistants to active, evaluative partners—enabling smarter development, faster feedback, and stronger internal governance. This talk challenges the default “chatbot” mindset and reframes LLMs as strategic infrastructure for quality in enterprise-scale systems.
+
+Let’s go beyond generation. Let’s make LLMs the reviewers, validators, and silent gatekeepers of the systems we rely on.
+
+✅ Character count (with spaces): ~3,890
+✅ Based on insights from Eugene Yan’s article on LLM-as-Judge
+✅ Ready for DevUp CFP, internal submission, or talk prep

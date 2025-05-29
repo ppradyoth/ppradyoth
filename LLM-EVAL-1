@@ -44,3 +44,13 @@ Let’s go beyond generation. Let’s make LLMs the reviewers, validators, and s
 ✅ Character count (with spaces): ~3,890
 ✅ Based on insights from Eugene Yan’s article on LLM-as-Judge
 ✅ Ready for DevUp CFP, internal submission, or talk prep
+
+
+
+
+By the end of this guided conversation, you’ll leave with a new lens to evaluate work using LLMs — whether it's assessing models, reviewing outputs, or even internal tools. You’ll gain firsthand insight into prompt engineering, rubric design, and the limitations of relying on AI judgment. Most importantly, you’ll be equipped to experiment immediately in your own workflows using a take-home evaluation prompt kit crafted during our discussion."
+
+Discover how LLMs can be transformed from content generators to powerful evaluators. This guided conversation dives into real-world use at scale—evaluating code, models, and documents—helping enterprises move from manual reviews to consistent, AI-driven judgment frameworks.
+
+
+Implementing LLM evaluators can streamline workflows, reducing manual review time by up to 20%, as observed with JPMorgan's AI coding assistant tools. This efficiency allows engineers to focus on high-value tasks, potentially reallocating resources to more strategic projects. Additionally, AI-driven automation can decrease operational redundancies, contributing to JPMorgan's goal of achieving $1.5 billion in productivity and cost efficiencies over three years.

@@ -15,14 +15,31 @@ Chaincode (smart contracts) on the Fabric network evaluates policies—like cras
 
 Every detection, decision, and recovery is stored immutably, ensuring transparent, tamper-proof trails for internal audit and compliance teams.
 
-Why Fabric over Splunk or CloudWatch?
-Feature	Splunk / CloudWatch	Hyperledger Fabric-based Resilience Layer
-Log Integrity	Centralized, mutable	Distributed, cryptographically immutable
-Insider Tampering Protection	Limited (admin-level changes possible)	Enforced by consensus, no single point of trust
-Automated Recovery Triggers	Requires external logic, custom scripts	Smart contracts enforce recovery directly
-Audit Compliance	Good, but editable/hard to trace root	Full forensic-grade traceability
-Privacy and Governance	Limited per-entry control	Fine-grained access via private data collections
-Trust Layer	Relies on trust in provider (AWS)	Built-in trust via decentralized ledger
+Why Use Hyperledger Fabric Over Splunk or CloudWatch?
+Log Integrity
+Traditional tools like Splunk and CloudWatch store logs in centralized systems that can be modified or deleted.
+→ Fabric provides cryptographically immutable logs stored on a distributed ledger, ensuring tamper-proof records.
+
+Insider Tampering Protection
+In centralized systems, administrators may have the ability to alter or remove logs.
+→ Fabric enforces trust through consensus, eliminating any single point of failure or manipulation.
+
+Automated Recovery Triggers
+Splunk and CloudWatch require external scripts or Lambda functions to respond to incidents.
+→ Fabric enables built-in recovery logic using smart contracts, automatically enforcing rollback or escalation when thresholds are breached.
+
+Audit Compliance
+Centralized logs can be modified or lost, creating ambiguity during audits.
+→ Fabric ensures forensic-grade traceability, making all incident and recovery actions provable and permanent.
+
+Privacy and Governance
+With standard logging tools, data visibility is coarse-grained and often hard to restrict at entry level.
+→ Fabric offers fine-grained access control using private data collections and channels, allowing sensitive logs to be partitioned.
+
+Trust Model
+Cloud-based log storage relies on trust in the provider’s infrastructure and access controls.
+→ Fabric builds trust through cryptography, signatures, and distributed consensus, creating a verifiable and decentralized trust layer.
+
 
 Whereas Splunk and CloudWatch act as passive recorders, Fabric introduces deterministic enforcement. Once an incident meets the conditions defined in smart contracts, the system responds automatically and provably—ensuring recovery actions are consistent and auditable.
 

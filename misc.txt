@@ -1,0 +1,21 @@
+🔍 Definition
+Security Inference Testing (SIT) is the practice of evaluating AI systems during inference to uncover potential security vulnerabilities, misbehaviors, or policy violations.
+
+🎯 Purpose of SIT
+
+Assess how AI models respond to adversarial, misleading, or risky inputs
+
+Identify weaknesses in input handling, content generation, and safety controls
+
+Ensure models behave securely, ethically, and compliantly under real-world usage
+
+⚠️ Why It Matters
+
+AI systems are exposed to unpredictable and untrusted user inputs
+
+Threats like prompt injection, data leakage, and toxic responses are increasing
+
+Helps organizations proactively harden AI models before deployment
+
+🧠 Think of SIT as stress-testing your AI — but from a security perspective.
+It’s a crucial step in building trustworthy and responsible AI systems.

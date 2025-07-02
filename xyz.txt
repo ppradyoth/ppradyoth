@@ -1,0 +1,30 @@
+🌍 UNESCO AI Ethics Principles
+📘 Overview
+In 2021, UNESCO adopted the first global ethical framework for artificial intelligence: the Recommendation on the Ethics of Artificial Intelligence. Endorsed by 193 member states, it sets out values and principles to guide the development, deployment, and governance of AI in ways that are human-centered, inclusive, and sustainable.
+
+🧭 Core Principles (10)
+Principle	Description
+1. Proportionality and Do No Harm	AI systems should only be used when necessary and when the benefits clearly outweigh the risks.
+2. Safety and Security	AI must be technically safe, robust, and secure from vulnerabilities and malicious use.
+3. Fairness and Non-Discrimination	AI must be designed and used in ways that avoid bias, exclusion, and discriminatory outcomes.
+4. Sustainability	AI should contribute to environmental sustainability and support the UN Sustainable Development Goals (SDGs).
+5. Privacy and Data Protection	Respect for privacy, informed consent, and the secure handling of personal data is essential.
+6. Human Oversight and Autonomy	AI should support human decision-making, not replace or diminish human control.
+7. Transparency and Explainability	AI systems should be understandable, with clear documentation on how decisions are made.
+8. Responsibility and Accountability	Clear accountability mechanisms must be in place for all actors involved in the AI lifecycle.
+9. Awareness and AI Literacy	Societies should invest in education to help people understand the impact and functioning of AI.
+10. Multi-Stakeholder and Open Participation	A wide range of voices—including governments, civil society, and academia—should shape AI governance.
+
+🔑 Foundational Values
+UNESCO’s ethical vision is grounded in values such as:
+
+Human dignity and human rights
+
+Freedom, autonomy, and justice
+
+Equality, inclusion, and solidarity
+
+Environmental stewardship and peace
+
+🛠️ Supporting Developers
+AI Ethics Central serves as a practical guide to help developers, researchers, and teams align their AI systems with these principles—offering clarity, examples, and tools to build ethically grounded technologies.

@@ -1,30 +1,80 @@
-🌍 UNESCO AI Ethics Principles
-📘 Overview
-In 2021, UNESCO adopted the first global ethical framework for artificial intelligence: the Recommendation on the Ethics of Artificial Intelligence. Endorsed by 193 member states, it sets out values and principles to guide the development, deployment, and governance of AI in ways that are human-centered, inclusive, and sustainable.
+import os
+import struct
+import json
 
-🧭 Core Principles (10)
-Principle	Description
-1. Proportionality and Do No Harm	AI systems should only be used when necessary and when the benefits clearly outweigh the risks.
-2. Safety and Security	AI must be technically safe, robust, and secure from vulnerabilities and malicious use.
-3. Fairness and Non-Discrimination	AI must be designed and used in ways that avoid bias, exclusion, and discriminatory outcomes.
-4. Sustainability	AI should contribute to environmental sustainability and support the UN Sustainable Development Goals (SDGs).
-5. Privacy and Data Protection	Respect for privacy, informed consent, and the secure handling of personal data is essential.
-6. Human Oversight and Autonomy	AI should support human decision-making, not replace or diminish human control.
-7. Transparency and Explainability	AI systems should be understandable, with clear documentation on how decisions are made.
-8. Responsibility and Accountability	Clear accountability mechanisms must be in place for all actors involved in the AI lifecycle.
-9. Awareness and AI Literacy	Societies should invest in education to help people understand the impact and functioning of AI.
-10. Multi-Stakeholder and Open Participation	A wide range of voices—including governments, civil society, and academia—should shape AI governance.
+# Mapping of extensions to magic number signatures
+MAGIC_SIGNATURES = {
+    "npy": [b"\x93NUMPY"],
+    "npz": [b"PK\x03\x04"],  # ZIP
+    "pickle": [b"\x80"],
+    "pt": [b"\x80"],
+    "pth": [b"\x80"],
+    "7z": [b"\x37\x7A\xBC\xAF\x27\x1C"],
+    "json": [b"{", b"["],  # Soft match
+    "msgpack": [bytes([0x80])],  # Approx — messagepack map prefix
+}
 
-🔑 Foundational Values
-UNESCO’s ethical vision is grounded in values such as:
+# Extensions with no reliable magic number
+NO_MAGIC_VALIDATION = {"safetensors", "bin", "model", "txt", "md"}
 
-Human dignity and human rights
+def detect_magic_format(file_path):
+    with open(file_path, "rb") as f:
+        header = f.read(16)
 
-Freedom, autonomy, and justice
+    for ext, signatures in MAGIC_SIGNATURES.items():
+        for sig in signatures:
+            if header.startswith(sig):
+                return ext
+    return None
 
-Equality, inclusion, and solidarity
+def is_probably_safetensors(file_path):
+    try:
+        with open(file_path, "rb") as f:
+            header_len = struct.unpack("<Q", f.read(8))[0]
+            header_json = f.read(header_len).decode("utf-8")
+            header = json.loads(header_json)
+        return isinstance(header, dict) and all("shape" in v for v in header.values())
+    except Exception:
+        return False
 
-Environmental stewardship and peace
+def validate_file(file_path):
+    claimed_ext = os.path.splitext(file_path)[1].lstrip(".").lower()
 
-🛠️ Supporting Developers
-AI Ethics Central serves as a practical guide to help developers, researchers, and teams align their AI systems with these principles—offering clarity, examples, and tools to build ethically grounded technologies.
+    print(f"\n🔍 Checking: {file_path}  (Extension: .{claimed_ext})")
+
+    if claimed_ext in NO_MAGIC_VALIDATION:
+        if claimed_ext == "safetensors":
+            if is_probably_safetensors(file_path):
+                print("✅ Detected valid .safetensors structure.")
+            else:
+                print("❌ Invalid .safetensors file structure detected!")
+        else:
+            print(f"⚠️ File extension tampering script does NOT apply to '.{claimed_ext}' files — no reliable signature.")
+        return
+
+    detected_ext = detect_magic_format(file_path)
+
+    if detected_ext is None:
+        print("❌ Unable to detect file type — possible corruption or unknown format.")
+    elif detected_ext != claimed_ext:
+        print(f"🚨 Extension mismatch: Claimed '.{claimed_ext}' but detected as '{detected_ext}'")
+    else:
+        print(f"✅ File extension matches detected format: .{claimed_ext}")
+
+def validate_directory(directory_path):
+    for filename in os.listdir(directory_path):
+        filepath = os.path.join(directory_path, filename)
+        if os.path.isfile(filepath):
+            validate_file(filepath)
+
+# 🧪 Example usage:
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="File Extension Tampering Validator")
+    parser.add_argument("path", help="Path to file or directory to validate")
+    args = parser.parse_args()
+
+    if os.path.isdir(args.path):
+        validate_directory(args.path)
+    else:
+        validate_file(args.path)

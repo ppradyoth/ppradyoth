@@ -78,3 +78,28 @@ if __name__ == "__main__":
         validate_directory(args.path)
     else:
         validate_file(args.path)
+
+
+
+
+
+from safetensors.torch import save_file, load_file
+import torch
+
+# 1. Create some example tensors
+tensors = {
+    "weights": torch.randn(2, 2),
+    "bias": torch.tensor([0.5, -0.5])
+}
+
+# 2. Add some metadata
+metadata = {
+    "created_by": "Pradyoth",
+    "purpose": "Test safetensors metadata",
+    "version": "1.0"
+}
+
+# 3. Save the safetensors file with metadata
+save_file(tensors, "with_metadata.safetensors", metadata=metadata)
+
+print("✅ File 'with_metadata.safetensors' saved with metadata.")

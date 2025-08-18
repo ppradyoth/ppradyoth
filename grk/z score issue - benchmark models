@@ -1,0 +1,63 @@
+# How Garak Decides Benchmark (Reference) Models
+
+## Does the Benchmark Set Change Over Time?
+
+**Yes. The reference set of models Garak uses for benchmarking and Z-score calculation is periodically updated and refreshed.**  
+- The Z-score is calculated against a **"bag of models of varying sizes, updated periodically"**.[1]
+- As new LLMs are released and older ones are deprecated, Garak includes recent, popular, or security-relevant models.
+- Calibration runs are timestamped (e.g., “23 models built at 2025-05-28”), and subsequent calibrations can use new or removed benchmarks.[1]
+
+## How Are Benchmark Models Selected?
+
+**Selection is based on:**
+- **Popularity & public relevance**: Models like GPT-4o, Anthropic Claude, Meta LLaMA, Microsoft Phi, Google Gemini, etc.
+- **Vendor diversity**: Models from OpenAI, Meta, Google, Microsoft, IBM, Anthropic, Deepseek, Qwen, Writer, AI21, Zyphra, etc.
+- **Model scale & architecture variety**: Both large (e.g., 405B params) and small (e.g., 7B, 8B, mini) included.
+- **Recentness**: Preference for models recently released or commonly deployed.
+
+But:  
+**There is no explicit, documented “quality control” or manual evaluation of each benchmark model’s own robustness or security**.[2][1]
+
+## What is Their Benchmark?
+
+- Each reference model is tested with the **same suite of Garak probes and detectors** as any user-scanned model.[1]
+- All models’ results are aggregated and their pass/failure rates are normalized, forming the “distribution” used to compute Z-scores.
+- The “average” score is thus **the mean performance of this shifting bag of models**, not an industry security standard or controlled safety baseline.[3][1]
+
+## Reality Check: Problems with the Benchmark Approach
+
+- If new reference models are more vulnerable, the “average” bar drops and your Z-score may be artificially inflated.
+- If the set includes outdated or poorly secured models, “competing” against them rewards mediocrity rather than true security.
+- If only similar architectures or vendors are included, results may be biased/unrepresentative.
+
+**In summary:**  
+- Garak’s benchmark set **does change over time** and is intended to reflect the “real-world landscape” of popular LLMs.
+- The models are evaluated by running all Garak probes/detectors and recording outcomes; there is no external or independent validation of their security.
+- **The benchmark is simply the average performance of periodically selected recent models—not a gold-standard or guaranteed secure baseline.**
+
+***
+
+## Key References
+
+: https://docs.nvidia.com/nemo/microservices/latest/audit/results.html[1]
+: https://reference.garak.ai/en/stable/reporting.html[3]
+: https://github.com/NVIDIA/garak/releases[2]
+
+[1] https://docs.nvidia.com/nemo/microservices/latest/audit/results.html
+[2] https://github.com/NVIDIA/garak/releases
+[3] https://reference.garak.ai/en/stable/reporting.html
+[4] https://github.com/NVIDIA/garak
+[5] https://openreview.net/forum?id=rIHx6puY5b
+[6] https://reference.garak.ai/en/latest/usage.html
+[7] https://docs.garak.ai/garak/examples/basic-test
+[8] https://arxiv.org/html/2406.11036v1
+[9] https://images.nvidia.com/content/pdf/NVIDIA-Frontier-AI-Risk-Assessment.pdf
+[10] https://reference.garak.ai/en/latest/extending.generator.html
+[11] https://github.com/NVIDIA/garak/issues/869
+[12] https://catalog.ngc.nvidia.com/orgs/nvidia/teams/eval-factory/containers/garak
+[13] https://pdfs.semanticscholar.org/ebf0/12ca7234c029f3567530f6a0f99288535a3c.pdf
+[14] https://www.marktechpost.com/2024/11/19/nvidia-ai-introduces-garak-the-llm-vulnerability-scanner-to-perform-ai-red-teaming-and-vulnerability-assessment-on-llm-applications/
+[15] https://arxiv.org/html/2410.16527v1
+[16] https://pypi.org/project/garak/
+[17] https://arxiv.org/html/2505.04784v1
+[18] https://reference.garak.ai/en/latest/cliref.html

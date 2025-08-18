@@ -1,0 +1,86 @@
+# Understanding Garak Reports
+
+This page provides a consolidated overview of Garak’s reporting artifacts, interpretation pitfalls, benchmarking methodology, and best practices for generating reliable security scores. Use the subpages to dive deeper into each topic.
+
+***
+
+## 1. Introduction
+
+Garak is an open-source AI red-teaming framework that generates structured JSONL and HTML reports detailing vulnerability assessments of Large Language Models (LLMs). While richly detailed, these reports can be misleading without proper interpretation and understanding of underlying methodology and benchmarking.
+
+***
+
+## 2. Report Formats
+
+### 2.1 JSONL Reports  
+- **Purpose**: Capture full, forensic-level details of each probe attempt.  
+- **Contents**:  
+  - `start_run setup` entries (environment, model, probe configuration)  
+  - `attempt` entries with UUIDs, status codes (0–2), prompts, raw detector scores, timestamps  
+  - `eval` entries summarizing pass/fail counts and raw pass rate  
+  - **Strengths**: Granular audit trail, raw detection arrays, exact model responses, lifecycle tracking  
+  - **Limitations**: Lacks aggregation, percentages, human-readable context, or visual summaries  
+
+### 2.2 HTML Reports  
+- **Purpose**: Provide high-level, stakeholder-friendly summaries of security posture.  
+- **Contents**:  
+  - DEFCON-style ratings (1–5) and Z-scores  
+  - Grouped “Module → Probe → Detector” pass rates  
+  - Percentage pass/fail metrics, color coding, explanatory text  
+  - **Strengths**: Aggregation logic, interactive visuals, contextual descriptions  
+  - **Limitations**: Hides raw detector data, omits lifecycle details, no exact timestamps or UUIDs  
+
+***
+
+## 3. Common Interpretation Pitfalls
+
+1. **Blind Reliance on Z-Scores**  
+   - Z-scores are computed relative to a periodically updated “bag” of benchmark models with unknown security quality.  
+   - A positive Z-score only indicates “better than average” among that set—not inherently secure.
+
+2. **Missing Context in JSONL**  
+   - Raw pass/fail counts need external knowledge of aggregation logic to translate into percentages and ratings.
+
+3. **Hidden Technical Data in HTML**  
+   - HTML abstracts away detector confidence, raw scores, and lifecycle progression, undermining forensic analysis and debugging.
+
+***
+
+## 4. Benchmark Model Selection
+
+- **Dynamic Set**: Approximately two dozen popular LLMs from OpenAI, Meta, Google, Microsoft, Anthropic, NVIDIA, IBM, Mistral, Deepseek, Qwen, and academic projects—updated periodically (e.g., May 28, 2025).  
+- **Evaluation**: Each benchmark is scanned with the full suite of Garak probes and detectors. Results form the distribution for Z-score computation.  
+- **Limitation**: No external security validation. The benchmark average can shift with new, vulnerable models, leading to misleading comparative scores.
+
+***
+
+## 5. Reliable Scoring Approach
+
+To overcome Garak’s comparative pitfalls, adopt an **absolute, weighted failure-rate scoring methodology**:  
+1. **Define category weights** based on real-world impact (e.g., 30% for prompt injection, 25% for jailbreaking).  
+2. **Calculate raw failure rates** per category (`failures ÷ total attempts`).  
+3. **Compute weighted failure sum**: ∑(failure_rate × weight).  
+4. **Invert to reliability**: `1.0 − weighted_failure_sum`.  
+5. **Optionally adjust** by detector confidence and deployment context (e.g., 0.9 multiplier for healthcare).  
+
+This yields a transparent “reliability percentage” (0–100%) that reflects your model’s actual vulnerability profile—without depending on external benchmarks.
+
+***
+
+## 6. Best Practices
+
+- **Use JSONL** for technical analysis, debugging, and audit trails.  
+- **Use HTML** for executive summaries and stakeholder communication.  
+- **Always focus on absolute failure rates** and hit logs (successful attacks), not only Z-scores.  
+- **Document scoring methodology** and context multipliers so consumers understand how scores were derived.  
+- **Revalidate regularly**: Rerun assessments after model updates, probe additions, or context changes.
+
+***
+
+## 7. Next Steps & Subpages
+
+- **Subpage: JSONL Report Anatomy** — Detailed breakdown of entry types, fields, and usage examples.  
+- **Subpage: HTML Report Anatomy** — Explanation of DEFCON ratings, module results, and interactive elements.  
+- **Subpage: Benchmark Models & Calibration** — Full list of reference models, update frequency, and selection criteria.  
+- **Subpage: Scoring Framework** — Pseudocode, weight definitions, and sample calculations for generating reliable scores.  
+- **Subpage: Interpretation Guide** — Quick-reference checklist for red team analysts on interpreting Garak reports.

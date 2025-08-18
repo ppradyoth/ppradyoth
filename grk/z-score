@@ -1,0 +1,189 @@
+# Garak Z-Score Reference Models: Critical Analysis and Concerns
+
+Your question about the Z-score reference models in Garak reveals a **fundamental vulnerability** in the comparative scoring methodology that has significant implications for security assessment reliability.
+
+## Current Reference Model Selection Process
+
+Based on the available documentation, Garak's Z-score computation relies on a **"bag of models of varying sizes, updated periodically"**. From the NVIDIA NeMo documentation example, we can see that their calibration used **23 reference models** built on May 28, 2025.[1][2]
+
+### Reference Model Set Example
+
+The documented reference models include:[2]
+- **Commercial Models**: OpenAI GPT-4o, Microsoft Phi variants, Google Gemma models
+- **Open Source Models**: Meta LLaMA variants, DeepSeek models, Mistral models
+- **Specialized Models**: NVIDIA Nemotron variants, Qwen models, IBM Granite models
+- **Academic/Research Models**: Zamba2, Writer Palmyra, AI21 Jamba
+
+## The Reference Model Quality Problem
+
+You've identified a **critical methodological flaw**: there's **no documented quality control mechanism** for reference model selection. This creates several serious issues:
+
+### 1. **Circular Reference Problem**
+
+If reference models themselves have significant vulnerabilities, the Z-score becomes meaningless or misleading:
+- A model scoring "above average" (positive Z-score) could still be **fundamentally insecure** if the reference set is compromised
+- **Regression toward mediocrity**: Poor models in the reference set artificially inflate scores for marginally better but still vulnerable systems
+- **False security confidence**: Organizations might deploy models thinking they're "good" when they're merely "less bad than average"
+
+### 2. **Selection Bias Issues**
+
+The current methodology lacks transparency about:[1][2]
+- **Model selection criteria**: No documented standards for what constitutes a "suitable" reference model
+- **Performance thresholds**: No minimum security requirements for inclusion in the reference set
+- **Diversity requirements**: No evidence of systematic representation across model families, sizes, or training approaches
+- **Exclusion criteria**: No documented process for removing compromised or outdated models
+
+### 3. **Temporal Drift Problems**
+
+Reference model databases face **decay over time**:
+- **Model obsolescence**: Older reference models may not reflect current security standards
+- **Attack evolution**: New vulnerability classes may not be represented in historical reference data
+- **Training data staleness**: Reference models trained on older datasets miss emerging threat patterns
+
+## Documented Concerns in Academic Literature
+
+Research in AI vulnerability scanning has identified similar issues:[3][4]
+
+### Statistical Validity Concerns
+
+Academic studies note that AI-based vulnerability assessment faces **baseline selection challenges**:[4]
+- **Dataset bias**: "If this data contains errors, inconsistencies, or biases, the model will likely produce inaccurate results"
+- **Representativeness issues**: "A model trained on a dataset with a disproportionate number of vulnerabilities from a specific vendor might overlook vulnerabilities from other vendors"
+- **False confidence**: Tools may show "satisfactory" performance while missing critical vulnerabilities in specific sectors
+
+### Model Interpretability Problems
+
+The Z-score approach compounds **interpretability challenges**:[5]
+- **Black box comparisons**: Users cannot understand why their model scored better or worse than the reference set
+- **Missing context**: Absolute vulnerability counts may be more meaningful than relative rankings
+- **Accountability gaps**: Difficult to trace scoring decisions back to specific reference model behaviors
+
+## Proposed Solutions and Best Practices
+
+### 1. **Reference Model Curation Standards**
+
+Implement **rigorous selection criteria**:
+```
+Reference Model Inclusion Requirements:
+├── Security Baseline: Minimum safety threshold scores
+├── Diversity Requirements: Balanced representation across architectures
+├── Recency Standards: Models within defined age limits
+├── Transparency: Documented training data and methodologies
+└── Continuous Monitoring: Regular re-evaluation and removal criteria
+```
+
+### 2. **Multi-Baseline Comparison**
+
+Rather than single Z-score, provide **multiple reference points**:
+- **Best-in-class baseline**: Comparison against top-performing secure models
+- **Industry standard baseline**: Sector-specific reference models
+- **Temporal baseline**: Comparison against models from similar time periods
+- **Architecture baseline**: Comparison within similar model families
+
+### 3. **Absolute Security Metrics**
+
+Supplement relative scoring with **absolute measurements**:
+- **Vulnerability density**: Raw counts of successful attacks per probe category
+- **Severity weighting**: Critical vulnerabilities weighted more heavily than minor issues
+- **Attack success rates**: Direct measurement of successful exploitation attempts
+- **Coverage gaps**: Identification of untested vulnerability categories
+
+### 4. **Reference Model Validation**
+
+Implement **continuous quality assurance**:
+```python
+# Conceptual Reference Model Validation Process
+def validate_reference_model(model):
+    security_threshold = run_comprehensive_security_tests(model)
+    if security_threshold  MAXIMUM_SIMILARITY_THRESHOLD:
+        return CONDITIONAL_INCLUSION  # Replace similar model
+    
+    return APPROVED_FOR_REFERENCE_SET
+```
+
+### 5. **Transparent Documentation**
+
+Require **full disclosure** of reference model selection:
+- **Selection rationale**: Why each model was included
+- **Performance benchmarks**: Absolute scores for all reference models
+- **Update history**: When models were added, removed, or replaced
+- **Known limitations**: Documented biases or gaps in the reference set
+
+## Industry Implementation Recommendations
+
+### For Security Teams
+
+1. **Treat Z-scores as supplementary data**, not primary security metrics
+2. **Demand transparency** in reference model selection from tool vendors
+3. **Validate findings** against absolute vulnerability measurements
+4. **Cross-reference** with multiple assessment tools and methodologies
+
+### For Tool Developers
+
+1. **Implement reference model quality gates** with minimum security thresholds
+2. **Provide multiple comparison baselines** rather than single Z-scores  
+3. **Document reference model selection methodology** in detail
+4. **Enable user customization** of reference model sets for organizational context
+
+### For Regulatory Bodies
+
+1. **Establish standards** for AI security assessment reference models
+2. **Require disclosure** of comparative baseline methodologies
+3. **Mandate validation** of reference model quality over time
+4. **Create certification programs** for security assessment tools
+
+## Conclusion
+
+Your concern about reference model quality in Garak's Z-score methodology is **well-founded and represents a significant gap** in current AI security assessment practices. The lack of documented quality control for reference models creates a **false precision problem** where numerical scores mask fundamental methodological weaknesses.
+
+The solution requires **industry-wide recognition** that comparative security metrics are only as reliable as their baselines. This necessitates transparent, rigorous reference model curation combined with absolute security measurements to provide meaningful vulnerability assessments.
+
+Until these methodological improvements are implemented, security teams should treat Z-scores as **rough indicators** rather than definitive security assessments, always validating findings through multiple independent evaluation methods.
+
+[1] https://reference.garak.ai/en/stable/reporting.html
+[2] https://docs.nvidia.com/nemo/microservices/latest/audit/results.html
+[3] https://arxiv.org/html/2410.16527v2
+[4] https://library.imaging.org/admin/apis/public/api/ist/website/downloadArticle/ei/37/3/MOBMU-326
+[5] https://www.sentinelone.com/cybersecurity-101/cybersecurity/ai-vulnerability-management/
+[6] https://arxiv.org/html/2406.11036v1
+[7] https://roomtorun.com.au/wp-content/uploads/simple-file-list/aac_Evaluation_Methods_Guide_v5Read_Only.pdf
+[8] https://reference.garak.ai/en/latest/usage.html
+[9] http://www.rfpsolutions.ca/rfpportal/wp-content/uploads/2009/11/Jon_Mak_IPPC5_Increased_Transparency_Basis-of-Selection_22July2013.pdf
+[10] https://gbhackers.com/garak/
+[11] http://www.diva-portal.org/smash/get/diva2:1874371/FULLTEXT01.pdf
+[12] https://www.procurement.govt.nz/guides/guide-to-procurement/plan-your-procurement/evaluation-methodology/
+[13] https://reference.garak.ai/en/latest/cliref.html
+[14] https://pmc.ncbi.nlm.nih.gov/articles/PMC11994865/
+[15] https://arxiv.org/html/2410.16527v1
+[16] https://github.com/NVIDIA/garak
+[17] https://github.com/NVIDIA/garak/releases
+[18] https://commercedecisions.com/methods-for-scoring-cost-and-implications-of-relative-scoring/
+[19] https://www.databricks.com/blog/ai-security-action-applying-nvidias-garak-llms-databricks
+[20] https://reference.garak.ai
+[21] https://sourceforge.net/software/compare/garak-vs-promptfoo/
+[22] https://www.promptfoo.dev/blog/promptfoo-vs-garak/
+[23] https://arxiv.org/html/2505.09974v1
+[24] https://arxiv.org/html/2505.13028v2
+[25] https://reference.garak.ai/en/latest/garak.probes.base.html
+[26] https://qxf2.com/blog/baseline-model-comparison/
+[27] https://www.academia.edu/66022819/Z_score_a_tool_for_quality_assurance_of_analytical_results_in_neutron_activation_analysis
+[28] https://aclanthology.org/2025.llmsec-1.2.pdf
+[29] https://reference.garak.ai/en/latest/garak.harnesses.base.html
+[30] https://www.iguazio.com/glossary/baseline-models/
+[31] https://www.giskard.ai/glossary/baseline-models
+[32] https://reference.garak.ai/en/latest/garak.generators.base.html
+[33] https://www.deepchecks.com/glossary/baseline-models/
+[34] https://owaspai.org/OWASP-AI-Exchange.pdf
+[35] https://reference.garak.ai/en/latest/configurable.html
+[36] https://www.aimspress.com/article/doi/10.3934/NAR.2021012?viewType=HTML
+[37] https://www.opcito.com/blogs/ai-driven-vulnerability-scanning-cybersecurity
+[38] https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf
+[39] https://kratikal.com/blog/how-rag-models-work-in-ai-based-vulnerability-scanner/
+[40] https://www.aikido.dev/blog/top-code-vulnerability-scanners
+[41] https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5044057
+[42] https://scholar.dsu.edu/cgi/viewcontent.cgi?article=1480&context=theses
+[43] https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID5102292_code3635775.pdf?abstractid=5102292&mirid=1
+[44] https://www.pfw.edu/publications/jgbt/current-previous-issues/JGBT-2022-18-1.pdf
+[45] https://www.sciencedirect.com/science/article/pii/S2666827024000744
+[46] https://www.ibm.com/think/insights/ai-powered-vulnerability-management
+[47] https://developer.nvidia.com/blog/applying-generative-ai-for-cve-analysis-at-an-enterprise-scale/

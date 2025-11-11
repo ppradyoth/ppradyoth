@@ -1,0 +1,6 @@
+https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+
+
+Key	Value
+Content-Type	application/json
+x-goog-api-key	AIzaSyDS7wfRFDN40v13zKFNJd6qp_5Tigt5d3I

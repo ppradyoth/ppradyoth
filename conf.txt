@@ -15,3 +15,32 @@ x-goog-api-key	AIzaSyDS7wfRFDN40v13zKFNJd6qp_5Tigt5d3I
     }
   ]
 }
+
+
+{
+  "candidates": [
+    {
+      "content": {
+        "role": "model",
+        "parts": [
+          {
+            "text": "The moon whispers to the ocean,\nIn silver-tinted streams,\nWaves reply in gentle motion,\nDancing through her dreams."
+          }
+        ]
+      },
+      "finishReason": "STOP",
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_UNSPECIFIED",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 15,
+    "candidatesTokenCount": 30,
+    "totalTokenCount": 45
+  },
+  "modelVersion": "gemini-2.0-flash"
+}

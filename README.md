@@ -1,43 +1,25 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:0e75b6&height=180&section=header&text=Pradyoth%20Prashanth&fontSize=48&fontColor=00ff41&animation=twinkling&fontAlignY=35&desc=Security%20Engineer%20II%20%7C%20Gen%20AI%20Red%20Team%20%7C%20JPMorganChase&descAlignY=55&descSize=18&descFontColor=ffffff" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=Pradyoth%20Prashanth&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=Security%20Engineer%20II%20%7C%20Gen%20AI%20Red%20Team%20%7C%20JPMorganChase&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=00FF41&center=true&width=600&lines=Gen+AI+Red+Teaming;Adversarial+AI+%26+LLM+Security;Prompt+Injection+%26+Jailbreak+Analysis;AI+Safety+%26+Behavioral+Evaluation;Breaking+AI+so+you+don't+have+to." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=CC2200&center=true&width=600&lines=Gen+AI+Red+Teaming;Adversarial+AI+%26+LLM+Security;Prompt+Injection+%26+Jailbreak+Analysis;AI+Safety+%26+Behavioral+Evaluation;Breaking+AI+so+you+don't+have+to." alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ppradyoth&label=PROFILE+VIEWS&color=00ff41&style=flat" alt="ppradyoth" />
+  <img src="https://komarev.com/ghpvc/?username=ppradyoth&label=PROFILE+VIEWS&color=cc2200&style=flat" alt="ppradyoth" />
 </p>
 
 ---
 
-```bash
-┌──(ppradyoth㉿jpmc-red-team)-[~/adversarial-ai]
-└─$ whoami
+I work at the intersection of adversarial AI and security engineering — red teaming production AI systems at JPMorganChase before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
 
-  Security Engineer II | JPMorganChase Gen AI Red Team
-  Adversarial AI · LLM Security · Trust & Safety
-  Bengaluru, India
+**What I'm working on:**
+- Leading adversarial assessments of enterprise GenAI use cases — prompt injection, jailbreaks, intent deviation, alignment failures
+- Building red teaming toolkits and evaluation frameworks used across the AI Red Team
+- Designed the model scanning engine that covers thousands of externally sourced ML models
+- Developed vulnerability scoring mechanisms for LLM security findings
+- Built event-driven compliance pipelines that replaced manual attestation workflows
 
-┌──(ppradyoth㉿jpmc-red-team)-[~/adversarial-ai]
-└─$ cat current_mission.txt
-
-  ► Leading adversarial assessments of enterprise GenAI systems
-  ► Prompt injection · jailbreaks · intent deviation · alignment failures
-  ► Built red teaming toolkits & evaluation frameworks for the AI Red Team
-  ► Designed model scanning engine covering thousands of externally sourced ML models
-  ► Vulnerability scoring mechanism for LLM security findings
-  ► Event-driven compliance pipelines that replaced manual attestation workflows
-
-┌──(ppradyoth㉿jpmc-red-team)-[~/adversarial-ai]
-└─$ cat achievements.txt
-
-  ✦ Inventor Recognition Q4 2025 — filed patents
-  ✦ Speaker @ DEVUP 2026 — JPMC's invite-only technical conference
-  ✦ SEP Engineer Committee Lead — 1,100+ early-career engineers @ JPMC Bengaluru Tech Centre
-
-┌──(ppradyoth㉿jpmc-red-team)-[~/adversarial-ai]
-└─$ █
-```
+**Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (JPMC's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at JPMC Bengaluru Tech Centre
 
 ---
 
@@ -104,4 +86,4 @@
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0e75b6,100:0d1117&height=120&section=footer&fontColor=00ff41" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0e75b6,50:8b0000,100:0d1117&height=120&section=footer" width="100%"/>

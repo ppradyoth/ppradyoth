@@ -32,6 +32,10 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 **[llm-ops-workshop](https://github.com/ppradyoth/llm-ops-workshop)** — End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.
 
+**[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
+
+**[schmaltz-surveyor](https://github.com/ppradyoth/schmaltz-surveyor)** — Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.
+
 *Also building something in AI security — stealth mode 🔒*
 
 ---

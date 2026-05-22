@@ -70,8 +70,8 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 ---
 
-<p>
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ppradyoth&show_icons=true&locale=en&layout=compact" alt="ppradyoth" />
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ppradyoth&show_icons=true&locale=en&layout=compact" alt="ppradyoth" />
+  &nbsp;
+  <img src="https://github-readme-stats.vercel.app/api?username=ppradyoth&show_icons=true&locale=en" alt="ppradyoth" />
 </p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ppradyoth&show_icons=true&locale=en" alt="ppradyoth" /></p>

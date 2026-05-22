@@ -71,7 +71,5 @@ I work at the intersection of adversarial AI and security engineering — red te
 ---
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ppradyoth&show_icons=true&locale=en&layout=compact" alt="ppradyoth" />
-  &nbsp;
-  <img src="https://github-readme-stats.vercel.app/api?username=ppradyoth&show_icons=true&locale=en" alt="ppradyoth" />
+  <img src="https://streak-stats.demolab.com/?user=ppradyoth&theme=dark" alt="ppradyoth" />
 </p>

@@ -79,18 +79,3 @@ I work at the intersection of adversarial AI and security engineering — red te
   <a href="https://fb.com/ppradyoth" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="ppradyoth" height="40" width="40" /></a>
 </p>
 
----
-
-<h3 align="left">Publications</h3>
-
-- **Analyzing the difficulties of Augmented Reality in Major Applications** — Research on challenges in AR adoption across real-world use cases
-
----
-
-<h3 align="left">Certifications</h3>
-
-- Explore Machine Learning Models with Explainable AI
-- AI For India 1.0
-- Insights from Data with BigQuery
-- Set up and Configure a Cloud Environment in Google Cloud
-- Mind Control: Managing Your Mental Health During COVID-19

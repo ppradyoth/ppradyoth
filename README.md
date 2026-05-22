@@ -23,6 +23,40 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 ---
 
+<h3 align="left">AI & LLM Security</h3>
+
+**LLMs & AI Platforms**
+
+![Claude](https://img.shields.io/badge/Claude-Anthropic-cc2200?style=for-the-badge&logo=anthropic&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-OpenAI-0e75b6?style=for-the-badge&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-Google-0e75b6?style=for-the-badge&logo=google&logoColor=white)
+![Grok](https://img.shields.io/badge/Grok-xAI-111111?style=for-the-badge&logoColor=white)
+![Llama](https://img.shields.io/badge/Llama-Meta-0e75b6?style=for-the-badge&logo=meta&logoColor=white)
+![Mistral](https://img.shields.io/badge/Mistral-AI-cc2200?style=for-the-badge&logoColor=white)
+![Copilot](https://img.shields.io/badge/GitHub%20Copilot-111111?style=for-the-badge&logo=github&logoColor=white)
+![NVIDIA NIM](https://img.shields.io/badge/NVIDIA%20NIM-76b900?style=for-the-badge&logo=nvidia&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logoColor=black)
+
+**Red Team & Security Tools**
+
+![Garak](https://img.shields.io/badge/Garak-LLM%20Vuln%20Scanner-cc2200?style=for-the-badge&logo=python&logoColor=white)
+![PyRIT](https://img.shields.io/badge/PyRIT-MS%20AI%20Red%20Team-cc2200?style=for-the-badge&logo=microsoft&logoColor=white)
+![Promptfoo](https://img.shields.io/badge/Promptfoo-LLM%20Testing-0e75b6?style=for-the-badge&logoColor=white)
+![Protect AI](https://img.shields.io/badge/Protect%20AI-ML%20Security-cc2200?style=for-the-badge&logoColor=white)
+![Prisma AIRS](https://img.shields.io/badge/Prisma%20AIRS-Palo%20Alto%20Networks-cc2200?style=for-the-badge&logoColor=white)
+![NeMo Guardrails](https://img.shields.io/badge/NeMo%20Guardrails-NVIDIA-76b900?style=for-the-badge&logo=nvidia&logoColor=white)
+![Lakera Guard](https://img.shields.io/badge/Lakera%20Guard-Prompt%20Injection-cc2200?style=for-the-badge&logoColor=white)
+![Burp Suite](https://img.shields.io/badge/Burp%20Suite-PortSwigger-cc2200?style=for-the-badge&logoColor=white)
+![Counterfit](https://img.shields.io/badge/Counterfit-MS%20AI%20Security-0e75b6?style=for-the-badge&logo=microsoft&logoColor=white)
+
+**Frameworks & Standards**
+
+![OWASP LLM Top 10](https://img.shields.io/badge/OWASP%20LLM%20Top%2010-111111?style=for-the-badge&logoColor=white)
+![MITRE ATLAS](https://img.shields.io/badge/MITRE%20ATLAS-Adversarial%20ML-cc2200?style=for-the-badge&logoColor=white)
+![NIST AI RMF](https://img.shields.io/badge/NIST%20AI%20RMF-0e75b6?style=for-the-badge&logoColor=white)
+
+---
+
 <h3 align="left">Tech</h3>
 <p align="left">
   <a href="https://www.python.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/></a>

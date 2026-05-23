@@ -43,6 +43,16 @@ const EXCLUDED_REPOS = [
   'OperatingSystems'
 ];
 
+// Only these repos are shown in the Open Source section — must be impactful and post-2023
+const IMPACTFUL_REPOS = [
+  'synaptic-wetware',
+  'prompt-injection-ctf',
+  'akrivon-ai',
+  'weighted-safety-refusal',
+  'ai-security-resources',
+  'llm-ops-workshop',
+];
+
 // File Paths
 const readmePath = path.join(__dirname, '..', 'README.md');
 

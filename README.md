@@ -28,6 +28,8 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 <h3 align="left">Open Source</h3>
 
+**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
+
 **[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** — Interactive AI Security Playground. Craft attack prompts to break constrained AI systems. Covers prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
 
 **[llm-ops-workshop](https://github.com/ppradyoth/llm-ops-workshop)** — End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.
@@ -106,6 +108,10 @@ I work at the intersection of adversarial AI and security engineering — red te
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
     <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
   </picture>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-metrics.svg" alt="Pradyoth's Coding Metrics" />
 </p>
 
 ---

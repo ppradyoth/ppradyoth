@@ -92,8 +92,8 @@ I work at the intersection of adversarial AI and security engineering — red te
 <h3 align="center">Analytics & Activity</h3>
 
 <p align="center">
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="180" src="https://github-readme-stats.vercel.app/api?username=ppradyoth&show_icons=true&title_color=cc2200&text_color=cccccc&icon_color=cc2200&bg_color=0d1117&hide_border=true&include_all_commits=true&count_private=true" alt="Pradyoth's GitHub Stats" />
+  <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
+    <img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ppradyoth&theme=dracula" alt="Pradyoth's GitHub Stats" />
   </a>
   <a href="https://github.com/aaron-bond/github-readme-streak-stats">
     <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=ppradyoth&background=0d1117&fire=cc2200&ring=cc2200&currStreakNum=ffffff&sideNums=cccccc&currStreakLabel=cc2200&sideLabels=cccccc&dates=cccccc&hide_border=true" alt="Pradyoth's GitHub Streak" />

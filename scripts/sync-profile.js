@@ -12,7 +12,9 @@ const CUSTOM_DESCRIPTIONS = {
   'llm-ops-workshop': 'End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.',
   'ML-101-Workshop': 'Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.',
   'schmaltz-surveyor': 'Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.',
-  'synaptic-wetware': '🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).'
+  'synaptic-wetware': '🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).',
+  'akrivon-ai': 'AI Scope & Intent Enforcement Gateway. Automated adversarial red-team probing (IntentScan) and a low-latency runtime proxy (IntentEnforce) to keep LLMs secure and aligned.',
+  'weighted-safety-refusal': 'Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.'
 };
 
 // Patterns to exclude minor, test, or school lab repositories to keep the profile premium

@@ -16,11 +16,11 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 **What I'm working on:**
 <!-- WORK_START -->
-- Engineered a firm-wide Gen AI Red Teaming platform — the first of its kind at JPMC — enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
-- Led the red team assessment of a flagship Asset & Wealth Management LLM, surfacing multiple critical and high-severity vulnerabilities — prompt injection, data leakage, system prompt extraction, and intent drift — before the model reached production
-- Authored JPMC's blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect, now the standard for high-risk AI use case reviews
-- Architected a Network Broker enabling secure, isolated connectivity between JPMC's internal red teaming platform and external vendor evaluation infrastructure — eliminating manual handoffs and enabling continuous, reproducible assessment
-- Containerized and deployed Red Teaming ECS Task modules, allowing concurrent adversarial evaluation of multiple AI use cases without capacity constraints as the firm's AI portfolio scales
+- Engineering a firm-wide Gen AI Red Teaming platform — the first of its kind at JPMC — enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
+- Lead the red team assessments of flagship LLM based applications, surfacing multiple critical and high-severity vulnerabilities — before the model reached production
+- Drafting firmwide blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect, now the standard for high-risk AI use case reviews~!
+- Architected a Network Broker enabling secure, isolated connectivity between internal red teaming platform and external vendor evaluation infrastructure — eliminating manual handoffs and enabling continuous, reproducible assessment
+- Containerized and deployed ECS Task modules, allowing concurrent adversarial evaluation of multiple AI use cases without capacity constraints as the firm's AI portfolio scales
 - Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement across JPMC's engineering workforce
 <!-- WORK_END -->
 

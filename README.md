@@ -38,7 +38,7 @@ I work at the intersection of adversarial AI and security engineering — red te
 <!-- OPENSYNC_START -->
 **[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** (⭐ 1) — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
 
-**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — No description provided.
+**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation — with risk-adjusted category weights and a custom model-graded scorer.
 
 **[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 

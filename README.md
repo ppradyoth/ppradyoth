@@ -1,4 +1,6 @@
+<!-- HEADER_START -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=Pradyoth%20Prashanth&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=Security%20Engineer%20II%20%7C%20Gen%20AI%20Red%20Team%20%7C%20JPMorganChase&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>
+<!-- HEADER_END -->
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=CC2200&center=true&width=600&lines=Gen+AI+Red+Teaming;Adversarial+AI+%26+LLM+Security;Prompt+Injection+%26+Jailbreak+Analysis;AI+Safety+%26+Behavioral+Evaluation;Breaking+AI+so+you+don't+have+to." alt="Typing SVG" />
@@ -13,12 +15,14 @@
 I work at the intersection of adversarial AI and security engineering — red teaming production AI systems at JPMorganChase before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
 
 **What I'm working on:**
-- Leading adversarial assessments of enterprise GenAI use cases — prompt injection, jailbreaks, intent deviation, alignment failures
-- Building and operationalizing red teaming toolkits and evaluation frameworks used across the AI Red Team
-- Running adversarial and behavioral evaluations across enterprise AI use cases, identifying high-severity LLM vulnerabilities
-- Designing scalable workflows for AI security assessments, reporting, and governance
-- Evaluating state-of-the-art AI security tools and coding assistants from a security perspective
-- Contributing to internal AI security research and emerging threat analysis for Generative AI systems
+<!-- WORK_START -->
+- Engineered a firm-wide Gen AI Red Teaming platform — the first of its kind at JPMC — enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
+- Led the red team assessment of a flagship Asset & Wealth Management LLM, surfacing multiple critical and high-severity vulnerabilities — prompt injection, data leakage, system prompt extraction, and intent drift — before the model reached production
+- Authored JPMC's blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect, now the standard for high-risk AI use case reviews
+- Architected a Network Broker enabling secure, isolated connectivity between JPMC's internal red teaming platform and external vendor evaluation infrastructure — eliminating manual handoffs and enabling continuous, reproducible assessment
+- Containerized and deployed Red Teaming ECS Task modules, allowing concurrent adversarial evaluation of multiple AI use cases without capacity constraints as the firm's AI portfolio scales
+- Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement across JPMC's engineering workforce
+<!-- WORK_END -->
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (JPMC's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at JPMC Bengaluru Tech Centre
 
@@ -28,17 +32,27 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 <h3 align="left">Open Source</h3>
 
+<!-- OPENSYNC_START -->
+**[stock-predictor](https://github.com/ppradyoth/stock-predictor)** (⭐ 2) — This project is part of the AI-ML course (Industry driven Elective by Nokia) and aims to help retail investors make an informed choice about choosing to go long/short on a particular stock. As quoted in the TV-show Billions "Everyone has the data, we analyze it better". This project delivers high quality insights from raw data.
+
+**[Lens-Studio-Lenses](https://github.com/ppradyoth/Lens-Studio-Lenses)** (⭐ 2) — This repository contains the source files of the 80 lenses that I created during my tenure as a Snapchat Opinion Leader at Under 25.
+
+**[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** (⭐ 1) — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
+
+**[schmaltz-surveyor](https://github.com/ppradyoth/schmaltz-surveyor)** (⭐ 1) — Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.
+
+**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — No description provided.
+
 **[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** — Interactive AI Security Playground. Craft attack prompts to break constrained AI systems. Covers prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
+**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
+
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
 
 **[llm-ops-workshop](https://github.com/ppradyoth/llm-ops-workshop)** — End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.
 
-**[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
-
-**[schmaltz-surveyor](https://github.com/ppradyoth/schmaltz-surveyor)** — Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.
-
 *Also building something in AI security — stealth mode 🔒*
+<!-- OPENSYNC_END -->
 
 ---
 

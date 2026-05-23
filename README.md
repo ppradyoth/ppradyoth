@@ -16,12 +16,15 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 **What I'm working on:**
 <!-- WORK_START -->
-- Building and scaling Gen AI Red Teaming infrastructure — enabling systematic automated and manual adversarial evaluation of LLM-powered applications before they reach production
-- Leading red team assessments of high-stakes AI systems, identifying critical behavioral vulnerabilities including prompt injection, intent drift, and information leakage
-- Developing structured methodology for manual red teaming of AI systems — covering areas that automated scanners cannot reach, adopted as an internal standard for high-risk AI reviews
-- Designed secure connectivity infrastructure bridging internal evaluation tooling and external vendor assessment environments — enabling continuous, reproducible testing workflows
-- Previously worked in AI Controls Engineering — building guardrails, policy enforcement mechanisms, and safety controls for enterprise AI systems
-- Evaluated emerging AI developer tooling from a security perspective, informing firm-wide decisions on safe adoption of AI coding assistants
+- Designed and operationalized Gen AI red teaming capabilities — building tooling and workflows to evaluate AI applications against adversarial and misuse-driven attack scenarios
+- Conduct manual and automated adversarial assessments of enterprise AI systems, surfacing high-severity behavioral vulnerabilities across top LLM risk categories
+- Built assessment frameworks that go beyond traditional vulnerability scanning — covering intent deviation, harmful output generation, and alignment failure analysis
+- Developed structured methodology for manual red teaming that targets areas automated scanners fundamentally cannot reach
+- Previously in AI Controls Engineering: built a model scanning engine to evaluate externally sourced ML models at procurement and periodically for security risks
+- Developed a risk-aligned scoring mechanism over LLM vulnerability scanner outputs to prioritize findings and feed security review workflows
+- Built an event-driven compliance pipeline that replaced manual attestation workflows and accelerated regulatory readiness
+- Integrated adversarial testing with a vendor platform to support pre-deployment and periodic AI security evaluations
+- Evaluated AI security tooling and reviewed emerging AI coding assistants from a security perspective, informing adoption decisions
 <!-- WORK_END -->
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (JPMC's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at JPMC Bengaluru Tech Centre

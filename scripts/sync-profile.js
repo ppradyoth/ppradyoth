@@ -171,10 +171,12 @@ async function main() {
       const newHeader = `<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=${encodedName}&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=${encodedDesc}&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>`;
       readmeContent = replaceBetweenMarkers(readmeContent, '<!-- HEADER_START -->', '<!-- HEADER_END -->', newHeader);
 
-      // 5. Update What I'm Working On — redact company name from highlights
-      const workLines = latestRole.highlights
-        .map(h => `- ${h.replace(/JPMorganChase|JPMC/gi, 'my workplace')}`)
-        .join('\n');
+      // 5. Update What I'm Working On — redact company name from highlights and append AI controls bullet
+      const highlights = latestRole.highlights
+        .map(h => `- ${h.replace(/JPMorganChase|JPMC/gi, 'my workplace')}`);
+      // Always append AI controls engineering bullet — this is independent of website data
+      highlights.push('- Building AI Controls engineering solutions to systematically enforce safety, scope, and behavioural boundaries across deployed LLM use cases');
+      const workLines = highlights.join('\n');
       readmeContent = replaceBetweenMarkers(readmeContent, '<!-- WORK_START -->', '<!-- WORK_END -->', workLines);
       console.log('Header and work section updated.');
     } else {

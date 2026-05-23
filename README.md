@@ -121,19 +121,11 @@ I work at the intersection of adversarial AI and security engineering — red te
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[stock-predictor](https://github.com/ppradyoth/stock-predictor)** (⭐ 2) — This project is part of the AI-ML course (Industry driven Elective by Nokia) and aims to help retail investors make an informed choice about choosing to go long/short on a particular stock. As quoted in the TV-show Billions "Everyone has the data, we analyze it better". This project delivers high quality insights from raw data.
-
-**[Lens-Studio-Lenses](https://github.com/ppradyoth/Lens-Studio-Lenses)** (⭐ 2) — This repository contains the source files of the 80 lenses that I created during my tenure as a Snapchat Opinion Leader at Under 25.
-
 **[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 1) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 
-**[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** (⭐ 1) — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
-
-**[schmaltz-surveyor](https://github.com/ppradyoth/schmaltz-surveyor)** (⭐ 1) — Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.
+**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
 
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
-
-**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
 
 **[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
 

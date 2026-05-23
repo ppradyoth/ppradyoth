@@ -40,14 +40,6 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 ---
 
-<h3 align="left">OSS Contributions</h3>
-
-| Date | Project | PR | Description | Status |
-|------|---------|-----|-------------|--------|
-| May 2026 | [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1793](https://github.com/NVIDIA/garak/pull/1793) | Tune pylintrc and fix pylint violations across core modules — enables linting CI | Draft |
-
----
-
 <h3 align="left">AI & LLM Security</h3>
 
 **LLMs & AI Platforms**

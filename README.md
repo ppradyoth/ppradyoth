@@ -16,15 +16,12 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 **What I'm working on:**
 <!-- WORK_START -->
-- Designed and operationalized Gen AI red teaming capabilities — building tooling and workflows to evaluate AI applications against adversarial and misuse-driven attack scenarios
-- Conduct manual and automated adversarial assessments of enterprise AI systems, surfacing high-severity behavioral vulnerabilities across top LLM risk categories
-- Built assessment frameworks that go beyond traditional vulnerability scanning — covering intent deviation, harmful output generation, and alignment failure analysis
-- Developed structured methodology for manual red teaming that targets areas automated scanners fundamentally cannot reach
-- Previously in AI Controls Engineering: built a model scanning engine to evaluate externally sourced ML models at procurement and periodically for security risks
-- Developed a risk-aligned scoring mechanism over LLM vulnerability scanner outputs to prioritize findings and feed security review workflows
-- Built an event-driven compliance pipeline that replaced manual attestation workflows and accelerated regulatory readiness
-- Integrated adversarial testing with a vendor platform to support pre-deployment and periodic AI security evaluations
-- Evaluated AI security tooling and reviewed emerging AI coding assistants from a security perspective, informing adoption decisions
+- Engineered a firm-wide Gen AI Red Teaming platform — the first of its kind at JPMC — enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
+- Led the red team assessment of a flagship Asset & Wealth Management LLM, surfacing multiple critical and high-severity vulnerabilities — prompt injection, data leakage, system prompt extraction, and intent drift — before the model reached production
+- Authored JPMC's blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect, now the standard for high-risk AI use case reviews
+- Architected a Network Broker enabling secure, isolated connectivity between JPMC's internal red teaming platform and external vendor evaluation infrastructure — eliminating manual handoffs and enabling continuous, reproducible assessment
+- Containerized and deployed Red Teaming ECS Task modules, allowing concurrent adversarial evaluation of multiple AI use cases without capacity constraints as the firm's AI portfolio scales
+- Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement across JPMC's engineering workforce
 <!-- WORK_END -->
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (JPMC's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at JPMC Bengaluru Tech Centre
@@ -33,14 +30,108 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 ---
 
+<h3 align="left">🛡️ Featured AI Security & Biocomputing Projects</h3>
+
+<p align="left">
+  These are full-fledged engineering projects built to address critical, high-risk security and simulation challenges at the frontier of AI and biological computing.
+</p>
+
+<table width="100%" border="0" cellpadding="8" cellspacing="0">
+  <tr>
+    <!-- Project 1 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">🧠 Synaptic Wetware</h4>
+      <p align="left"><strong>Organoid Intelligence (OI) Biocomputer Simulator</strong></p>
+      <p align="left">A scientifically rigorous interactive web dashboard simulating an organoid biocomputer lab, running living human brain cells on silicon chips. Grounded in peer-reviewed research (Nature & Frontiers).</p>
+      <ul align="left">
+        <li>Custom <strong>Hodgkin-Huxley</strong> (4 ODEs) and <strong>Izhikevich</strong> neuron models integrated in real-time</li>
+        <li><strong>MaxInterval burst detection</strong> on 64-channel multi-electrode arrays</li>
+        <li>DishBrain Pong training playground & Baltimore Declaration ethics monitor</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/React-18-646cff?style=flat-square&logo=react" alt="React" />
+        <img src="https://img.shields.io/badge/TypeScript-Vite-blue?style=flat-square&logo=typescript" alt="TypeScript" />
+        <img src="https://img.shields.io/badge/Physics-Euler_ODE-cc2200?style=flat-square" alt="Physics" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/synaptic-wetware">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://synaptic-wetware.vercel.app">🌐 Live Demo</a>
+      </p>
+    </td>
+    <!-- Project 2 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">🎮 Prompt Injection CTF</h4>
+      <p align="left"><strong>Interactive AI Security Hacking Playground</strong></p>
+      <p align="left">A gamified Capture The Flag platform designed to teach hands-on adversarial thinking. Mapped directly to real-world risk frameworks (OWASP LLM Top 10 & MITRE ATLAS).</p>
+      <ul align="left">
+        <li><strong>5 Progressive Levels</strong> covering basic injection, jailbreaks, intent drift, token smuggling, and multi-vector chaining</li>
+        <li><strong>Zero-API-cost heuristics engine</strong> (Base64, roleplay markers) for instant feedback</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Next.js-16-111111?style=flat-square&logo=next.js" alt="Next.js" />
+        <img src="https://img.shields.io/badge/Tailwind-v4-0e75b6?style=flat-square&logo=tailwindcss" alt="Tailwind" />
+        <img src="https://img.shields.io/badge/Security-OWASP_LLM-cc2200?style=flat-square" alt="Security" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/prompt-injection-ctf">💾 Codebase</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <!-- Project 3 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">🛡️ Akrivon AI</h4>
+      <p align="left"><strong>AI Scope & Intent Enforcement Proxy Gateway</strong></p>
+      <p align="left">An enterprise-grade safety proxy and automated red-teaming tool designed to keep deployed LLM applications safe, secure, and strictly aligned within their defined scopes.</p>
+      <ul align="left">
+        <li><strong>IntentScan</strong>: Automated red-teaming simulating Role Transformation, Gradual Drift, and Language Variation attacks</li>
+        <li><strong>IntentEnforce</strong>: Runtime reverse proxy utilizing LLM classification allow/block policies</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/FastAPI-Python_3.11-0e75b6?style=flat-square&logo=fastapi" alt="FastAPI" />
+        <img src="https://img.shields.io/badge/Gemini_Pro-API-0e75b6?style=flat-square&logo=google&logoColor=white" alt="Gemini" />
+        <img src="https://img.shields.io/badge/Gateway-Proxy-cc2200?style=flat-square" alt="Gateway" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/akrivon-ai">💾 Codebase</a>
+      </p>
+    </td>
+    <!-- Project 4 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">📊 Weighted Safety Refusal</h4>
+      <p align="left"><strong>Absolute Safety Robustness Evaluation Harness</strong></p>
+      <p align="left">An advanced LLM safety benchmark that evaluates absolute, severity-weighted category failure rates instead of shifting, relative statistics (Z-scores).</p>
+      <ul align="left">
+        <li>Built on top of the UK AISI's open-source <strong>inspect_ai</strong> framework</li>
+        <li>Risk-adjusted severity weighting: prompt injection (0.3), jailbreaks (0.3), data exfiltration (0.2), toxicity (0.1), malware (0.1)</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Inspect_AI-UK_AISI-0e75b6?style=flat-square" alt="Inspect AI" />
+        <img src="https://img.shields.io/badge/Python-3.11-cc2200?style=flat-square&logo=python" alt="Python" />
+        <img src="https://img.shields.io/badge/Benchmark-Robustness-0e75b6?style=flat-square" alt="Benchmark" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/weighted-safety-refusal">💾 Codebase</a>
+      </p>
+    </td>
+  </tr>
+</table>
+
+---
+
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
+**[stock-predictor](https://github.com/ppradyoth/stock-predictor)** (⭐ 2) — This project is part of the AI-ML course (Industry driven Elective by Nokia) and aims to help retail investors make an informed choice about choosing to go long/short on a particular stock. As quoted in the TV-show Billions "Everyone has the data, we analyze it better". This project delivers high quality insights from raw data.
+
+**[Lens-Studio-Lenses](https://github.com/ppradyoth/Lens-Studio-Lenses)** (⭐ 2) — This repository contains the source files of the 80 lenses that I created during my tenure as a Snapchat Opinion Leader at Under 25.
+
+**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 1) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
+
 **[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** (⭐ 1) — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
 
-**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation — with risk-adjusted category weights and a custom model-graded scorer.
+**[schmaltz-surveyor](https://github.com/ppradyoth/schmaltz-surveyor)** (⭐ 1) — Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.
 
-**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
+**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
 
 **[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
 

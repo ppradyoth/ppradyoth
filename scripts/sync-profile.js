@@ -97,39 +97,41 @@ async function main() {
   try {
     console.log('Starting profile sync...');
 
-    // 1. Load career data from personal website
-    let tsContent;
-    const localWebsitePath = path.join(__dirname, '..', '..', '..', 'ppradyoth-website', 'lib', 'data.ts');
-    
-    if (fs.existsSync(localWebsitePath)) {
-      console.log('Found local website data file at:', localWebsitePath);
-      tsContent = fs.readFileSync(localWebsitePath, 'utf8');
-    } else {
-      console.log('Local website data not found, fetching from remote repo...');
-      const websiteHeaders = {
-        'User-Agent': 'ppradyoth-sync-script',
-      };
-      // Use WEBSITE_ACCESS_TOKEN or GITHUB_TOKEN if provided for private repo access
-      const token = process.env.WEBSITE_ACCESS_TOKEN || process.env.GITHUB_TOKEN;
-      if (token) {
-        websiteHeaders['Authorization'] = `token ${token}`;
-        console.log('Using authorization token for website data fetch.');
-      }
-      tsContent = await fetchText(WEBSITE_DATA_URL, websiteHeaders);
-    }
+    // 1. Load career data from personal website (optional — skipped gracefully if unavailable)
+    let careerData = null;
+    let latestRole = null;
+    try {
+      let tsContent;
+      const localWebsitePath = path.join(__dirname, '..', '..', '..', 'ppradyoth-website', 'lib', 'data.ts');
 
-    const careerData = parseWebsiteData(tsContent);
-    const latestRole = careerData.experience[0];
-    
-    if (!latestRole) {
-      throw new Error('No experience roles found in website data.');
+      if (fs.existsSync(localWebsitePath)) {
+        console.log('Found local website data file at:', localWebsitePath);
+        tsContent = fs.readFileSync(localWebsitePath, 'utf8');
+      } else {
+        console.log('Local website data not found, fetching from remote repo...');
+        const websiteHeaders = { 'User-Agent': 'ppradyoth-sync-script' };
+        // Use WEBSITE_ACCESS_TOKEN if provided — needed when the website repo is private
+        const token = process.env.WEBSITE_ACCESS_TOKEN || process.env.GITHUB_TOKEN;
+        if (token) {
+          websiteHeaders['Authorization'] = `token ${token}`;
+          console.log('Using authorization token for website data fetch.');
+        }
+        tsContent = await fetchText(WEBSITE_DATA_URL, websiteHeaders);
+      }
+
+      careerData = parseWebsiteData(tsContent);
+      latestRole = careerData.experience[0];
+      if (!latestRole) throw new Error('No experience roles found in website data.');
+      console.log(`Latest role parsed: ${latestRole.role} at ${latestRole.company}`);
+    } catch (websiteErr) {
+      console.warn(`⚠️  Could not load website career data (skipping header/work updates): ${websiteErr.message}`);
     }
-    console.log(`Latest role parsed: ${latestRole.role} at ${latestRole.company}`);
 
     // 2. Fetch public repositories from GitHub API
     console.log('Fetching repositories from GitHub API...');
     const githubHeaders = {
       'User-Agent': 'ppradyoth-sync-script',
+      'Accept': 'application/vnd.github+json',
     };
     if (process.env.GITHUB_TOKEN) {
       githubHeaders['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
@@ -145,40 +147,52 @@ async function main() {
     }
     let readmeContent = fs.readFileSync(readmePath, 'utf8');
 
-    // 4. Update Header (Capsule Render desc)
-    let teamName = latestRole.team || '';
-    if (teamName.includes('·')) {
-      const parts = teamName.split('·').map(p => p.trim());
-      teamName = parts.find(p => p.toLowerCase().includes('red team')) || parts[parts.length - 1];
-    }
-    const descString = `${latestRole.role} | ${teamName} | ${latestRole.company}`;
-    const encodedDesc = encodeURIComponent(descString);
-    const encodedName = encodeURIComponent(careerData.profile.name);
-    
-    const newHeader = `<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=${encodedName}&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=${encodedDesc}&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>`;
-    
-    readmeContent = replaceBetweenMarkers(readmeContent, '<!-- HEADER_START -->', '<!-- HEADER_END -->', newHeader);
+    // 4. Update Header + Work section (only if career data loaded successfully)
+    if (latestRole) {
+      let teamName = latestRole.team || '';
+      if (teamName.includes('·')) {
+        const parts = teamName.split('·').map(p => p.trim());
+        teamName = parts.find(p => p.toLowerCase().includes('red team')) || parts[parts.length - 1];
+      }
+      const descString = `${latestRole.role} | ${teamName} | my workplace`;
+      const encodedDesc = encodeURIComponent(descString);
+      const encodedName = encodeURIComponent(careerData.profile.name);
 
-    // 5. Update What I'm Working On (Latest Role highlights)
-    const workLines = latestRole.highlights.map(h => `- ${h}`).join('\n');
-    readmeContent = replaceBetweenMarkers(readmeContent, '<!-- WORK_START -->', '<!-- WORK_END -->', workLines);
+      const newHeader = `<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=${encodedName}&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=${encodedDesc}&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>`;
+      readmeContent = replaceBetweenMarkers(readmeContent, '<!-- HEADER_START -->', '<!-- HEADER_END -->', newHeader);
+
+      // 5. Update What I'm Working On — redact company name from highlights
+      const workLines = latestRole.highlights
+        .map(h => `- ${h.replace(/JPMorganChase|JPMC/gi, 'my workplace')}`)
+        .join('\n');
+      readmeContent = replaceBetweenMarkers(readmeContent, '<!-- WORK_START -->', '<!-- WORK_END -->', workLines);
+      console.log('Header and work section updated.');
+    } else {
+      console.log('Skipping header/work update (no career data available).');
+    }
 
     // 6. Update Open Source Section
     const formattedRepos = repos
       .filter(r => {
         if (r.fork || r.private || EXCLUDED_REPOS.includes(r.name)) return false;
-        // Filter out minor, lab, or test repositories
-        return !EXCLUDE_PATTERNS.some(pat => pat.test(r.name));
+        // Exclude minor, lab, or test repositories
+        if (EXCLUDE_PATTERNS.some(pat => pat.test(r.name))) return false;
+        // Exclude repositories created in or before 2023
+        const createdYear = new Date(r.created_at).getFullYear();
+        if (createdYear <= 2023) return false;
+        // Keep only repositories flagged as impactful
+        if (!IMPACTFUL_REPOS.includes(r.name)) return false;
+        return true;
       })
       .sort((a, b) => {
-        if (b.stargazers_count !== a.stargazers_count) {
-          return b.stargazers_count - a.stargazers_count;
-        }
+        if (b.stargazers_count !== a.stargazers_count) return b.stargazers_count - a.stargazers_count;
         return new Date(b.pushed_at) - new Date(a.pushed_at);
       })
       .map(r => {
         const starBadge = r.stargazers_count > 0 ? ` (⭐ ${r.stargazers_count})` : '';
-        const description = CUSTOM_DESCRIPTIONS[r.name] || r.description || 'No description provided.';
+        // Redact any company name from the repo description with a generic term
+        let description = CUSTOM_DESCRIPTIONS[r.name] || r.description || 'No description provided.';
+        description = description.replace(/JPMorganChase|JPMC/gi, 'my workplace');
         return `**[${r.name}](${r.html_url})**${starBadge} — ${description}`;
       })
       .join('\n\n');

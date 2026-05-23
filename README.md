@@ -12,19 +12,20 @@
 
 ---
 
-I work at the intersection of adversarial AI and security engineering — red teaming production AI systems at JPMorganChase before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
+I work at the intersection of adversarial AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
 
 **What I'm working on:**
 <!-- WORK_START -->
 - Engineered a firm-wide Gen AI Red Teaming platform enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
-- Lead the red team assessments, surfacing multiple critical and high-severity vulnerabilities before the model reached production
-- Authoredblueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect, now the standard for high-risk AI use case reviews
-- Architected a Network Broker enabling secure, isolated connectivity between internal red teaming platform and external vendor evaluation infrastructure — eliminating manual handoffs and enabling continuous, reproducible assessment
-- Containerized and deployed Red Teaming ECS Task modules, allowing concurrent adversarial evaluation of multiple AI use cases without capacity constraints as the firm's AI portfolio scales
-- Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement across engineering workforce
+- Led the red team assessment of flagship LLMs, surfacing multiple critical and high-severity vulnerabilities — prompt injection, data leakage, system prompt extraction, and intent drift — before the models reached production
+- Authored a blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect
+- Architected a Network Broker enabling secure, isolated connectivity between internal red teaming platform and external vendor evaluation infrastructure
+- Containerized and deployed Red Teaming ECS Task modules for concurrent adversarial evaluation of multiple AI use cases without capacity constraints
+- Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement
+- Building AI Controls engineering solutions to systematically enforce safety, scope, and behavioural boundaries across deployed LLM use cases
 <!-- WORK_END -->
 
-**Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (JPMC's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at JPMC Bengaluru Tech Centre
+**Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (my workplace's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at my workplace Bengaluru Tech Centre
 
 📬 ppradyoth64@gmail.com
 
@@ -92,7 +93,7 @@ I work at the intersection of adversarial AI and security engineering — red te
         <img src="https://img.shields.io/badge/Gateway-Proxy-cc2200?style=flat-square" alt="Gateway" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/akrivon-ai">💾 Codebase</a>
+        🔒 Stealth / Private Repository
       </p>
     </td>
     <!-- Project 4 -->

@@ -16,12 +16,12 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 **What I'm working on:**
 <!-- WORK_START -->
-- Engineering a firm-wide Gen AI Red Teaming platform — the first of its kind at JPMC — enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
-- Lead the red team assessments of flagship LLM based applications, surfacing multiple critical and high-severity vulnerabilities — before the model reached production
-- Drafting firmwide blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect, now the standard for high-risk AI use case reviews~!
-- Architected a Network Broker enabling secure, isolated connectivity between internal red teaming platform and external vendor evaluation infrastructure — eliminating manual handoffs and enabling continuous, reproducible assessment
-- Containerized and deployed ECS Task modules, allowing concurrent adversarial evaluation of multiple AI use cases without capacity constraints as the firm's AI portfolio scales
-- Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement across JPMC's engineering workforce
+- Building and scaling Gen AI Red Teaming infrastructure — enabling systematic automated and manual adversarial evaluation of LLM-powered applications before they reach production
+- Leading red team assessments of high-stakes AI systems, identifying critical behavioral vulnerabilities including prompt injection, intent drift, and information leakage
+- Developing structured methodology for manual red teaming of AI systems — covering areas that automated scanners cannot reach, adopted as an internal standard for high-risk AI reviews
+- Designed secure connectivity infrastructure bridging internal evaluation tooling and external vendor assessment environments — enabling continuous, reproducible testing workflows
+- Previously worked in AI Controls Engineering — building guardrails, policy enforcement mechanisms, and safety controls for enterprise AI systems
+- Evaluated emerging AI developer tooling from a security perspective, informing firm-wide decisions on safe adoption of AI coding assistants
 <!-- WORK_END -->
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (JPMC's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at JPMC Bengaluru Tech Centre
@@ -33,13 +33,7 @@ I work at the intersection of adversarial AI and security engineering — red te
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[stock-predictor](https://github.com/ppradyoth/stock-predictor)** (⭐ 2) — This project is part of the AI-ML course (Industry driven Elective by Nokia) and aims to help retail investors make an informed choice about choosing to go long/short on a particular stock. As quoted in the TV-show Billions "Everyone has the data, we analyze it better". This project delivers high quality insights from raw data.
-
-**[Lens-Studio-Lenses](https://github.com/ppradyoth/Lens-Studio-Lenses)** (⭐ 2) — This repository contains the source files of the 80 lenses that I created during my tenure as a Snapchat Opinion Leader at Under 25.
-
 **[ML-101-Workshop](https://github.com/ppradyoth/ML-101-Workshop)** (⭐ 1) — Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.
-
-**[schmaltz-surveyor](https://github.com/ppradyoth/schmaltz-surveyor)** (⭐ 1) — Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.
 
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — No description provided.
 

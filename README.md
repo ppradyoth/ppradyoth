@@ -40,6 +40,14 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 ---
 
+<h3 align="left">OSS Contributions</h3>
+
+| Date | Project | PR | Description | Status |
+|------|---------|-----|-------------|--------|
+| May 2026 | [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1793](https://github.com/NVIDIA/garak/pull/1793) | Tune pylintrc and fix pylint violations across core modules — enables linting CI | Draft |
+
+---
+
 <h3 align="left">AI & LLM Security</h3>
 
 **LLMs & AI Platforms**
@@ -89,11 +97,24 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 ---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
-</picture>
+<h3 align="center">Analytics & Activity</h3>
+
+<p align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img height="180" src="https://github-readme-stats.vercel.app/api?username=ppradyoth&show_icons=true&title_color=cc2200&text_color=cccccc&icon_color=cc2200&bg_color=0d1117&hide_border=true&include_all_commits=true&count_private=true" alt="Pradyoth's GitHub Stats" />
+  </a>
+  <a href="https://github.com/aaron-bond/github-readme-streak-stats">
+    <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=ppradyoth&background=0d1117&fire=cc2200&ring=cc2200&currStreakNum=ffffff&sideNums=cccccc&currStreakLabel=cc2200&sideLabels=cccccc&dates=cccccc&hide_border=true" alt="Pradyoth's GitHub Streak" />
+  </a>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
+  </picture>
+</p>
 
 ---
 

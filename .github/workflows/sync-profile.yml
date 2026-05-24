@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
 
     steps:
       - name: Checkout Repository
@@ -26,16 +27,33 @@ jobs:
       - name: Run Profile Sync Script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/sync-profile.js
+        run: node scripts/sync-profile.js 2>&1 | tee /tmp/sync-profile.log
 
       - name: Commit and Push if Changed
+        id: commit
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           if git diff --staged --quiet; then
-            echo "No changes in README.md, skipping commit."
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "Auto-update profile README (sync website career & public repos)"
             git push origin main
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Log changes to changelog issue
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CHANGED_SECTIONS=$(grep -E "^(Header|Work section|Open source section) updated\." /tmp/sync-profile.log | sed 's/ updated\.//' | paste -sd ', ')
+          gh issue comment 1 --repo ppradyoth/ppradyoth --body "$(cat <<EOF
+          ### 📝 Profile README updated — $(date -u +%Y-%m-%d)
+
+          **What changed:** ${CHANGED_SECTIONS:-README.md}
+
+          **Run:** [View workflow run](https://github.com/ppradyoth/ppradyoth/actions/workflows/sync-profile.yml)
+          EOF
+          )"

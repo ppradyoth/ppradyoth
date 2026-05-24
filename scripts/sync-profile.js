@@ -230,7 +230,7 @@ async function main() {
       })
       .join('\n\n');
 
-    const openSourceContent = formattedRepos + '\n\n*Also building something in AI security — stealth mode 🔒*\n\n📋 [Full list of external contributions](./external_contributions.md) — repos outside my account where I\'ve contributed (2020–present)';
+    const openSourceContent = formattedRepos + '\n\n*Also building something in AI security — stealth mode 🔒*\n\n📋 [Full list of external contributions](./EXTERNAL_CONTRIBUTIONS.md) — repos outside my account where I\'ve contributed (2020–present)';
     const openSourceResult = replaceBetweenMarkers(readmeContent, '<!-- OPENSYNC_START -->', '<!-- OPENSYNC_END -->', openSourceContent);
     readmeContent = openSourceResult.content;
     if (openSourceResult.changed) { console.log('Open source section updated.'); anyChanged = true; }

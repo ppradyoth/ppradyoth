@@ -1,0 +1,294 @@
+name: Sync External Contributions
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 6am UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate external_contributions.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ppradyoth
+        run: |
+          python3 << 'PYEOF'
+          import subprocess, json, os
+          from datetime import datetime, timezone
+
+          USERNAME = os.environ["USERNAME"]
+          GH_TOKEN = os.environ["GH_TOKEN"]
+
+          def gh_graphql(query):
+              result = subprocess.run(
+                  ["gh", "api", "graphql", "-f", f"query={query}"],
+                  capture_output=True, text=True, env={**os.environ}
+              )
+              return json.loads(result.stdout)
+
+          def gh_rest(path):
+              result = subprocess.run(
+                  ["gh", "api", path],
+                  capture_output=True, text=True, env={**os.environ}
+              )
+              try:
+                  return json.loads(result.stdout)
+              except Exception:
+                  return []
+
+          def get_repo_prs(repo, username):
+              data = gh_rest(f"/repos/{repo}/pulls?state=all&per_page=100")
+              if not isinstance(data, list):
+                  return []
+              return [p for p in data if p.get("user", {}).get("login") == username]
+
+          # ── Contribution years ──────────────────────────────────────────────
+          years_data = gh_graphql(f'{{ user(login: "{USERNAME}") {{ contributionsCollection {{ contributionYears }} }} }}')
+          years = years_data["data"]["user"]["contributionsCollection"]["contributionYears"]
+
+          # ── Gather all external repos from contributions calendar ────────────
+          external_repos = {}  # nameWithOwner -> meta
+
+          for year in years:
+              q = f'''
+              {{
+                user(login: "{USERNAME}") {{
+                  contributionsCollection(from: "{year}-01-01T00:00:00Z", to: "{year}-12-31T23:59:59Z") {{
+                    commitContributionsByRepository(maxRepositories: 100) {{
+                      repository {{ nameWithOwner isPrivate owner {{ login __typename }} primaryLanguage {{ name }} stargazerCount url }}
+                    }}
+                    pullRequestContributionsByRepository(maxRepositories: 100) {{
+                      repository {{ nameWithOwner isPrivate owner {{ login __typename }} primaryLanguage {{ name }} stargazerCount url }}
+                    }}
+                    issueContributionsByRepository(maxRepositories: 100) {{
+                      repository {{ nameWithOwner isPrivate owner {{ login __typename }} primaryLanguage {{ name }} stargazerCount url }}
+                    }}
+                    pullRequestReviewContributionsByRepository(maxRepositories: 100) {{
+                      repository {{ nameWithOwner isPrivate owner {{ login __typename }} primaryLanguage {{ name }} stargazerCount url }}
+                    }}
+                  }}
+                }}
+              }}
+              '''
+              data = gh_graphql(q)
+              cc = data["data"]["user"]["contributionsCollection"]
+              for section in ["commitContributionsByRepository", "pullRequestContributionsByRepository",
+                              "issueContributionsByRepository", "pullRequestReviewContributionsByRepository"]:
+                  for entry in cc[section]:
+                      r = entry["repository"]
+                      now = r["nameWithOwner"]
+                      if r["owner"]["login"] == USERNAME:
+                          continue
+                      if r["isPrivate"]:
+                          continue
+                      if now not in external_repos:
+                          external_repos[now] = r
+
+          # ── Collaborator repos (public only) ─────────────────────────────────
+          collab_repos = gh_rest("/user/repos?affiliation=collaborator&per_page=100&visibility=all")
+          collab_public = []
+          if isinstance(collab_repos, list):
+              for r in collab_repos:
+                  if not r.get("private") and r["owner"]["login"] != USERNAME:
+                      collab_public.append(r["full_name"])
+                      if r["full_name"] not in external_repos:
+                          external_repos[r["full_name"]] = {
+                              "nameWithOwner": r["full_name"],
+                              "isPrivate": False,
+                              "owner": {"login": r["owner"]["login"]},
+                              "primaryLanguage": {"name": r.get("language")} if r.get("language") else None,
+                              "stargazerCount": r.get("stargazers_count", 0),
+                              "url": r["html_url"],
+                          }
+
+          # ── Fetch PRs for every external repo ────────────────────────────────
+          repo_prs = {}
+          for nwo in external_repos:
+              prs = get_repo_prs(nwo, USERNAME)
+              if prs:
+                  repo_prs[nwo] = prs
+
+          # ── Classify PRs ─────────────────────────────────────────────────────
+          def pr_status(pr):
+              if pr.get("merged_at"):
+                  return "merged"
+              if pr.get("state") == "closed":
+                  return "closed"
+              return "open"
+
+          STATUS_ICON = {"merged": "✅ Merged", "open": "🔁 Open", "closed": "❌ Closed"}
+
+          def pr_row_org(nwo, pr, stars):
+              lang = external_repos[nwo].get("primaryLanguage") or {}
+              lang_str = lang.get("name") or "—"
+              date = (pr.get("merged_at") or pr.get("created_at") or "")[:10]
+              status = pr_status(pr)
+              return f'| [{nwo}]({external_repos[nwo]["url"]}) | [#{pr["number"]} — {pr["title"]}]({pr["html_url"]}) | {lang_str} | {stars:,} | {STATUS_ICON[status]} | {date} |'
+
+          def pr_row_friend(nwo, pr):
+              lang = external_repos[nwo].get("primaryLanguage") or {}
+              lang_str = lang.get("name") or "—"
+              date = (pr.get("merged_at") or pr.get("created_at") or "")[:10]
+              status = pr_status(pr)
+              return f'| [{nwo}]({external_repos[nwo]["url"]}) | [#{pr["number"]} — {pr["title"]}]({pr["html_url"]}) | {lang_str} | {STATUS_ICON[status]} | {date} |'
+
+          # ── Split into org vs friend repos ────────────────────────────────────
+          ORG_REPOS = {
+              "stanfordnlp/dspy", "anthropics/anthropic-sdk-python",
+              "NVIDIA-NeMo/Guardrails", "promptfoo/promptfoo",
+              "NVIDIA/garak", "567-labs/instructor",
+              "UKGovernmentBEIS/inspect_evals",
+          }
+          # Dynamically: any repo whose owner __typename is Organization
+          for nwo, meta in external_repos.items():
+              if meta.get("owner", {}).get("__typename") == "Organization":
+                  ORG_REPOS.add(nwo)
+
+          org_repos = {k: v for k, v in external_repos.items() if k in ORG_REPOS}
+          friend_repos = {k: v for k, v in external_repos.items() if k not in ORG_REPOS}
+
+          # ── Build merged-only sections ─────────────────────────────────────────
+          def build_merged_org():
+              rows = []
+              for nwo, meta in sorted(org_repos.items(), key=lambda x: -x[1].get("stargazerCount", 0)):
+                  stars = meta.get("stargazerCount", 0)
+                  for pr in repo_prs.get(nwo, []):
+                      if pr_status(pr) == "merged":
+                          rows.append(pr_row_org(nwo, pr, stars))
+              return rows
+
+          def build_merged_friend():
+              rows = []
+              for nwo in sorted(friend_repos):
+                  for pr in repo_prs.get(nwo, []):
+                      if pr_status(pr) == "merged":
+                          rows.append(pr_row_friend(nwo, pr))
+              return rows
+
+          # ── Build all-contributions sections ──────────────────────────────────
+          def build_all_org():
+              rows = []
+              for nwo, meta in sorted(org_repos.items(), key=lambda x: -x[1].get("stargazerCount", 0)):
+                  stars = meta.get("stargazerCount", 0)
+                  for pr in repo_prs.get(nwo, []):
+                      rows.append(pr_row_org(nwo, pr, stars))
+              return rows
+
+          def build_all_friend_prs():
+              rows = []
+              for nwo in sorted(friend_repos):
+                  for pr in repo_prs.get(nwo, []):
+                      rows.append(pr_row_friend(nwo, pr))
+              return rows
+
+          def build_commit_only():
+              rows = []
+              for nwo, meta in sorted(friend_repos.items()):
+                  if nwo not in repo_prs:
+                      lang = (meta.get("primaryLanguage") or {}).get("name") or "—"
+                      rows.append(f'| [{nwo}]({meta["url"]}) | {meta["owner"]["login"]} | {lang} |')
+              return rows
+
+          def build_collab_public():
+              rows = []
+              for nwo in sorted(collab_public):
+                  if nwo in external_repos and nwo not in repo_prs:
+                      meta = external_repos[nwo]
+                      lang = (meta.get("primaryLanguage") or {}).get("name") or "—"
+                      rows.append(f'| [{nwo}]({meta["url"]}) | {meta["owner"]["login"]} | {lang} |')
+              return rows
+
+          # ── Assemble file ──────────────────────────────────────────────────────
+          today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+          merged_org = build_merged_org()
+          merged_friend = build_merged_friend()
+          all_org = build_all_org()
+          all_friend_prs = build_all_friend_prs()
+          commit_only = build_commit_only()
+          collab_pub = build_collab_public()
+
+          def table_or_empty(headers, rows, empty_msg="— none yet —"):
+              if not rows:
+                  return f"> {empty_msg}\n"
+              return headers + "\n" + "\n".join(rows) + "\n"
+
+          md = f"""# External Contributions
+
+All repositories outside my account (ppradyoth) where I appear as a contributor — via commits, PRs, issues, or direct collaborator access.
+
+**Default view: Merged contributions** — jump to [All Contributions](#all-contributions-including-open--unmerged) for the full list.
+
+---
+
+## ✅ Merged Contributions
+
+### Open Source / Organization Repos
+
+{table_or_empty(
+    "| Repository | PR | Language | Stars | Merged On |\\n|---|---|---|---|---|",
+    merged_org
+)}
+### Friend / Community Repos
+
+{table_or_empty(
+    "| Repository | PR | Language | Status | Date |\\n|---|---|---|---|---|",
+    merged_friend
+)}
+---
+
+## All Contributions (including open & unmerged)
+
+### Open Source / Organization Repos
+
+{table_or_empty(
+    "| Repository | PR | Language | Stars | Status | Date |\\n|---|---|---|---|---|---|",
+    all_org
+)}
+### Friend / Community Repos — PRs
+
+{table_or_empty(
+    "| Repository | PR | Language | Status | Date |\\n|---|---|---|---|---|",
+    all_friend_prs
+)}
+### Friend / Community Repos — Commit-only (no PR)
+
+{table_or_empty(
+    "| Repository | Owner | Language |\\n|---|---|---|",
+    commit_only
+)}
+### Collaborator Repos (public)
+
+Direct collaborator access — contributions via commits; individual PR history not tracked by GitHub API for all.
+
+{table_or_empty(
+    "| Repository | Owner | Language |\\n|---|---|---|",
+    collab_pub
+)}
+_Generated on {today} · Sources: GitHub contribution calendar ({min(years)}–{max(years)}), collaborator API, PR history per repo_
+"""
+
+          with open("external_contributions.md", "w") as f:
+              f.write(md)
+
+          print("Done — external_contributions.md written.")
+          PYEOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add external_contributions.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: sync external contributions [$(date -u +%Y-%m-%d)]"
+            git push
+          fi

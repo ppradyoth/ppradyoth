@@ -134,7 +134,7 @@ I work at the intersection of adversarial AI and security engineering — red te
 
 *Also building something in AI security — stealth mode 🔒*
 
-📋 [Full list of external contributions](./external_contributions.md) — repos outside my account where I've contributed (2020–2026)
+📋 [Full list of external contributions](./EXTERNAL_CONTRIBUTIONS.md) — repos outside my account where I've contributed (2020–2026)
 <!-- OPENSYNC_END -->
 
 ---

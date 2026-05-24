@@ -84,23 +84,39 @@ function parseWebsiteData(tsContent) {
   return data;
 }
 
-// Helper to replace text between markers
+// Helper to extract current content between markers
+function extractBetweenMarkers(content, startMarker, endMarker) {
+  const startIndex = content.indexOf(startMarker);
+  const endIndex = content.indexOf(endMarker);
+  if (startIndex === -1 || endIndex === -1) return null;
+  return content.substring(startIndex + startMarker.length, endIndex).trim();
+}
+
+// Helper to replace text between markers — only writes if content actually changed
 function replaceBetweenMarkers(content, startMarker, endMarker, replacement) {
   const startIndex = content.indexOf(startMarker);
   const endIndex = content.indexOf(endMarker);
 
   if (startIndex === -1 || endIndex === -1) {
     console.warn(`Markers not found: ${startMarker} or ${endMarker}`);
-    return content;
+    return { content, changed: false };
   }
 
-  return (
-    content.substring(0, startIndex + startMarker.length) +
-    '\n' +
-    replacement +
-    '\n' +
-    content.substring(endIndex)
-  );
+  const current = content.substring(startIndex + startMarker.length, endIndex).trim();
+  if (current === replacement.trim()) {
+    return { content, changed: false };
+  }
+
+  return {
+    content: (
+      content.substring(0, startIndex + startMarker.length) +
+      '\n' +
+      replacement +
+      '\n' +
+      content.substring(endIndex)
+    ),
+    changed: true,
+  };
 }
 
 async function main() {
@@ -156,8 +172,9 @@ async function main() {
       throw new Error(`README.md not found at ${readmePath}`);
     }
     let readmeContent = fs.readFileSync(readmePath, 'utf8');
+    let anyChanged = false;
 
-    // 4. Update Header + Work section (only if career data loaded successfully)
+    // 4. Update Header + Work section (only if content actually changed)
     if (latestRole) {
       let teamName = latestRole.team || '';
       if (teamName.includes('·')) {
@@ -169,16 +186,20 @@ async function main() {
       const encodedName = encodeURIComponent(careerData.profile.name);
 
       const newHeader = `<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=${encodedName}&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=${encodedDesc}&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>`;
-      readmeContent = replaceBetweenMarkers(readmeContent, '<!-- HEADER_START -->', '<!-- HEADER_END -->', newHeader);
+      const headerResult = replaceBetweenMarkers(readmeContent, '<!-- HEADER_START -->', '<!-- HEADER_END -->', newHeader);
+      readmeContent = headerResult.content;
+      if (headerResult.changed) { console.log('Header updated.'); anyChanged = true; }
+      else { console.log('Header unchanged — skipping.'); }
 
-      // 5. Update What I'm Working On — redact company name from highlights and append AI controls bullet
+      // 5. Update What I'm Working On (only if highlights changed)
       const highlights = latestRole.highlights
         .map(h => `- ${h.replace(/JPMorganChase|JPMC/gi, 'my workplace')}`);
-      // Always append AI controls engineering bullet — this is independent of website data
       highlights.push('- Building AI Controls engineering solutions to systematically enforce safety, scope, and behavioural boundaries across deployed LLM use cases');
       const workLines = highlights.join('\n');
-      readmeContent = replaceBetweenMarkers(readmeContent, '<!-- WORK_START -->', '<!-- WORK_END -->', workLines);
-      console.log('Header and work section updated.');
+      const workResult = replaceBetweenMarkers(readmeContent, '<!-- WORK_START -->', '<!-- WORK_END -->', workLines);
+      readmeContent = workResult.content;
+      if (workResult.changed) { console.log('Work section updated.'); anyChanged = true; }
+      else { console.log('Work section unchanged — skipping.'); }
     } else {
       console.log('Skipping header/work update (no career data available).');
     }
@@ -210,11 +231,18 @@ async function main() {
       .join('\n\n');
 
     const openSourceContent = formattedRepos + '\n\n*Also building something in AI security — stealth mode 🔒*\n\n📋 [Full list of external contributions](./external_contributions.md) — repos outside my account where I\'ve contributed (2020–present)';
-    readmeContent = replaceBetweenMarkers(readmeContent, '<!-- OPENSYNC_START -->', '<!-- OPENSYNC_END -->', openSourceContent);
+    const openSourceResult = replaceBetweenMarkers(readmeContent, '<!-- OPENSYNC_START -->', '<!-- OPENSYNC_END -->', openSourceContent);
+    readmeContent = openSourceResult.content;
+    if (openSourceResult.changed) { console.log('Open source section updated.'); anyChanged = true; }
+    else { console.log('Open source section unchanged — skipping.'); }
 
-    // 7. Write changes back to README.md
+    // 7. Write only if something actually changed
+    if (!anyChanged) {
+      console.log('README.md is already up to date — no write needed.');
+      return;
+    }
     fs.writeFileSync(readmePath, readmeContent, 'utf8');
-    console.log('README.md successfully updated and synchronized!');
+    console.log('README.md updated.');
 
   } catch (error) {
     console.error('Error during sync process:', error);

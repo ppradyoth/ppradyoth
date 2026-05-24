@@ -50,8 +50,9 @@ jobs:
               return [p for p in data if p.get("user", {}).get("login") == username]
 
           # ── Contribution years ──────────────────────────────────────────────
-          years_data = gh_graphql(f'{{ user(login: "{USERNAME}") {{ contributionsCollection {{ contributionYears }} }} }}')
-          years = years_data["data"]["user"]["contributionsCollection"]["contributionYears"]
+          # Historical data (2020-2025) is already committed; only query current year onwards.
+          current_year = datetime.now(timezone.utc).year
+          years = list(range(2026, current_year + 1))
 
           # ── Gather all external repos from contributions calendar ────────────
           external_repos = {}  # nameWithOwner -> meta
@@ -272,7 +273,7 @@ Direct collaborator access — contributions via commits; individual PR history 
     "| Repository | Owner | Language |\\n|---|---|---|",
     collab_pub
 )}
-_Generated on {today} · Sources: GitHub contribution calendar ({min(years)}–{max(years)}), collaborator API, PR history per repo_
+_Generated on {today} · Sources: GitHub contribution calendar (2020–{max(years)}), collaborator API, PR history per repo_
 """
 
           with open("external_contributions.md", "w") as f:

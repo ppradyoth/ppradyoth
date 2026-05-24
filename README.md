@@ -133,6 +133,8 @@ I work at the intersection of adversarial AI and security engineering — red te
 **[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
 
 *Also building something in AI security — stealth mode 🔒*
+
+📋 [Full list of external contributions](./external_contributions.md) — repos outside my account where I've contributed (2020–2026)
 <!-- OPENSYNC_END -->
 
 ---

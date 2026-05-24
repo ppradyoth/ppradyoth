@@ -209,7 +209,7 @@ async function main() {
       })
       .join('\n\n');
 
-    const openSourceContent = formattedRepos + '\n\n*Also building something in AI security — stealth mode 🔒*';
+    const openSourceContent = formattedRepos + '\n\n*Also building something in AI security — stealth mode 🔒*\n\n📋 [Full list of external contributions](./external_contributions.md) — repos outside my account where I\'ve contributed (2020–present)';
     readmeContent = replaceBetweenMarkers(readmeContent, '<!-- OPENSYNC_START -->', '<!-- OPENSYNC_END -->', openSourceContent);
 
     // 7. Write changes back to README.md

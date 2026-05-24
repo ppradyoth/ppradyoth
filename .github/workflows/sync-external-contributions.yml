@@ -14,17 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate external_contributions.md
+      - name: Merge new contributions into external_contributions.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ppradyoth
         run: |
           python3 << 'PYEOF'
-          import subprocess, json, os
+          import subprocess, json, os, re
           from datetime import datetime, timezone
 
           USERNAME = os.environ["USERNAME"]
-          GH_TOKEN = os.environ["GH_TOKEN"]
 
           def gh_graphql(query):
               result = subprocess.run(
@@ -43,19 +42,37 @@ jobs:
               except Exception:
                   return []
 
-          def get_repo_prs(repo, username):
+          def get_repo_prs(repo):
               data = gh_rest(f"/repos/{repo}/pulls?state=all&per_page=100")
               if not isinstance(data, list):
                   return []
-              return [p for p in data if p.get("user", {}).get("login") == username]
+              return [p for p in data if p.get("user", {}).get("login") == USERNAME]
 
-          # ── Contribution years ──────────────────────────────────────────────
-          # Historical data (2020-2025) is already committed; only query current year onwards.
+          # ── Parse existing file to extract known PR URLs and their status ────
+          EXISTING_FILE = "external_contributions.md"
+          existing_text = open(EXISTING_FILE).read() if os.path.exists(EXISTING_FILE) else ""
+
+          # Extract all PR URLs already in the file: github.com/.../pull/NNN
+          known_pr_urls = set(re.findall(r'https://github\.com/[^/]+/[^/]+/pull/\d+', existing_text))
+
+          # Extract current status of each known PR URL
+          # Row format: | ... | [#N — title](url) | ... | ✅/🔁/❌ ... | date |
+          known_pr_status = {}  # url -> "merged" | "open" | "closed"
+          for url in known_pr_urls:
+              if f'✅ Merged' in existing_text[max(0, existing_text.find(url)-200):existing_text.find(url)+50]:
+                  known_pr_status[url] = "merged"
+              elif f'❌ Closed' in existing_text[max(0, existing_text.find(url)-200):existing_text.find(url)+50]:
+                  known_pr_status[url] = "closed"
+              else:
+                  known_pr_status[url] = "open"
+
+          print(f"Found {len(known_pr_urls)} existing PR entries in file.")
+
+          # ── Query 2026+ contributions ────────────────────────────────────────
           current_year = datetime.now(timezone.utc).year
           years = list(range(2026, current_year + 1))
 
-          # ── Gather all external repos from contributions calendar ────────────
-          external_repos = {}  # nameWithOwner -> meta
+          fresh_repos = {}  # nameWithOwner -> meta
 
           for year in years:
               q = f'''
@@ -84,202 +101,173 @@ jobs:
                               "issueContributionsByRepository", "pullRequestReviewContributionsByRepository"]:
                   for entry in cc[section]:
                       r = entry["repository"]
-                      now = r["nameWithOwner"]
-                      if r["owner"]["login"] == USERNAME:
+                      nwo = r["nameWithOwner"]
+                      if r["owner"]["login"] == USERNAME or r["isPrivate"]:
                           continue
-                      if r["isPrivate"]:
-                          continue
-                      if now not in external_repos:
-                          external_repos[now] = r
+                      if nwo not in fresh_repos:
+                          fresh_repos[nwo] = r
 
-          # ── Collaborator repos (public only) ─────────────────────────────────
+          # Collaborator repos (public only)
           collab_repos = gh_rest("/user/repos?affiliation=collaborator&per_page=100&visibility=all")
-          collab_public = []
           if isinstance(collab_repos, list):
               for r in collab_repos:
-                  if not r.get("private") and r["owner"]["login"] != USERNAME:
-                      collab_public.append(r["full_name"])
-                      if r["full_name"] not in external_repos:
-                          external_repos[r["full_name"]] = {
-                              "nameWithOwner": r["full_name"],
-                              "isPrivate": False,
-                              "owner": {"login": r["owner"]["login"]},
-                              "primaryLanguage": {"name": r.get("language")} if r.get("language") else None,
-                              "stargazerCount": r.get("stargazers_count", 0),
-                              "url": r["html_url"],
-                          }
+                  nwo = r["full_name"]
+                  if not r.get("private") and r["owner"]["login"] != USERNAME and nwo not in fresh_repos:
+                      fresh_repos[nwo] = {
+                          "nameWithOwner": nwo, "isPrivate": False,
+                          "owner": {"login": r["owner"]["login"], "__typename": r["owner"]["type"]},
+                          "primaryLanguage": {"name": r.get("language")} if r.get("language") else None,
+                          "stargazerCount": r.get("stargazers_count", 0),
+                          "url": r["html_url"],
+                      }
 
-          # ── Fetch PRs for every external repo ────────────────────────────────
-          repo_prs = {}
-          for nwo in external_repos:
-              prs = get_repo_prs(nwo, USERNAME)
+          # ── Fetch fresh PR data only for repos that have new or open PRs ─────
+          fresh_prs = {}  # nwo -> [pr, ...]
+          for nwo in fresh_repos:
+              prs = get_repo_prs(nwo)
               if prs:
-                  repo_prs[nwo] = prs
+                  fresh_prs[nwo] = prs
 
-          # ── Classify PRs ─────────────────────────────────────────────────────
+          # ── Determine what actually changed ───────────────────────────────────
           def pr_status(pr):
-              if pr.get("merged_at"):
-                  return "merged"
-              if pr.get("state") == "closed":
-                  return "closed"
+              if pr.get("merged_at"):   return "merged"
+              if pr.get("state") == "closed": return "closed"
               return "open"
 
           STATUS_ICON = {"merged": "✅ Merged", "open": "🔁 Open", "closed": "❌ Closed"}
 
-          def pr_row_org(nwo, pr, stars):
-              lang = external_repos[nwo].get("primaryLanguage") or {}
-              lang_str = lang.get("name") or "—"
+          new_prs       = []  # brand-new PRs not yet in file
+          changed_prs   = []  # PRs whose status changed (open → merged, etc.)
+          new_repos     = []  # repos not yet mentioned at all in file
+
+          for nwo, prs in fresh_prs.items():
+              for pr in prs:
+                  url = pr["html_url"]
+                  status = pr_status(pr)
+                  if url not in known_pr_urls:
+                      new_prs.append((nwo, pr))
+                  elif known_pr_status.get(url) != status:
+                      changed_prs.append((nwo, pr, known_pr_status.get(url), status))
+
+          for nwo in fresh_repos:
+              if nwo not in existing_text:
+                  new_repos.append(nwo)
+
+          print(f"New PRs: {len(new_prs)} | Status changes: {len(changed_prs)} | New repos: {len(new_repos)}")
+
+          if not new_prs and not changed_prs and not new_repos:
+              print("Nothing changed — file is already up to date.")
+              exit(0)
+
+          # ── Apply changes to the file ─────────────────────────────────────────
+          content = existing_text
+
+          # 1. Update status of changed PRs in-place (replace icon text in row)
+          for nwo, pr, old_status, new_status in changed_prs:
+              url = pr["html_url"]
+              old_icon = STATUS_ICON[old_status]
+              new_icon = STATUS_ICON[new_status]
+              # Replace the icon in the line containing this URL
+              pattern = re.compile(
+                  r'(\| \[' + re.escape(f'#{pr["number"]}') + r'[^\n]+' + re.escape(url) + r'[^\n]+)\| ' +
+                  re.escape(old_icon) + r' \|',
+                  re.MULTILINE
+              )
+              new_date = (pr.get("merged_at") or pr.get("updated_at") or "")[:10]
+              def replacer(m):
+                  line = m.group(0)
+                  # Update icon
+                  line = line.replace(f'| {old_icon} |', f'| {new_icon} |')
+                  # Update date in last column if merging
+                  if new_status == "merged":
+                      line = re.sub(r'\| \d{4}-\d{2}-\d{2} \|$', f'| {new_date} |', line)
+                  return line
+              content, n = re.subn(pattern, replacer, content)
+              if n:
+                  print(f"  Updated status: {nwo} #{pr['number']} {old_status} → {new_status}")
+              else:
+                  # Simpler fallback: just replace the icon text near the URL
+                  idx = content.find(url)
+                  if idx != -1:
+                      snippet = content[max(0,idx-300):idx+100]
+                      new_snippet = snippet.replace(old_icon, new_icon, 1)
+                      content = content[:max(0,idx-300)] + new_snippet + content[idx+100:]
+                      print(f"  Updated status (fallback): {nwo} #{pr['number']}")
+
+          # 2. Append new PRs and new repos before the footer line
+          today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+          additions = []
+
+          ORG_TYPE = {"Organization"}
+          def is_org(nwo):
+              meta = fresh_repos.get(nwo, {})
+              return meta.get("owner", {}).get("__typename") in ORG_TYPE
+
+          def pr_row_org(nwo, pr):
+              meta = fresh_repos[nwo]
+              lang = (meta.get("primaryLanguage") or {}).get("name") or "—"
+              stars = meta.get("stargazerCount", 0)
               date = (pr.get("merged_at") or pr.get("created_at") or "")[:10]
               status = pr_status(pr)
-              return f'| [{nwo}]({external_repos[nwo]["url"]}) | [#{pr["number"]} — {pr["title"]}]({pr["html_url"]}) | {lang_str} | {stars:,} | {STATUS_ICON[status]} | {date} |'
+              return f'| [{nwo}]({meta["url"]}) | [#{pr["number"]} — {pr["title"]}]({pr["html_url"]}) | {lang} | {stars:,} | {STATUS_ICON[status]} | {date} |'
 
           def pr_row_friend(nwo, pr):
-              lang = external_repos[nwo].get("primaryLanguage") or {}
-              lang_str = lang.get("name") or "—"
+              meta = fresh_repos[nwo]
+              lang = (meta.get("primaryLanguage") or {}).get("name") or "—"
               date = (pr.get("merged_at") or pr.get("created_at") or "")[:10]
               status = pr_status(pr)
-              return f'| [{nwo}]({external_repos[nwo]["url"]}) | [#{pr["number"]} — {pr["title"]}]({pr["html_url"]}) | {lang_str} | {STATUS_ICON[status]} | {date} |'
+              return f'| [{nwo}]({meta["url"]}) | [#{pr["number"]} — {pr["title"]}]({pr["html_url"]}) | {lang} | {STATUS_ICON[status]} | {date} |'
 
-          # ── Split into org vs friend repos ────────────────────────────────────
-          ORG_REPOS = {
-              "stanfordnlp/dspy", "anthropics/anthropic-sdk-python",
-              "NVIDIA-NeMo/Guardrails", "promptfoo/promptfoo",
-              "NVIDIA/garak", "567-labs/instructor",
-              "UKGovernmentBEIS/inspect_evals",
-          }
-          # Dynamically: any repo whose owner __typename is Organization
-          for nwo, meta in external_repos.items():
-              if meta.get("owner", {}).get("__typename") == "Organization":
-                  ORG_REPOS.add(nwo)
+          if new_prs:
+              additions.append(f"\n<!-- additions synced {today} -->")
+              org_new = [(nwo, pr) for nwo, pr in new_prs if is_org(nwo)]
+              friend_new = [(nwo, pr) for nwo, pr in new_prs if not is_org(nwo)]
+              if org_new:
+                  additions.append("\n**New org contributions:**\n")
+                  additions.append("| Repository | PR | Language | Stars | Status | Date |")
+                  additions.append("|---|---|---|---|---|---|")
+                  for nwo, pr in org_new:
+                      additions.append(pr_row_org(nwo, pr))
+              if friend_new:
+                  additions.append("\n**New friend/community contributions:**\n")
+                  additions.append("| Repository | PR | Language | Status | Date |")
+                  additions.append("|---|---|---|---|---|")
+                  for nwo, pr in friend_new:
+                      additions.append(pr_row_friend(nwo, pr))
 
-          org_repos = {k: v for k, v in external_repos.items() if k in ORG_REPOS}
-          friend_repos = {k: v for k, v in external_repos.items() if k not in ORG_REPOS}
-
-          # ── Build merged-only sections ─────────────────────────────────────────
-          def build_merged_org():
-              rows = []
-              for nwo, meta in sorted(org_repos.items(), key=lambda x: -x[1].get("stargazerCount", 0)):
-                  stars = meta.get("stargazerCount", 0)
-                  for pr in repo_prs.get(nwo, []):
-                      if pr_status(pr) == "merged":
-                          rows.append(pr_row_org(nwo, pr, stars))
-              return rows
-
-          def build_merged_friend():
-              rows = []
-              for nwo in sorted(friend_repos):
-                  for pr in repo_prs.get(nwo, []):
-                      if pr_status(pr) == "merged":
-                          rows.append(pr_row_friend(nwo, pr))
-              return rows
-
-          # ── Build all-contributions sections ──────────────────────────────────
-          def build_all_org():
-              rows = []
-              for nwo, meta in sorted(org_repos.items(), key=lambda x: -x[1].get("stargazerCount", 0)):
-                  stars = meta.get("stargazerCount", 0)
-                  for pr in repo_prs.get(nwo, []):
-                      rows.append(pr_row_org(nwo, pr, stars))
-              return rows
-
-          def build_all_friend_prs():
-              rows = []
-              for nwo in sorted(friend_repos):
-                  for pr in repo_prs.get(nwo, []):
-                      rows.append(pr_row_friend(nwo, pr))
-              return rows
-
-          def build_commit_only():
-              rows = []
-              for nwo, meta in sorted(friend_repos.items()):
-                  if nwo not in repo_prs:
+          if new_repos:
+              no_pr_new = [nwo for nwo in new_repos if nwo not in fresh_prs]
+              if no_pr_new:
+                  if not new_prs:
+                      additions.append(f"\n<!-- additions synced {today} -->")
+                  additions.append("\n**New repos (commit/collaborator access):**\n")
+                  additions.append("| Repository | Owner | Language |")
+                  additions.append("|---|---|---|")
+                  for nwo in no_pr_new:
+                      meta = fresh_repos[nwo]
                       lang = (meta.get("primaryLanguage") or {}).get("name") or "—"
-                      rows.append(f'| [{nwo}]({meta["url"]}) | {meta["owner"]["login"]} | {lang} |')
-              return rows
+                      additions.append(f'| [{nwo}]({meta["url"]}) | {meta["owner"]["login"]} | {lang} |')
 
-          def build_collab_public():
-              rows = []
-              for nwo in sorted(collab_public):
-                  if nwo in external_repos and nwo not in repo_prs:
-                      meta = external_repos[nwo]
-                      lang = (meta.get("primaryLanguage") or {}).get("name") or "—"
-                      rows.append(f'| [{nwo}]({meta["url"]}) | {meta["owner"]["login"]} | {lang} |')
-              return rows
+          if additions:
+              # Insert before the footer _Generated line
+              footer_pat = re.compile(r'^_Generated on .+_$', re.MULTILINE)
+              footer_match = footer_pat.search(content)
+              new_footer = f"_Generated on {today} · Sources: GitHub contribution calendar (2020–{max(years)}), collaborator API, PR history per repo_"
+              insert_block = "\n".join(additions) + "\n\n"
+              if footer_match:
+                  content = content[:footer_match.start()] + insert_block + new_footer + "\n"
+              else:
+                  content = content.rstrip() + "\n\n" + insert_block + new_footer + "\n"
+          else:
+              # Only a status update happened — just refresh the footer date
+              footer_pat = re.compile(r'^_Generated on .+_$', re.MULTILINE)
+              new_footer = f"_Generated on {today} · Sources: GitHub contribution calendar (2020–{max(years)}), collaborator API, PR history per repo_"
+              content = footer_pat.sub(new_footer, content)
 
-          # ── Assemble file ──────────────────────────────────────────────────────
-          today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+          with open(EXISTING_FILE, "w") as f:
+              f.write(content)
 
-          merged_org = build_merged_org()
-          merged_friend = build_merged_friend()
-          all_org = build_all_org()
-          all_friend_prs = build_all_friend_prs()
-          commit_only = build_commit_only()
-          collab_pub = build_collab_public()
-
-          def table_or_empty(headers, rows, empty_msg="— none yet —"):
-              if not rows:
-                  return f"> {empty_msg}\n"
-              return headers + "\n" + "\n".join(rows) + "\n"
-
-          md = f"""# External Contributions
-
-All repositories outside my account (ppradyoth) where I appear as a contributor — via commits, PRs, issues, or direct collaborator access.
-
-**Default view: Merged contributions** — jump to [All Contributions](#all-contributions-including-open--unmerged) for the full list.
-
----
-
-## ✅ Merged Contributions
-
-### Open Source / Organization Repos
-
-{table_or_empty(
-    "| Repository | PR | Language | Stars | Merged On |\\n|---|---|---|---|---|",
-    merged_org
-)}
-### Friend / Community Repos
-
-{table_or_empty(
-    "| Repository | PR | Language | Status | Date |\\n|---|---|---|---|---|",
-    merged_friend
-)}
----
-
-## All Contributions (including open & unmerged)
-
-### Open Source / Organization Repos
-
-{table_or_empty(
-    "| Repository | PR | Language | Stars | Status | Date |\\n|---|---|---|---|---|---|",
-    all_org
-)}
-### Friend / Community Repos — PRs
-
-{table_or_empty(
-    "| Repository | PR | Language | Status | Date |\\n|---|---|---|---|---|",
-    all_friend_prs
-)}
-### Friend / Community Repos — Commit-only (no PR)
-
-{table_or_empty(
-    "| Repository | Owner | Language |\\n|---|---|---|",
-    commit_only
-)}
-### Collaborator Repos (public)
-
-Direct collaborator access — contributions via commits; individual PR history not tracked by GitHub API for all.
-
-{table_or_empty(
-    "| Repository | Owner | Language |\\n|---|---|---|",
-    collab_pub
-)}
-_Generated on {today} · Sources: GitHub contribution calendar (2020–{max(years)}), collaborator API, PR history per repo_
-"""
-
-          with open("external_contributions.md", "w") as f:
-              f.write(md)
-
-          print("Done — external_contributions.md written.")
+          print("Done — external_contributions.md updated.")
           PYEOF
 
       - name: Commit if changed

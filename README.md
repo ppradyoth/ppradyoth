@@ -12,7 +12,7 @@
 
 ---
 
-I work at the intersection of adversarial AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
+I work at the intersection of Applied AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
 
 **What I'm working on:**
 <!-- WORK_START -->

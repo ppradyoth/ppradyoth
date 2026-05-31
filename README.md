@@ -27,7 +27,9 @@ I work at the intersection of Applied AI and security engineering — red teamin
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (my workplace's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at my workplace Bengaluru Tech Centre
 
-📬 ppradyoth64@gmail.com
+pradyoth.jpg@gmail.com
+
+https://ppradyoth.web.app/
 
 ---
 

@@ -43,14 +43,14 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 |---|---|---|---|---|---|
 | [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [#9402 — fix(eval): preserve all distinct CallApiFunction providers in combineConfigs](https://github.com/promptfoo/promptfoo/pull/9402) | TypeScript | 21,547 | 🔁 Open | 2026-05-24 |
 | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) | [#9807 — fix(evaluate): expose timeout parameter and cap straggler resubmissions per item](https://github.com/stanfordnlp/dspy/pull/9807) | Python | 34,607 | 🔁 Open | 2026-05-23 |
-| [UKGovernmentBEIS/inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals) | [#1707 — feat: register Weighted Safety Refusal evaluation suite](https://github.com/UKGovernmentBEIS/inspect_evals/pull/1707) | Python | 511 | 🔁 Open | 2026-05-23 |
+| [UKGovernmentBEIS/inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals) | [#1707 — feat: register Weighted Safety Refusal evaluation suite](https://github.com/UKGovernmentBEIS/inspect_evals/pull/1707) | Python | 511 | ❌ Closed | 2026-05-23 |
 | [567-labs/instructor](https://github.com/567-labs/instructor) | [#2320 — fix(gemini,vertexai): raise ConfigurationError with install hint when jsonref is absent](https://github.com/567-labs/instructor/pull/2320) | Python | 13,013 | 🔁 Open | 2026-05-24 |
 | [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1921 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1921) | Python | 6,227 | ❌ Closed | 2026-05-22 |
 | [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1920 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1920) | Python | 6,227 | ❌ Closed | 2026-05-22 |
 | [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1919 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1919) | Python | 6,227 | 🔁 Open | 2026-05-22 |
-| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1794 — fix(evaluators): inline score_to_defcon in get_z_rating](https://github.com/NVIDIA/garak/pull/1794) | Python | 7,892 | 🔁 Open | 2026-05-22 |
+| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1794 — fix(evaluators): inline score_to_defcon in get_z_rating](https://github.com/NVIDIA/garak/pull/1794) | Python | 7,892 | ✅ Merged | 2026-05-22 |
 | [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1793 — fix(lint): tune pylintrc and fix violations across core modules](https://github.com/NVIDIA/garak/pull/1793) | Python | 7,892 | 🔁 Open | 2026-05-22 |
-| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1791 — test(config): regression guard for config_files dedup](https://github.com/NVIDIA/garak/pull/1791) | Python | 7,892 | 🔁 Open | 2026-05-22 |
+| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1791 — test(config): regression guard for config_files dedup](https://github.com/NVIDIA/garak/pull/1791) | Python | 7,892 | ✅ Merged | 2026-05-22 |
 | [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1790 — feat(cli): structured exit codes for improper exit](https://github.com/NVIDIA/garak/pull/1790) | Python | 7,892 | 🔁 Open | 2026-05-22 |
 | [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | [#1590 — fix(skills): add normalize_skill_files() helper and document path naming convention](https://github.com/anthropics/anthropic-sdk-python/pull/1590) | Python | 3,512 | 🔁 Open | 2026-05-22 |
 
@@ -107,4 +107,14 @@ Direct collaborator access — contributions via commits; individual PR history 
 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [#667 — feat(misc): secure Claude Code routines — avoiding credential leakage](https://github.com/anthropics/claude-cookbooks/pull/667) | Jupyter Notebook | 43,801 | 🔁 Open | 2026-05-25 |
 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | [#62099 — Add credential-guard plugin for hardcoded secret detection](https://github.com/anthropics/claude-code/pull/62099) | Shell | 126,390 | 🔁 Open | 2026-05-24 |
 
-_Generated on 2026-05-25 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
+
+<!-- additions synced 2026-06-01 -->
+
+**New org contributions:**
+
+| Repository | PR | Language | Stars | Status | Date |
+|---|---|---|---|---|---|
+| [immich-app/immich](https://github.com/immich-app/immich) | [#28698 — fix(mobile): use originalFileName for multipart filename in background uploads](https://github.com/immich-app/immich/pull/28698) | TypeScript | 102,421 | ❌ Closed | 2026-05-30 |
+| [protectai/modelscan](https://github.com/protectai/modelscan) | [#349 — Fix empty file generation for create-settings-file](https://github.com/protectai/modelscan/pull/349) | Python | 718 | 🔁 Open | 2026-05-25 |
+
+_Generated on 2026-06-01 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_

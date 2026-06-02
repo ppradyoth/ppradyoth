@@ -124,7 +124,7 @@ https://ppradyoth.web.app/
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 1) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
+**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 2) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
 

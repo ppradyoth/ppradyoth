@@ -117,4 +117,13 @@ Direct collaborator access — contributions via commits; individual PR history 
 | [immich-app/immich](https://github.com/immich-app/immich) | [#28698 — fix(mobile): use originalFileName for multipart filename in background uploads](https://github.com/immich-app/immich/pull/28698) | TypeScript | 102,421 | 🔁 Open | 2026-05-30 |
 | [protectai/modelscan](https://github.com/protectai/modelscan) | [#349 — Fix empty file generation for create-settings-file](https://github.com/protectai/modelscan/pull/349) | Python | 718 | 🔁 Open | 2026-05-25 |
 
-_Generated on 2026-06-08 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
+
+<!-- additions synced 2026-06-15 -->
+
+**New org contributions:**
+
+| Repository | PR | Language | Stars | Status | Date |
+|---|---|---|---|---|---|
+| [future-agi/future-agi](https://github.com/future-agi/future-agi) | [#851 — feature(gateway): add indirect prompt injection guardrail](https://github.com/future-agi/future-agi/pull/851) | Python | 1,149 | 🔁 Open | 2026-06-10 |
+
+_Generated on 2026-06-15 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_

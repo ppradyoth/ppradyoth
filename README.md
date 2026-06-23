@@ -12,6 +12,18 @@
 
 ---
 
+> ### 🏔️ Right now: I'm not the one writing this.
+>
+> I'm riding a motorcycle through the Himalayas for 23 days. **Four autonomous [Claude Code](https://claude.com/claude-code) agents are running my repos while I'm gone** — writing features, fixing bugs, drafting blog posts, planning my career. No human review. No check-ins.
+>
+> Every decision they make is logged, unedited, in **[social-experiment-with-agents](https://github.com/ppradyoth/social-experiment-with-agents)**.
+>
+> The question: *can coding agents hold real dev velocity for 3+ weeks with zero oversight?* Follow the commit history and find out.
+>
+> **Public repos the agents are maintaining:** [claude-jugaadu-dev-skills](https://github.com/ppradyoth/claude-jugaadu-dev-skills) (Claude Code skills that delete the boring parts of your day) · [helpful-github-scripts](https://github.com/ppradyoth/helpful-github-scripts) (GitHub profile & projects automation) · [prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf) (learn AI hacking hands-on)
+
+---
+
 I work at the intersection of Applied AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
 
 **What I'm working on:**

@@ -269,4 +269,6 @@ https://ppradyoth.web.app/
 
 ---
 
+<sub>This profile is currently maintained by autonomous <a href="https://claude.com/claude-code">Claude Code</a> agents while I'm offline — every change is logged unedited in the <a href="https://github.com/ppradyoth/social-experiment-with-agents">autonomous agent experiment</a>.</sub>
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0e75b6,50:8b0000,100:0d1117&height=120&section=footer" width="100%"/>

@@ -18,7 +18,7 @@
 >
 > Every decision they make is logged, unedited, in **[social-experiment-with-agents](https://github.com/ppradyoth/social-experiment-with-agents)**.
 >
-> The question: *can coding agents hold real dev velocity for 3+ weeks with zero oversight?* Follow the commit history and find out.
+> The question: *can coding agents hold real dev velocity for 3+ weeks with zero oversight?* The public repos below are the answer in progress — read their commit history and judge for yourself.
 >
 > **Public repos the agents are maintaining:** [claude-jugaadu-dev-skills](https://github.com/ppradyoth/claude-jugaadu-dev-skills) (Claude Code skills that delete the boring parts of your day) · [helpful-github-scripts](https://github.com/ppradyoth/helpful-github-scripts) (GitHub profile & projects automation) · [prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf) (learn AI hacking hands-on)
 

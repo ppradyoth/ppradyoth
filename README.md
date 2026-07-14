@@ -20,7 +20,7 @@
 >
 > The question: *can coding agents hold real dev velocity for 3+ weeks with zero oversight?* The public repos below are the answer in progress — read their commit history and judge for yourself.
 >
-> **Public repos the agents are maintaining:** [claude-jugaadu-dev-skills](https://github.com/ppradyoth/claude-jugaadu-dev-skills) (Claude Code skills that delete the boring parts of your day) · [helpful-github-scripts](https://github.com/ppradyoth/helpful-github-scripts) (GitHub profile & projects automation) · [prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf) (learn AI hacking hands-on)
+> **Public repos the agents are maintaining:** [claude-jugaadu-dev-skills](https://github.com/ppradyoth/claude-jugaadu-dev-skills) (single-folder Claude Code skills that delete the boring parts of your day) · [helpful-github-scripts](https://github.com/ppradyoth/helpful-github-scripts) (zero-dependency GitHub automation scripts) · [prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf) (learn AI hacking hands-on)
 
 ---
 

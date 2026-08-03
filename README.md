@@ -124,7 +124,7 @@ https://ppradyoth.web.app/
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 1) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 2) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
 
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** (⭐ 1) — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
 

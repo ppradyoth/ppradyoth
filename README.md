@@ -43,25 +43,6 @@ https://ppradyoth.web.app/
   <tr>
     <!-- Project 1 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">🧠 Synaptic Wetware</h4>
-      <p align="left"><strong>Organoid Intelligence (OI) Biocomputer Simulator</strong></p>
-      <p align="left">A scientifically rigorous interactive web dashboard simulating an organoid biocomputer lab, running living human brain cells on silicon chips. Grounded in peer-reviewed research (Nature & Frontiers).</p>
-      <ul align="left">
-        <li>Custom <strong>Hodgkin-Huxley</strong> (4 ODEs) and <strong>Izhikevich</strong> neuron models integrated in real-time</li>
-        <li><strong>MaxInterval burst detection</strong> on 64-channel multi-electrode arrays</li>
-        <li>DishBrain Pong training playground & Baltimore Declaration ethics monitor</li>
-      </ul>
-      <p align="left">
-        <img src="https://img.shields.io/badge/React-18-646cff?style=flat-square&logo=react" alt="React" />
-        <img src="https://img.shields.io/badge/TypeScript-Vite-blue?style=flat-square&logo=typescript" alt="TypeScript" />
-        <img src="https://img.shields.io/badge/Physics-Euler_ODE-cc2200?style=flat-square" alt="Physics" />
-      </p>
-      <p align="left">
-        <a href="https://github.com/ppradyoth/synaptic-wetware">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://synaptic-wetware.vercel.app">🌐 Live Demo</a>
-      </p>
-    </td>
-    <!-- Project 2 -->
-    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
       <h4 align="left" style="margin-top: 0;">🎮 Prompt Injection CTF</h4>
       <p align="left"><strong>Interactive AI Security Hacking Playground</strong></p>
       <p align="left">A gamified Capture The Flag platform designed to teach hands-on adversarial thinking. Mapped directly to real-world risk frameworks (OWASP LLM Top 10 & MITRE ATLAS).</p>
@@ -75,12 +56,68 @@ https://ppradyoth.web.app/
         <img src="https://img.shields.io/badge/Security-OWASP_LLM-cc2200?style=flat-square" alt="Security" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/prompt-injection-ctf">💾 Codebase</a>
+        <a href="https://github.com/ppradyoth/prompt-injection-ctf">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://prompt-injection-ctf-2026.web.app">🌐 Live Demo</a>
+      </p>
+    </td>
+    <!-- Project 2 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">🔬 AgentInjectionBench</h4>
+      <p align="left"><strong>Prompt Injection Benchmark for Agentic Tool-Use</strong></p>
+      <p align="left">The first benchmark targeting injection attacks in agentic, tool-using pipelines — tool-output injection and goal hijacking across multi-step workflows, where single-turn benchmarks like AdvBench and HarmBench don't reach.</p>
+      <ul align="left">
+        <li>Covers <strong>Tool Output Injection</strong>, <strong>Goal Hijacking</strong>, and multi-step attack chains</li>
+        <li>Dataset & interactive Space published on Hugging Face</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/🤗-Dataset-yellow?style=flat-square" alt="Hugging Face Dataset" />
+        <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0" />
+        <img src="https://img.shields.io/badge/Benchmark-Agentic_AI-cc2200?style=flat-square" alt="Benchmark" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/AgentInjectionBench">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://huggingface.co/datasets/ppradyoth/AgentInjectionBench">🤗 Dataset</a>
       </p>
     </td>
   </tr>
   <tr>
     <!-- Project 3 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">📊 Weighted Safety Refusal</h4>
+      <p align="left"><strong>Absolute Safety Robustness Evaluation Harness</strong></p>
+      <p align="left">An advanced LLM safety benchmark that evaluates absolute, severity-weighted category failure rates instead of shifting, relative statistics (Z-scores).</p>
+      <ul align="left">
+        <li>Built on top of the UK AISI's open-source <strong>inspect_ai</strong> framework</li>
+        <li>Risk-adjusted severity weighting: prompt injection (0.3), jailbreaks (0.3), data exfiltration (0.2), toxicity (0.1), malware (0.1)</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Inspect_AI-UK_AISI-0e75b6?style=flat-square" alt="Inspect AI" />
+        <img src="https://img.shields.io/badge/Python-3.11-cc2200?style=flat-square&logo=python" alt="Python" />
+        <img src="https://img.shields.io/badge/Benchmark-Robustness-0e75b6?style=flat-square" alt="Benchmark" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/weighted-safety-refusal">💾 Codebase</a>
+      </p>
+    </td>
+    <!-- Project 4 -->
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">🔐 Credential Guard Tracker</h4>
+      <p align="left"><strong>Automated AI Supply-Chain Security Monitor</strong></p>
+      <p align="left">Daily automated tracking of credential-leak and supply-chain risk signals across the AI CLI tool ecosystem — ranks issues by severity and publishes digest reports automatically.</p>
+      <ul align="left">
+        <li>Keyword-tiered classifier surfaces critical/high/medium security signals from issue titles, labels & bodies</li>
+        <li>Publishes daily digests + weekly rollup trend reports as GitHub Issues</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Python-3.11-cc2200?style=flat-square&logo=python" alt="Python" />
+        <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT" />
+        <img src="https://img.shields.io/badge/Automation-Daily-0e75b6?style=flat-square" alt="Automation" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/credential-guard-tracker">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://ppradyoth.github.io/credential-guard-tracker/">🌐 Live Dashboard</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <!-- Project 5 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
       <h4 align="left" style="margin-top: 0;">🛡️ Akrivon AI</h4>
       <p align="left"><strong>AI Scope & Intent Enforcement Proxy Gateway</strong></p>
@@ -98,22 +135,23 @@ https://ppradyoth.web.app/
         🔒 Stealth / Private Repository
       </p>
     </td>
-    <!-- Project 4 -->
+    <!-- Project 6 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">📊 Weighted Safety Refusal</h4>
-      <p align="left"><strong>Absolute Safety Robustness Evaluation Harness</strong></p>
-      <p align="left">An advanced LLM safety benchmark that evaluates absolute, severity-weighted category failure rates instead of shifting, relative statistics (Z-scores).</p>
+      <h4 align="left" style="margin-top: 0;">🧠 Synaptic Wetware</h4>
+      <p align="left"><strong>Organoid Intelligence (OI) Biocomputer Simulator</strong></p>
+      <p align="left">A scientifically rigorous interactive web dashboard simulating an organoid biocomputer lab, running living human brain cells on silicon chips. Grounded in peer-reviewed research (Nature & Frontiers).</p>
       <ul align="left">
-        <li>Built on top of the UK AISI's open-source <strong>inspect_ai</strong> framework</li>
-        <li>Risk-adjusted severity weighting: prompt injection (0.3), jailbreaks (0.3), data exfiltration (0.2), toxicity (0.1), malware (0.1)</li>
+        <li>Custom <strong>Hodgkin-Huxley</strong> (4 ODEs) and <strong>Izhikevich</strong> neuron models integrated in real-time</li>
+        <li><strong>MaxInterval burst detection</strong> on 64-channel multi-electrode arrays</li>
+        <li>DishBrain Pong training playground & Baltimore Declaration ethics monitor</li>
       </ul>
       <p align="left">
-        <img src="https://img.shields.io/badge/Inspect_AI-UK_AISI-0e75b6?style=flat-square" alt="Inspect AI" />
-        <img src="https://img.shields.io/badge/Python-3.11-cc2200?style=flat-square&logo=python" alt="Python" />
-        <img src="https://img.shields.io/badge/Benchmark-Robustness-0e75b6?style=flat-square" alt="Benchmark" />
+        <img src="https://img.shields.io/badge/React-18-646cff?style=flat-square&logo=react" alt="React" />
+        <img src="https://img.shields.io/badge/TypeScript-Vite-blue?style=flat-square&logo=typescript" alt="TypeScript" />
+        <img src="https://img.shields.io/badge/Physics-Euler_ODE-cc2200?style=flat-square" alt="Physics" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/weighted-safety-refusal">💾 Codebase</a>
+        <a href="https://github.com/ppradyoth/synaptic-wetware">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://synaptic-wetware.vercel.app">🌐 Live Demo</a>
       </p>
     </td>
   </tr>

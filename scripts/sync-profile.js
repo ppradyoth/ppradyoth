@@ -14,7 +14,10 @@ const CUSTOM_DESCRIPTIONS = {
   'schmaltz-surveyor': 'Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.',
   'synaptic-wetware': '🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).',
   'akrivon-ai': 'AI Scope & Intent Enforcement Gateway. Automated adversarial red-team probing (IntentScan) and a low-latency runtime proxy (IntentEnforce) to keep LLMs secure and aligned.',
-  'weighted-safety-refusal': 'Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.'
+  'weighted-safety-refusal': 'Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.',
+  'AgentInjectionBench': 'The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.',
+  'credential-guard-tracker': 'Automated daily ecosystem tracking for credential-leak and AI supply-chain security signals — ranks issues by severity and publishes digest reports automatically.',
+  'ai-security-tracker': 'Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.'
 };
 
 // Patterns to exclude minor, test, or school lab repositories to keep the profile premium
@@ -51,6 +54,9 @@ const IMPACTFUL_REPOS = [
   'weighted-safety-refusal',
   'ai-security-resources',
   'llm-ops-workshop',
+  'AgentInjectionBench',
+  'credential-guard-tracker',
+  'ai-security-tracker',
 ];
 
 // File Paths

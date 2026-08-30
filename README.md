@@ -151,7 +151,7 @@ https://ppradyoth.web.app/
         <img src="https://img.shields.io/badge/Physics-Euler_ODE-cc2200?style=flat-square" alt="Physics" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/synaptic-wetware">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://synaptic-wetware.vercel.app">🌐 Live Demo</a>
+        <a href="https://github.com/ppradyoth/synaptic-wetware">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://ppradyoth.github.io/synaptic-wetware/">🌐 Live Demo</a>
       </p>
     </td>
   </tr>

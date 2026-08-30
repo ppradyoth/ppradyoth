@@ -162,11 +162,17 @@ https://ppradyoth.web.app/
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 2) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
-
 **[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 2) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 2) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
+
+**[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 1) — The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.
+
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** (⭐ 1) — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
+
+**[credential-guard-tracker](https://github.com/ppradyoth/credential-guard-tracker)** — Automated daily ecosystem tracking for credential-leak and AI supply-chain security signals — ranks issues by severity and publishes digest reports automatically.
+
+**[ai-security-tracker](https://github.com/ppradyoth/ai-security-tracker)** — Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.
 
 **[llm-ops-workshop](https://github.com/ppradyoth/llm-ops-workshop)** — End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.
 

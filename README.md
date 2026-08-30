@@ -170,13 +170,13 @@ https://ppradyoth.web.app/
 
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** (⭐ 1) — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
 
-**[credential-guard-tracker](https://github.com/ppradyoth/credential-guard-tracker)** — Automated daily ecosystem tracking for credential-leak and AI supply-chain security signals — ranks issues by severity and publishes digest reports automatically.
+**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
+
+**[intent-drift-playbook](https://github.com/ppradyoth/intent-drift-playbook)** — A taxonomy of trajectory-based LLM jailbreak patterns (gradual drift, persona anchoring, trust escalation) that single-turn automated scanners structurally can't catch — plus concrete detection methods.
 
 **[ai-security-tracker](https://github.com/ppradyoth/ai-security-tracker)** — Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.
 
 **[llm-ops-workshop](https://github.com/ppradyoth/llm-ops-workshop)** — End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.
-
-**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
 
 *Also building something in AI security — stealth mode 🔒*
 

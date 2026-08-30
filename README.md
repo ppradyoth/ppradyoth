@@ -6,10 +6,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=CC2200&center=true&width=600&lines=Gen+AI+Red+Teaming;Adversarial+AI+%26+LLM+Security;Prompt+Injection+%26+Jailbreak+Analysis;AI+Safety+%26+Behavioral+Evaluation;Breaking+AI+so+you+don't+have+to." alt="Typing SVG" />
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ppradyoth&label=PROFILE+VIEWS&color=cc2200&style=flat" alt="ppradyoth" />
-</p>
-
 ---
 
 I work at the intersection of Applied AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
@@ -33,10 +29,10 @@ https://ppradyoth.web.app/
 
 ---
 
-<h3 align="left">🛡️ Featured AI Security & Biocomputing Projects</h3>
+<h3 align="left">🛡️ Featured AI Security Projects</h3>
 
 <p align="left">
-  These are full-fledged engineering projects built to address critical, high-risk security and simulation challenges at the frontier of AI and biological computing.
+  Full-fledged engineering projects: red-teaming tools, safety benchmarks, and taxonomies built to address real gaps in how deployed LLMs are secured.
 </p>
 
 <table width="100%" border="0" cellpadding="8" cellspacing="0">
@@ -137,21 +133,20 @@ https://ppradyoth.web.app/
     </td>
     <!-- Project 6 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">🧠 Synaptic Wetware</h4>
-      <p align="left"><strong>Organoid Intelligence (OI) Biocomputer Simulator</strong></p>
-      <p align="left">A scientifically rigorous interactive web dashboard simulating an organoid biocomputer lab, running living human brain cells on silicon chips. Grounded in peer-reviewed research (Nature & Frontiers).</p>
+      <h4 align="left" style="margin-top: 0;">📚 AI Security Resources</h4>
+      <p align="left"><strong>The Definitive AI Security Practitioner's Guide</strong></p>
+      <p align="left">A curated, practitioner-depth guide to AI red teaming, runtime security, and MLSecOps — 14 specialized handbooks, not a link dump.</p>
       <ul align="left">
-        <li>Custom <strong>Hodgkin-Huxley</strong> (4 ODEs) and <strong>Izhikevich</strong> neuron models integrated in real-time</li>
-        <li><strong>MaxInterval burst detection</strong> on 64-channel multi-electrode arrays</li>
-        <li>DishBrain Pong training playground & Baltimore Declaration ethics monitor</li>
+        <li>Deep-dive handbooks: manual red teaming, standards & compliance, benchmarks, 2026 incidents & CVEs</li>
+        <li>Zero-to-Hero 12-month curriculum + hands-on labs (FGSM, prompt injection, RAG hijacking)</li>
       </ul>
       <p align="left">
-        <img src="https://img.shields.io/badge/React-18-646cff?style=flat-square&logo=react" alt="React" />
-        <img src="https://img.shields.io/badge/TypeScript-Vite-blue?style=flat-square&logo=typescript" alt="TypeScript" />
-        <img src="https://img.shields.io/badge/Physics-Euler_ODE-cc2200?style=flat-square" alt="Physics" />
+        <img src="https://img.shields.io/badge/License-CC0--1.0-lightgrey?style=flat-square" alt="CC0" />
+        <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
+        <img src="https://img.shields.io/badge/Guide-MLSecOps-7B1FA2?style=flat-square" alt="MLSecOps" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/synaptic-wetware">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://ppradyoth.github.io/synaptic-wetware/">🌐 Live Demo</a>
+        <a href="https://github.com/ppradyoth/ai-security-resources">💾 Codebase</a>
       </p>
     </td>
   </tr>
@@ -230,31 +225,6 @@ https://ppradyoth.web.app/
   <a href="https://www.youtube.com/c/pradyothp" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="pradyothp" height="40" width="40" /></a>
   <a href="https://www.hackerrank.com/ppradyoth" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="ppradyoth" height="40" width="40" /></a>
   <a href="https://fb.com/ppradyoth" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="ppradyoth" height="40" width="40" /></a>
-</p>
-
----
-
-<h3 align="center">Analytics & Activity</h3>
-
-<p align="center">
-  <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
-    <img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ppradyoth&theme=dracula" alt="Pradyoth's GitHub Stats" />
-  </a>
-  <a href="https://github.com/aaron-bond/github-readme-streak-stats">
-    <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=ppradyoth&background=0d1117&fire=cc2200&ring=cc2200&currStreakNum=ffffff&sideNums=cccccc&currStreakLabel=cc2200&sideLabels=cccccc&dates=cccccc&hide_border=true" alt="Pradyoth's GitHub Streak" />
-  </a>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-contribution-grid-snake.svg" />
-  </picture>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ppradyoth/ppradyoth/output/github-metrics.svg" alt="Pradyoth's Coding Metrics" />
 </p>
 
 ---

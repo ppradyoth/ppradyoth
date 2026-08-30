@@ -99,20 +99,20 @@ https://ppradyoth.web.app/
     </td>
     <!-- Project 4 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">🔐 Credential Guard Tracker</h4>
-      <p align="left"><strong>Automated AI Supply-Chain Security Monitor</strong></p>
-      <p align="left">Daily automated tracking of credential-leak and supply-chain risk signals across the AI CLI tool ecosystem — ranks issues by severity and publishes digest reports automatically.</p>
+      <h4 align="left" style="margin-top: 0;">🎭 Intent Drift Playbook</h4>
+      <p align="left"><strong>Multi-Turn Jailbreak Taxonomy & Detection</strong></p>
+      <p align="left">A taxonomy of trajectory-based LLM jailbreak patterns — gradual drift, persona anchoring, trust escalation — that single-turn automated scanners structurally can't catch, plus concrete detection methods.</p>
       <ul align="left">
-        <li>Keyword-tiered classifier surfaces critical/high/medium security signals from issue titles, labels & bodies</li>
-        <li>Publishes daily digests + weekly rollup trend reports as GitHub Issues</li>
+        <li>9 named attack patterns, each grounded in cited research (Crescendo, Anthropic's many-shot jailbreaking)</li>
+        <li>Practical detection section: embedding-based drift scoring, trajectory-level judge scoring, tooling landscape</li>
       </ul>
       <p align="left">
-        <img src="https://img.shields.io/badge/Python-3.11-cc2200?style=flat-square&logo=python" alt="Python" />
         <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT" />
-        <img src="https://img.shields.io/badge/Automation-Daily-0e75b6?style=flat-square" alt="Automation" />
+        <img src="https://img.shields.io/badge/AI%20Safety-Taxonomy-cc2200?style=flat-square" alt="AI Safety" />
+        <img src="https://img.shields.io/badge/Detection-Methodology-0e75b6?style=flat-square" alt="Detection" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/credential-guard-tracker">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://ppradyoth.github.io/credential-guard-tracker/">🌐 Live Dashboard</a>
+        <a href="https://github.com/ppradyoth/intent-drift-playbook">💾 Codebase</a>
       </p>
     </td>
   </tr>

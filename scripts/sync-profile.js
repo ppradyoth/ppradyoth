@@ -16,8 +16,8 @@ const CUSTOM_DESCRIPTIONS = {
   'akrivon-ai': 'AI Scope & Intent Enforcement Gateway. Automated adversarial red-team probing (IntentScan) and a low-latency runtime proxy (IntentEnforce) to keep LLMs secure and aligned.',
   'weighted-safety-refusal': 'Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.',
   'AgentInjectionBench': 'The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.',
-  'credential-guard-tracker': 'Automated daily ecosystem tracking for credential-leak and AI supply-chain security signals — ranks issues by severity and publishes digest reports automatically.',
-  'ai-security-tracker': 'Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.'
+  'ai-security-tracker': 'Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.',
+  'intent-drift-playbook': 'A taxonomy of trajectory-based LLM jailbreak patterns (gradual drift, persona anchoring, trust escalation) that single-turn automated scanners structurally can\'t catch — plus concrete detection methods.'
 };
 
 // Patterns to exclude minor, test, or school lab repositories to keep the profile premium
@@ -55,8 +55,8 @@ const IMPACTFUL_REPOS = [
   'ai-security-resources',
   'llm-ops-workshop',
   'AgentInjectionBench',
-  'credential-guard-tracker',
   'ai-security-tracker',
+  'intent-drift-playbook',
 ];
 
 // File Paths

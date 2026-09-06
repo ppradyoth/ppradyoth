@@ -159,9 +159,9 @@ https://ppradyoth.web.app/
 <!-- OPENSYNC_START -->
 **[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 2) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 2) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
+**[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 2) — The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.
 
-**[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 1) — The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 2) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
 
 **[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** (⭐ 1) — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
 

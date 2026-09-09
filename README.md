@@ -157,9 +157,9 @@ https://ppradyoth.web.app/
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 2) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
-
 **[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 2) — The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.
+
+**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 2) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 
 **[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 2) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
 

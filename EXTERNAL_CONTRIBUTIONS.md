@@ -18,25 +18,25 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 
 ## All Contributions (including open & unmerged)
 
-| Repository | PR | Language | Stars | Status | Date |
-|---|---|---|---|---|---|
-| [anthropics/claude-code](https://github.com/anthropics/claude-code) | [#62099 — Add credential-guard plugin for hardcoded secret detection](https://github.com/anthropics/claude-code/pull/62099) | TypeScript | 143,448 | 🔁 Open | 2026-05-24 |
-| [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [#667 — feat(misc): secure Claude Code routines — avoiding credential leakage](https://github.com/anthropics/claude-cookbooks/pull/667) | Jupyter Notebook | 52,290 | 🔁 Open | 2026-05-25 |
-| [future-agi/future-agi](https://github.com/future-agi/future-agi) | [#851 — feature(gateway): add indirect prompt injection guardrail](https://github.com/future-agi/future-agi/pull/851) | Python | 1,873 | 🔁 Open | 2026-06-10 |
-| [protectai/modelscan](https://github.com/protectai/modelscan) | [#349 — Fix empty file generation for create-settings-file](https://github.com/protectai/modelscan/pull/349) | Python | 766 | 🔁 Open | 2026-05-25 |
-| [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [#9402 — fix(eval): preserve all distinct CallApiFunction providers in combineConfigs](https://github.com/promptfoo/promptfoo/pull/9402) | TypeScript | 24,674 | ✅ Merged | 2026-05-24 |
-| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) | [#9807 — fix(evaluate): expose timeout parameter and cap straggler resubmissions per item](https://github.com/stanfordnlp/dspy/pull/9807) | Python | 37,663 | ❌ Closed | 2026-05-23 |
-| [UKGovernmentBEIS/inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals) | [#1707 — feat: register Weighted Safety Refusal evaluation suite](https://github.com/UKGovernmentBEIS/inspect_evals/pull/1707) | Python | 650 | ❌ Closed | 2026-05-23 |
-| [567-labs/instructor](https://github.com/567-labs/instructor) | [#2320 — fix(gemini,vertexai): raise ConfigurationError with install hint when jsonref is absent](https://github.com/567-labs/instructor/pull/2320) | Python | 13,802 | ❌ Closed | 2026-05-24 |
-| [immich-app/immich](https://github.com/immich-app/immich) | [#28698 — fix(mobile): use originalFileName for multipart filename in background uploads](https://github.com/immich-app/immich/pull/28698) | TypeScript | 112,980 | ❌ Closed | 2026-05-30 |
-| [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1921 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1921) | Python | 7,029 | 🔁 Open | 2026-05-22 |
-| [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1920 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1920) | Python | 7,029 | ❌ Closed | 2026-05-22 |
-| [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1919 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1919) | Python | 7,029 | ❌ Closed | 2026-05-22 |
-| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1794 — fix(evaluators): inline score_to_defcon in get_z_rating](https://github.com/NVIDIA/garak/pull/1794) | Python | 9,077 | ✅ Merged | 2026-05-27 |
-| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1793 — fix(lint): tune pylintrc and fix violations across core modules](https://github.com/NVIDIA/garak/pull/1793) | Python | 9,077 | 🔁 Open | 2026-05-22 |
-| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1791 — test(config): regression guard for config_files dedup](https://github.com/NVIDIA/garak/pull/1791) | Python | 9,077 | ✅ Merged | 2026-05-27 |
-| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1790 — feat(cli): structured exit codes for improper exit](https://github.com/NVIDIA/garak/pull/1790) | Python | 9,077 | 🔁 Open | 2026-05-22 |
-| [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | [#1590 — fix(skills): add normalize_skill_files() helper and document path naming convention](https://github.com/anthropics/anthropic-sdk-python/pull/1590) | Python | 3,870 | ❌ Closed | 2026-05-22 |
+| Repository | PR | Language | Stars | Status | Date | Reason (if closed) |
+|---|---|---|---|---|---|---|
+| [anthropics/claude-code](https://github.com/anthropics/claude-code) | [#62099 — Add credential-guard plugin for hardcoded secret detection](https://github.com/anthropics/claude-code/pull/62099) | TypeScript | 143,448 | 🔁 Open | 2026-05-24 | — |
+| [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [#667 — feat(misc): secure Claude Code routines — avoiding credential leakage](https://github.com/anthropics/claude-cookbooks/pull/667) | Jupyter Notebook | 52,290 | 🔁 Open | 2026-05-25 | — |
+| [future-agi/future-agi](https://github.com/future-agi/future-agi) | [#851 — feature(gateway): add indirect prompt injection guardrail](https://github.com/future-agi/future-agi/pull/851) | Python | 1,873 | 🔁 Open | 2026-06-10 | — |
+| [protectai/modelscan](https://github.com/protectai/modelscan) | [#349 — Fix empty file generation for create-settings-file](https://github.com/protectai/modelscan/pull/349) | Python | 766 | 🔁 Open | 2026-05-25 | — |
+| [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [#9402 — fix(eval): preserve all distinct CallApiFunction providers in combineConfigs](https://github.com/promptfoo/promptfoo/pull/9402) | TypeScript | 24,674 | ✅ Merged | 2026-05-24 | — |
+| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) | [#9807 — fix(evaluate): expose timeout parameter and cap straggler resubmissions per item](https://github.com/stanfordnlp/dspy/pull/9807) | Python | 37,663 | ❌ Closed | 2026-05-23 | Maintainer folded the fix into a broader consolidated PR ([#9912](https://github.com/stanfordnlp/dspy/pull/9912), open) that covers the same timeout/straggler bug plus extra shutdown hardening. Root cause and fix were confirmed correct. |
+| [UKGovernmentBEIS/inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals) | [#1707 — feat: register Weighted Safety Refusal evaluation suite](https://github.com/UKGovernmentBEIS/inspect_evals/pull/1707) | Python | 650 | ❌ Closed | 2026-05-23 | New submission policy requires a linked arXiv paper for the eval, added after this PR was opened. Reopening once the WSR paper is published. |
+| [567-labs/instructor](https://github.com/567-labs/instructor) | [#2320 — fix(gemini,vertexai): raise ConfigurationError with install hint when jsonref is absent](https://github.com/567-labs/instructor/pull/2320) | Python | 13,802 | ❌ Closed | 2026-05-24 | Maintainer consolidated several overlapping `jsonref` dependency-guidance PRs, including this one, into a single maintainer PR for the next release. |
+| [immich-app/immich](https://github.com/immich-app/immich) | [#28698 — fix(mobile): use originalFileName for multipart filename in background uploads](https://github.com/immich-app/immich/pull/28698) | TypeScript | 112,980 | ❌ Closed | 2026-05-30 | Rejected under the project's generative-AI contribution policy despite the PR including a documented test run (9/9 passing). |
+| [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1921 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1921) | Python | 7,029 | 🔁 Open | 2026-05-22 | — |
+| [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1920 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1920) | Python | 7,029 | ❌ Closed | 2026-05-22 | Duplicate branch push, self-closed within minutes and consolidated into #1921 (open). |
+| [NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [#1919 — fix: synchronize embedding batches](https://github.com/NVIDIA-NeMo/Guardrails/pull/1919) | Python | 7,029 | ❌ Closed | 2026-05-22 | Duplicate branch push, self-closed within minutes and consolidated into #1921 (open). |
+| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1794 — fix(evaluators): inline score_to_defcon in get_z_rating](https://github.com/NVIDIA/garak/pull/1794) | Python | 9,077 | ✅ Merged | 2026-05-27 | — |
+| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1793 — fix(lint): tune pylintrc and fix violations across core modules](https://github.com/NVIDIA/garak/pull/1793) | Python | 9,077 | 🔁 Open | 2026-05-22 | — |
+| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1791 — test(config): regression guard for config_files dedup](https://github.com/NVIDIA/garak/pull/1791) | Python | 9,077 | ✅ Merged | 2026-05-27 | — |
+| [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1790 — feat(cli): structured exit codes for improper exit](https://github.com/NVIDIA/garak/pull/1790) | Python | 9,077 | 🔁 Open | 2026-05-22 | — |
+| [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | [#1590 — fix(skills): add normalize_skill_files() helper and document path naming convention](https://github.com/anthropics/anthropic-sdk-python/pull/1590) | Python | 3,870 | ❌ Closed | 2026-05-22 | Maintainer preferred fixing the validation message and docs at the API level over a client-side re-rooting helper, to avoid masking genuine path mistakes. |
 
 ---
 
@@ -90,4 +90,4 @@ Direct collaborator access — contributions via commits; individual PR history 
 | [AdeepKrishnaKeelar/Cricket-Game](https://github.com/AdeepKrishnaKeelar/Cricket-Game) | AdeepKrishnaKeelar | C++ |
 | [nisbweb/Tick-Tock](https://github.com/nisbweb/Tick-Tock) | nisbweb | Vue |
 
-_Updated on 2026-08-30 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
+_Updated on 2026-09-14 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_

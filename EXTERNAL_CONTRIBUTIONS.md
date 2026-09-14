@@ -61,15 +61,25 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 | [DSCNIE/Hacktoberfest-DSC-NIE-2020](https://github.com/DSCNIE/Hacktoberfest-DSC-NIE-2020) | [#2 — Updated README.md and Contributing.md](https://github.com/DSCNIE/Hacktoberfest-DSC-NIE-2020/pull/2) | — | 2020-10-15 |
 | [shreyansh-sawarn/Hacktoberfest](https://github.com/shreyansh-sawarn/Hacktoberfest) | [#140 — Added bubble sort in C and CPP](https://github.com/shreyansh-sawarn/Hacktoberfest/pull/140) | C++ | 2020-10-13 |
 | [xeoneux/30-Days-of-Code](https://github.com/xeoneux/30-Days-of-Code) | [#204 — Update Solution.cpp](https://github.com/xeoneux/30-Days-of-Code/pull/204) | C++ | 2020-09-16 |
+| [Coder-forfun/Hactoberfest-accepted](https://github.com/Coder-forfun/Hactoberfest-accepted) | [#94 — Added N-Queens and Travelling Salesman Problem in c++](https://github.com/Coder-forfun/Hactoberfest-accepted/pull/94) | JavaScript | 2021-10-03 |
+| [prince2kumar4147/HacktoberFest2020-1](https://github.com/prince2kumar4147/HacktoberFest2020-1) | [#131 — Binary Tree in cpp : ppradyoth](https://github.com/prince2kumar4147/HacktoberFest2020-1/pull/131) | JavaScript | 2020-10-16 |
+| [junaidrahim/Hacktoberfest-KIIT-2021](https://github.com/junaidrahim/Hacktoberfest-KIIT-2021) | [#131 — COMPLIMENTOR BOT: basic telegram bot which compliments the user](https://github.com/junaidrahim/Hacktoberfest-KIIT-2021/pull/131) | Jupyter Notebook | 2020-10-14 |
+| [cfghyd22/team-40](https://github.com/cfghyd22/team-40) | [#4 — updated db](https://github.com/cfghyd22/team-40/pull/4) | CSS | 2022-06-12 |
+| [cfghyd22/team-40](https://github.com/cfghyd22/team-40) | [#3 — The solution is ready!](https://github.com/cfghyd22/team-40/pull/3) | CSS | 2022-06-12 |
+| [niegfg/Hacktoberfest---2022](https://github.com/niegfg/Hacktoberfest---2022) | [#24 — simply checking something](https://github.com/niegfg/Hacktoberfest---2022/pull/24) | C++ | 2022-10-05 |
+| [niegfg/Hacktoberfest---2022](https://github.com/niegfg/Hacktoberfest---2022) | [#1 — Update README.md](https://github.com/niegfg/Hacktoberfest---2022/pull/1) | C++ | 2022-10-03 |
 
 ### Open / Unmerged PRs
 
 | Repository | PR | Language | Status | Date |
 |---|---|---|---|---|
 | [devdinstructor/dev-ops](https://github.com/devdinstructor/dev-ops) | [#223 — 4NI19IS062 - PRADYOTH P - ASSIGNMENTS](https://github.com/devdinstructor/dev-ops/pull/223) | HTML | 🔁 Open | 2022–2023 |
+| [devdinstructor/dev-ops](https://github.com/devdinstructor/dev-ops) | [#4 — ppradyoth's first commit](https://github.com/devdinstructor/dev-ops/pull/4) | HTML | 🔁 Open | 2022 |
 | [DSCNIE/FlaskWorkshop](https://github.com/DSCNIE/FlaskWorkshop) | [#1 — Rename reqirements.txt to requirements.txt](https://github.com/DSCNIE/FlaskWorkshop/pull/1) | Python | 🔁 Open | 2020 |
 | [manojpkumar/DSC-Assignments](https://github.com/manojpkumar/DSC-Assignments) | [#1 — Renamed the files](https://github.com/manojpkumar/DSC-Assignments/pull/1) | — | 🔁 Open | 2020 |
 | [nisbweb/gitSessionDemo](https://github.com/nisbweb/gitSessionDemo) | [#3 — changed file contents :)](https://github.com/nisbweb/gitSessionDemo/pull/3) | — | 🔁 Open | 2020 |
+| [niegfg/Hacktoberfest---2022](https://github.com/niegfg/Hacktoberfest---2022) | [#27 — Revert "Fix broken badge SVG link"](https://github.com/niegfg/Hacktoberfest---2022/pull/27) | C++ | 🔁 Open | 2022 |
+| [aryasoni98/HacktoberfestPR2020](https://github.com/aryasoni98/HacktoberfestPR2020) | [#160 — All Tasks Completed](https://github.com/aryasoni98/HacktoberfestPR2020/pull/160) | C++ | ❌ Closed, not merged | 2020 |
 
 ### Commit-only (no PR)
 
@@ -77,10 +87,6 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 |---|---|---|---|
 | [niegfg/amazon-clone](https://github.com/niegfg/amazon-clone) | niegfg | HTML | 2022 |
 | [pranav-nb/Hacktoberfest22](https://github.com/pranav-nb/Hacktoberfest22) | pranav-nb | Java | 2022 |
-| [junaidrahim/Hacktoberfest-KIIT-2021](https://github.com/junaidrahim/Hacktoberfest-KIIT-2021) | junaidrahim | Jupyter Notebook | 2020 |
-| [aryasoni98/HacktoberfestPR2020](https://github.com/aryasoni98/HacktoberfestPR2020) | aryasoni98 | C++ | 2020 |
-| [Coder-forfun/Hactoberfest-accepted](https://github.com/Coder-forfun/Hactoberfest-accepted) | Coder-forfun | JavaScript | 2021 |
-| [princekumar-code/HacktoberFest2020-1](https://github.com/princekumar-code/HacktoberFest2020-1) | princekumar-code | JavaScript | 2020 |
 
 ### Collaborator Repos (public)
 

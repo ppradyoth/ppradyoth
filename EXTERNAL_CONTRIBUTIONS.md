@@ -20,6 +20,7 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 
 | Repository | PR | Language | Stars | Status | Date | Reason (if closed) |
 |---|---|---|---|---|---|---|
+| [ethz-spylab/agentdojo](https://github.com/ethz-spylab/agentdojo) | [#195 — fix(pi-detector): remove dead processed_messages list in PromptInjectionDetector.query()](https://github.com/ethz-spylab/agentdojo/pull/195) | Python | 821 | 🔁 Open | 2026-09-14 | — |
 | [data-privacy-stack/presidio](https://github.com/data-privacy-stack/presidio) | [#2254 — fix(analyzer): omitted deny_list_score in YAML registry now defaults to 1.0](https://github.com/data-privacy-stack/presidio/pull/2254) | Python | 10,852 | 🔁 Open | 2026-09-14 | — |
 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | [#62099 — Add credential-guard plugin for hardcoded secret detection](https://github.com/anthropics/claude-code/pull/62099) | TypeScript | 143,448 | 🔁 Open | 2026-05-24 | — |
 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [#667 — feat(misc): secure Claude Code routines — avoiding credential leakage](https://github.com/anthropics/claude-cookbooks/pull/667) | Jupyter Notebook | 52,290 | 🔁 Open | 2026-05-25 | — |

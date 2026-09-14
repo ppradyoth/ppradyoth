@@ -20,6 +20,7 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 
 | Repository | PR | Language | Stars | Status | Date | Reason (if closed) |
 |---|---|---|---|---|---|---|
+| [data-privacy-stack/presidio](https://github.com/data-privacy-stack/presidio) | [#2254 — fix(analyzer): omitted deny_list_score in YAML registry now defaults to 1.0](https://github.com/data-privacy-stack/presidio/pull/2254) | Python | 10,852 | 🔁 Open | 2026-09-14 | — |
 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | [#62099 — Add credential-guard plugin for hardcoded secret detection](https://github.com/anthropics/claude-code/pull/62099) | TypeScript | 143,448 | 🔁 Open | 2026-05-24 | — |
 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [#667 — feat(misc): secure Claude Code routines — avoiding credential leakage](https://github.com/anthropics/claude-cookbooks/pull/667) | Jupyter Notebook | 52,290 | 🔁 Open | 2026-05-25 | — |
 | [future-agi/future-agi](https://github.com/future-agi/future-agi) | [#851 — feature(gateway): add indirect prompt injection guardrail](https://github.com/future-agi/future-agi/pull/851) | Python | 1,873 | 🔁 Open | 2026-06-10 | — |
@@ -91,3 +92,4 @@ Direct collaborator access — contributions via commits; individual PR history 
 | [nisbweb/Tick-Tock](https://github.com/nisbweb/Tick-Tock) | nisbweb | Vue |
 
 _Updated on 2026-09-14 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
+

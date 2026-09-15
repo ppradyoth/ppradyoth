@@ -10,6 +10,7 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 
 | Repository | PR | Language | Stars | Merged On |
 |---|---|---|---|---|
+| [data-privacy-stack/presidio](https://github.com/data-privacy-stack/presidio) | [#2254 — fix(analyzer): omitted deny_list_score in YAML registry now defaults to 1.0](https://github.com/data-privacy-stack/presidio/pull/2254) | Python | 10,852 | 2026-09-15 |
 | [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [#9402 — fix(eval): preserve all distinct CallApiFunction providers in combineConfigs](https://github.com/promptfoo/promptfoo/pull/9402) | TypeScript | 24,674 | 2026-05-24 |
 | [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1794 — fix(evaluators): inline score_to_defcon in get_z_rating](https://github.com/NVIDIA/garak/pull/1794) | Python | 9,077 | 2026-05-27 |
 | [NVIDIA/garak](https://github.com/NVIDIA/garak) | [#1791 — test(config): regression guard for config_files dedup](https://github.com/NVIDIA/garak/pull/1791) | Python | 9,077 | 2026-05-27 |
@@ -21,7 +22,7 @@ All repositories outside my account (ppradyoth) where I appear as a contributor 
 | Repository | PR | Language | Stars | Status | Date | Reason (if closed) |
 |---|---|---|---|---|---|---|
 | [ethz-spylab/agentdojo](https://github.com/ethz-spylab/agentdojo) | [#195 — fix(pi-detector): remove dead processed_messages list in PromptInjectionDetector.query()](https://github.com/ethz-spylab/agentdojo/pull/195) | Python | 821 | 🔁 Open | 2026-09-14 | — |
-| [data-privacy-stack/presidio](https://github.com/data-privacy-stack/presidio) | [#2254 — fix(analyzer): omitted deny_list_score in YAML registry now defaults to 1.0](https://github.com/data-privacy-stack/presidio/pull/2254) | Python | 10,852 | 🔁 Open | 2026-09-14 | — |
+| [data-privacy-stack/presidio](https://github.com/data-privacy-stack/presidio) | [#2254 — fix(analyzer): omitted deny_list_score in YAML registry now defaults to 1.0](https://github.com/data-privacy-stack/presidio/pull/2254) | Python | 10,852 | ✅ Merged | 2026-09-15 | — |
 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | [#62099 — Add credential-guard plugin for hardcoded secret detection](https://github.com/anthropics/claude-code/pull/62099) | TypeScript | 143,448 | 🔁 Open | 2026-05-24 | — |
 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [#667 — feat(misc): secure Claude Code routines — avoiding credential leakage](https://github.com/anthropics/claude-cookbooks/pull/667) | Jupyter Notebook | 52,290 | 🔁 Open | 2026-05-25 | — |
 | [future-agi/future-agi](https://github.com/future-agi/future-agi) | [#851 — feature(gateway): add indirect prompt injection guardrail](https://github.com/future-agi/future-agi/pull/851) | Python | 1,873 | 🔁 Open | 2026-06-10 | — |
@@ -98,5 +99,5 @@ Direct collaborator access — contributions via commits; individual PR history 
 | [AdeepKrishnaKeelar/Cricket-Game](https://github.com/AdeepKrishnaKeelar/Cricket-Game) | AdeepKrishnaKeelar | C++ |
 | [nisbweb/Tick-Tock](https://github.com/nisbweb/Tick-Tock) | nisbweb | Vue |
 
-_Updated on 2026-09-14 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
+_Updated on 2026-09-15 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
 

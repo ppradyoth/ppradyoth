@@ -101,3 +101,13 @@ Direct collaborator access — contributions via commits; individual PR history 
 
 _Updated on 2026-09-15 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
 
+
+<!-- additions synced 2026-09-21 -->
+
+**New org contributions:**
+
+| Repository | PR | Language | Stars | Status | Date |
+|---|---|---|---|---|---|
+| [guardrails-ai/guardrails](https://github.com/guardrails-ai/guardrails) | [#1662 — Fix trace DELETE bypassing TIME_BETWEEN_CLEANUPS throttle](https://github.com/guardrails-ai/guardrails/pull/1662) | Python | 7,439 | ❌ Closed | 2026-09-19 |
+
+_Generated on 2026-09-21 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_

@@ -8,11 +8,11 @@
 
 ---
 
-I work at the intersection of Applied AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it for AI. My job is to find the things that change deployment decisions.
+I work at the intersection of Applied AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it as a one size fits all for AI. My job is to find the things that change deployment decisions primarily through inference level simulations
 
 **What I'm working on:**
 <!-- WORK_START -->
-- Engineered a firm-wide Gen AI Red Teaming platform enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
+- Engineered a firm-wide Gen AI Red Teaming toolkit enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
 - Led the red team assessment of flagship LLMs, surfacing multiple critical and high-severity vulnerabilities — prompt injection, data leakage, system prompt extraction, and intent drift — before the models reached production
 - Authored a blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect
 - Architected a Network Broker enabling secure, isolated connectivity between internal red teaming platform and external vendor evaluation infrastructure

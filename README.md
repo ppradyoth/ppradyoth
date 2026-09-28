@@ -41,10 +41,11 @@ https://ppradyoth.web.app/
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
       <h4 align="left" style="margin-top: 0;">🎮 Prompt Injection CTF</h4>
       <p align="left"><strong>Interactive AI Security Hacking Playground</strong></p>
-      <p align="left">A gamified Capture The Flag platform designed to teach hands-on adversarial thinking. Mapped directly to real-world risk frameworks (OWASP LLM Top 10 & MITRE ATLAS).</p>
+      <p align="left">A gamified Capture The Flag platform designed to teach hands-on adversarial thinking. Every challenge maps to a risk in the OWASP Top 10 for LLM Applications (2025), and all 10 are covered.</p>
       <ul align="left">
-        <li><strong>5 Progressive Levels</strong> covering basic injection, jailbreaks, intent drift, token smuggling, and multi-vector chaining</li>
-        <li><strong>Zero-API-cost heuristics engine</strong> (Base64, roleplay markers) for instant feedback</li>
+        <li><strong>16 challenges</strong> spanning prompt injection, jailbreaks, token smuggling, RAG and data poisoning, agent tool abuse, excessive agency, and supply chain</li>
+        <li><strong>Attack → Explain → Defend</strong>: every solve reveals the detection signals and the guardrail code that blocks it</li>
+        <li><strong>Zero-API-cost local evaluator</strong> for instant feedback. No signup, no API key</li>
       </ul>
       <p align="left">
         <img src="https://img.shields.io/badge/Next.js-16-111111?style=flat-square&logo=next.js" alt="Next.js" />
@@ -157,7 +158,7 @@ https://ppradyoth.web.app/
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 6) — Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 6) — Hands-on prompt injection and AI agent security CTF. 16 challenges covering all 10 OWASP LLM Top 10 (2025) risks, with a defender mode that shows the guardrail behind each attack. No signup, no API key.
 
 **[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 4) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
 

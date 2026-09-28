@@ -8,7 +8,7 @@ const GITHUB_USERNAME = 'ppradyoth';
 // Custom descriptions to override default GitHub descriptions with high-quality copy
 const CUSTOM_DESCRIPTIONS = {
   'ai-security-resources': 'Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.',
-  'prompt-injection-ctf': 'Interactive AI Security Playground — Prompt Injection CTF. Craft attack prompts to break constrained AI systems. Learn prompt injection, jailbreaking, intent drift & token smuggling. Built to teach adversarial thinking hands-on.',
+  'prompt-injection-ctf': 'Hands-on prompt injection and AI agent security CTF. 16 challenges covering all 10 OWASP LLM Top 10 (2025) risks, with a defender mode that shows the guardrail behind each attack. No signup, no API key.',
   'llm-ops-workshop': 'End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.',
   'ML-101-Workshop': 'Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.',
   'schmaltz-surveyor': 'Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.',

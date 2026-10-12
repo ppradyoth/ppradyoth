@@ -7,18 +7,31 @@ const GITHUB_USERNAME = 'ppradyoth';
 
 // Custom descriptions to override default GitHub descriptions with high-quality copy
 const CUSTOM_DESCRIPTIONS = {
-  'ai-security-resources': 'Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.',
-  'prompt-injection-ctf': 'Hands-on prompt injection and AI agent security CTF. 16 challenges covering all 10 OWASP LLM Top 10 (2025) risks, with a defender mode that shows the guardrail behind each attack. No signup, no API key.',
+  'ai-security-resources': 'AI red-teaming tools, research, practical labs, and 7/30/100-day learning paths. Includes agent security, model scanning, standards, interview prep, and public attack taxonomies.',
+  'prompt-injection-ctf': '46 AI security missions: 16 covering the OWASP LLM Top 10 (2025) and 30 covering the OWASP Agentic Top 10 (2026). Attack, inspect defenses, and replay controls. Default practice needs no signup or API key. Ranked runs require sign-in.',
   'llm-ops-workshop': 'End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.',
   'ML-101-Workshop': 'Source code from the ML-101 workshop hosted by IEEE Bangalore Section at IEEE CCONNECT. Built to make machine learning accessible to early-career engineers.',
   'schmaltz-surveyor': 'Live sentiment analysis of public tweets. Two-phase project: classifier benchmarking across multiple ML models, then a web app for real-time Twitter sentiment analysis.',
-  'synaptic-wetware': '🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).',
-  'akrivon-ai': 'AI Scope & Intent Enforcement Gateway. Automated adversarial red-team probing (IntentScan) and a low-latency runtime proxy (IntentEnforce) to keep LLMs secure and aligned.',
-  'weighted-safety-refusal': 'Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.',
-  'AgentInjectionBench': 'The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.',
-  'ai-security-tracker': 'Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.',
-  'intent-drift-playbook': 'A taxonomy of trajectory-based LLM jailbreak patterns (gradual drift, persona anchoring, trust escalation) that single-turn automated scanners structurally can\'t catch — plus concrete detection methods.'
+  'synaptic-wetware': 'Organoid intelligence simulator with Hodgkin–Huxley and Izhikevich neuron models, MEA burst detection, and DishBrain-inspired Pong.',
+  'weighted-safety-refusal': 'Reference-free, severity-weighted evaluation of harmful refusal and matched benign compliance. Combines both axes into a calibrated safety score so refusing everything earns zero.',
+  'AgentInjectionBench': '182 public synthetic cases: 142 attacks and 40 benign controls across 7 attack categories. Evaluate generated tool calls, arguments, and canary disclosures against explicit execution contracts, with saved traces and dataset fingerprints.',
+  'ai-security-tracker': 'Tracks public vulnerabilities, CVEs, and security activity across AI/ML repositories.',
+  'intent-drift-playbook': 'Research-grounded taxonomy of multi-turn intent drift, with conceptual detection approaches for tracking behavior against the original task and instructions.',
+  'railproof': 'Alpha enforcement library for AI agent actions. Deny-by-default policies check tools, arguments, identity, data labels, provenance, approvals, and session budgets before wrapped tools execute.',
+  'knowyourai': 'Zero-dependency model verification CLI for GGUF, safetensors, Ollama, and Hugging Face artifacts. Inspect metadata and chat templates without running a model, then pin approved artifacts in ai.lock and check for drift.',
+  'agentscan': 'Static security scanner for AI-agent configurations, MCP servers, permission settings, hooks, and instruction files. Flags risky grants and exposed secrets without model calls or dependencies.',
+  'agent-supply-chain-guard': 'Local scanner for third-party agent skills, MCP manifests, plugins, and README files. Flags hidden instructions, execution references, credential patterns, broad permissions, and invisible Unicode controls.',
+  'on-device-ai-app-starter-kit': 'Browser-local GGUF inference, document retrieval, and source citations. Model setup downloads the artifacts; document processing and inference run locally in LOCAL MODE.',
+  'yolobench': 'Sandboxed benchmark for coding-agent judgment when a requested action has an ambiguous or destructive target. Published results currently cover the scripted reference backend, not real coding agents.'
 };
+
+const PUBLIC_WORK_HIGHLIGHTS = [
+  'Red teaming LLM applications and agent workflows for prompt injection, data leakage, intent drift, and tool misuse.',
+  'Building action-level policies, approvals, and session budgets for AI agents with Railproof.',
+  'Maintaining AgentInjectionBench: reproducible injection cases, benign controls, and inspectable tool-call traces.',
+  'Expanding hands-on training through 16 LLM security missions and 30 agentic security missions.',
+  'Checking model artifacts, agent configurations, and third-party skills before they reach a runtime.'
+];
 
 // Patterns to exclude minor, test, or school lab repositories to keep the profile premium
 const EXCLUDE_PATTERNS = [
@@ -50,13 +63,18 @@ const EXCLUDED_REPOS = [
 const IMPACTFUL_REPOS = [
   'synaptic-wetware',
   'prompt-injection-ctf',
-  'akrivon-ai',
   'weighted-safety-refusal',
   'ai-security-resources',
   'llm-ops-workshop',
   'AgentInjectionBench',
   'ai-security-tracker',
   'intent-drift-playbook',
+  'railproof',
+  'knowyourai',
+  'agentscan',
+  'agent-supply-chain-guard',
+  'on-device-ai-app-starter-kit',
+  'yolobench',
 ];
 
 // File Paths
@@ -187,7 +205,7 @@ async function main() {
         const parts = teamName.split('·').map(p => p.trim());
         teamName = parts.find(p => p.toLowerCase().includes('red team')) || parts[parts.length - 1];
       }
-      const descString = `${latestRole.role} | ${teamName} | my workplace`;
+      const descString = `${latestRole.role} | ${teamName}`;
       const encodedDesc = encodeURIComponent(descString);
       const encodedName = encodeURIComponent(careerData.profile.name);
 
@@ -198,9 +216,7 @@ async function main() {
       else { console.log('Header unchanged — skipping.'); }
 
       // 5. Update What I'm Working On (only if highlights changed)
-      const highlights = latestRole.highlights
-        .map(h => `- ${h.replace(/JPMorganChase|JPMC/gi, 'my workplace')}`);
-      highlights.push('- Building AI Controls engineering solutions to systematically enforce safety, scope, and behavioural boundaries across deployed LLM use cases');
+      const highlights = PUBLIC_WORK_HIGHLIGHTS.map(h => `- ${h}`);
       const workLines = highlights.join('\n');
       const workResult = replaceBetweenMarkers(readmeContent, '<!-- WORK_START -->', '<!-- WORK_END -->', workLines);
       readmeContent = workResult.content;
@@ -213,7 +229,7 @@ async function main() {
     // 6. Update Open Source Section
     const formattedRepos = repos
       .filter(r => {
-        if (r.fork || r.private || EXCLUDED_REPOS.includes(r.name)) return false;
+        if (r.fork || r.private || r.archived || EXCLUDED_REPOS.includes(r.name)) return false;
         // Exclude minor, lab, or test repositories
         if (EXCLUDE_PATTERNS.some(pat => pat.test(r.name))) return false;
         // Exclude repositories created in or before 2023
@@ -236,7 +252,7 @@ async function main() {
       })
       .join('\n\n');
 
-    const openSourceContent = formattedRepos + '\n\n*Also building something in AI security — stealth mode 🔒*\n\n📋 [Full list of external contributions](./EXTERNAL_CONTRIBUTIONS.md) — repos outside my account where I\'ve contributed (2020–present)';
+    const openSourceContent = formattedRepos + '\n\n📋 [Full list of external contributions](./EXTERNAL_CONTRIBUTIONS.md) — repos outside my account where I\'ve contributed (2020–present)';
     const openSourceResult = replaceBetweenMarkers(readmeContent, '<!-- OPENSYNC_START -->', '<!-- OPENSYNC_END -->', openSourceContent);
     readmeContent = openSourceResult.content;
     if (openSourceResult.changed) { console.log('Open source section updated.'); anyChanged = true; }

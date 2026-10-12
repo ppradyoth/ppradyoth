@@ -1,5 +1,5 @@
 <!-- HEADER_START -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=Pradyoth%20Prashanth&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=Security%20Engineer%20II%20%7C%20Gen%20AI%20Red%20Team%20%7C%20JPMorganChase&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:8b0000,100:0e75b6&height=180&section=header&text=Pradyoth%20Prashanth&fontSize=48&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=Security%20Engineer%20II%20(Associate)%20%7C%20Gen%20AI%20Red%20Teaming&descAlignY=55&descSize=18&descFontColor=cccccc" width="100%"/>
 <!-- HEADER_END -->
 
 <p align="center">
@@ -8,146 +8,143 @@
 
 ---
 
-I work at the intersection of Applied AI and security engineering — red teaming and building controls for production AI systems at my workplace before they reach end users. Traditional security reviews don't cut it as a one size fits all for AI. My job is to find the things that change deployment decisions primarily through inference level simulations
+I break production AI, then build the controls that hold.
+
+I'm an AI security engineer and red teamer focused on prompt injection, agent tool abuse, model provenance, and runtime enforcement. These are my independent projects and public research.
 
 **What I'm working on:**
 <!-- WORK_START -->
-- Engineered a firm-wide Gen AI Red Teaming toolkit enabling systematic automated and manual adversarial evaluation of LLM use cases across all lines of business
-- Led the red team assessment of flagship LLMs, surfacing multiple critical and high-severity vulnerabilities — prompt injection, data leakage, system prompt extraction, and intent drift — before the models reached production
-- Authored a blueprint for Advanced Manual Red Teaming: a structured methodology for uncovering behavioral vulnerabilities and intent misalignment that automated scanners fundamentally cannot detect
-- Architected a Network Broker enabling secure, isolated connectivity between internal red teaming platform and external vendor evaluation infrastructure
-- Containerized and deployed Red Teaming ECS Task modules for concurrent adversarial evaluation of multiple AI use cases without capacity constraints
-- Reviewed emerging AI coding tools from a security perspective, producing key findings that directly shaped firm-wide decisions on AI coding enablement
-- Building AI Controls engineering solutions to systematically enforce safety, scope, and behavioural boundaries across deployed LLM use cases
+- Red teaming LLM applications and agent workflows for prompt injection, data leakage, intent drift, and tool misuse.
+- Building action-level policies, approvals, and session budgets for AI agents with Railproof.
+- Maintaining AgentInjectionBench: reproducible injection cases, benign controls, and inspectable tool-call traces.
+- Expanding hands-on training through 16 LLM security missions and 30 agentic security missions.
+- Checking model artifacts, agent configurations, and third-party skills before they reach a runtime.
 <!-- WORK_END -->
 
-**Recognition:** Inventor Recognition (Q4 2025) for filed patents · Speaker at DEVUP 2026 (my workplace's invite-only technical conference) · SEP Engineer Committee Lead for 1,100+ early-career engineers at my workplace Bengaluru Tech Centre
+**Recognition:** Inventor Recognition (Q4 2025) for filed patents · DEVUP 2026 speaker · SEP Engineer Committee Lead for 1,100+ early-career engineers
 
-pradyoth.jpg@gmail.com
-
-https://ppradyoth.com/
+[Portfolio](https://ppradyoth.com/) · [Research & evidence](https://ppradyoth.com/research) · [Email](mailto:ppradyoth64@gmail.com)
 
 ---
 
 <h3 align="left">🛡️ Featured AI Security Projects</h3>
 
 <p align="left">
-  Full-fledged engineering projects: red-teaming tools, safety benchmarks, and taxonomies built to address real gaps in how deployed LLMs are secured.
+  Tools for testing agent behavior, enforcing action policies, and inspecting the models and configurations those agents depend on.
 </p>
 
 <table width="100%" border="0" cellpadding="8" cellspacing="0">
   <tr>
-    <!-- Project 1 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
       <h4 align="left" style="margin-top: 0;">🎮 Prompt Injection CTF</h4>
-      <p align="left"><strong>Interactive AI Security Hacking Playground</strong></p>
-      <p align="left">A gamified Capture The Flag platform designed to teach hands-on adversarial thinking. Every challenge maps to a risk in the OWASP Top 10 for LLM Applications (2025), and all 10 are covered.</p>
+      <p align="left"><strong>46 LLM & Agentic Security Missions</strong></p>
+      <p align="left">Hands-on training across the OWASP LLM Top 10 (2025) and Agentic Top 10 (2026). Attack a constrained system, inspect the defense, and test whether legitimate work still succeeds.</p>
       <ul align="left">
-        <li><strong>16 challenges</strong> spanning prompt injection, jailbreaks, token smuggling, RAG and data poisoning, agent tool abuse, excessive agency, and supply chain</li>
-        <li><strong>Attack → Explain → Defend</strong>: every solve reveals the detection signals and the guardrail code that blocks it</li>
-        <li><strong>Zero-API-cost local evaluator</strong> for instant feedback. No signup, no API key</li>
+        <li><strong>16 LLM missions + 30 agentic missions</strong>, with attacker and defender tracks</li>
+        <li><strong>Defense replay and legitimate-task controls</strong> in the Agentic Security Lab</li>
+        <li><strong>Free default practice</strong> without signup or an API key. Ranked runs require sign-in. Live-model grading is optional</li>
       </ul>
       <p align="left">
         <img src="https://img.shields.io/badge/Next.js-16-111111?style=flat-square&logo=next.js" alt="Next.js" />
         <img src="https://img.shields.io/badge/Tailwind-v4-0e75b6?style=flat-square&logo=tailwindcss" alt="Tailwind" />
-        <img src="https://img.shields.io/badge/Security-OWASP_LLM-cc2200?style=flat-square" alt="Security" />
+        <img src="https://img.shields.io/badge/Security-OWASP_LLM_%26_Agentic-cc2200?style=flat-square" alt="OWASP LLM and Agentic" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/prompt-injection-ctf">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://prompt-injection-ctf-2026.web.app">🌐 Live Demo</a>
+        <a href="https://github.com/ppradyoth/prompt-injection-ctf">Codebase</a> &nbsp;•&nbsp; <a href="https://knowyourai.live/ctf">Play the CTF</a>
       </p>
     </td>
-    <!-- Project 2 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
       <h4 align="left" style="margin-top: 0;">🔬 AgentInjectionBench</h4>
-      <p align="left"><strong>Prompt Injection Benchmark for Agentic Tool-Use</strong></p>
-      <p align="left">The first benchmark targeting injection attacks in agentic, tool-using pipelines — tool-output injection and goal hijacking across multi-step workflows, where single-turn benchmarks like AdvBench and HarmBench don't reach.</p>
+      <p align="left"><strong>Reproducible Tests for Agent Tool Use</strong></p>
+      <p align="left">A public synthetic case pack and runner for testing whether untrusted content redirects an agent's next action. Inspect generated tool calls and arguments against each case's execution contract.</p>
       <ul align="left">
-        <li>Covers <strong>Tool Output Injection</strong>, <strong>Goal Hijacking</strong>, and multi-step attack chains</li>
-        <li>Dataset & interactive Space published on Hugging Face</li>
+        <li><strong>182 cases: 142 attacks + 40 benign controls</strong> across 7 attack categories</li>
+        <li><strong>Saved traces, case IDs, and dataset fingerprints</strong> for repeatable before-and-after runs</li>
+        <li><strong>Model adapters and a custom-agent interface</strong>. Built-in adapters simulate tool results and execute no external actions</li>
       </ul>
       <p align="left">
-        <img src="https://img.shields.io/badge/🤗-Dataset-yellow?style=flat-square" alt="Hugging Face Dataset" />
+        <img src="https://img.shields.io/badge/Dataset-182_cases-yellow?style=flat-square" alt="182 synthetic cases" />
         <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0" />
-        <img src="https://img.shields.io/badge/Benchmark-Agentic_AI-cc2200?style=flat-square" alt="Benchmark" />
+        <img src="https://img.shields.io/badge/Benchmark-Agentic_AI-cc2200?style=flat-square" alt="Agentic AI benchmark" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/AgentInjectionBench">💾 Codebase</a> &nbsp;•&nbsp; <a href="https://huggingface.co/datasets/ppradyoth/AgentInjectionBench">🤗 Dataset</a>
+        <a href="https://github.com/ppradyoth/AgentInjectionBench">Codebase</a> &nbsp;•&nbsp; <a href="https://huggingface.co/datasets/ppradyoth/AgentInjectionBench">Dataset</a> &nbsp;•&nbsp; <a href="https://huggingface.co/spaces/ppradyoth/AgentInjectionBench">Interactive Space</a>
       </p>
     </td>
   </tr>
   <tr>
-    <!-- Project 3 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">📊 Weighted Safety Refusal</h4>
-      <p align="left"><strong>Absolute Safety Robustness Evaluation Harness</strong></p>
-      <p align="left">An advanced LLM safety benchmark that evaluates absolute, severity-weighted category failure rates instead of shifting, relative statistics (Z-scores).</p>
+      <h4 align="left" style="margin-top: 0;">Railproof</h4>
+      <p align="left"><strong>Security Contracts Before Tools Execute</strong></p>
+      <p align="left">An alpha enforcement library that puts a deterministic policy decision in front of wrapped tool calls. Check the exact action, identity, data provenance, and session state before application code runs.</p>
       <ul align="left">
-        <li>Built on top of the UK AISI's open-source <strong>inspect_ai</strong> framework</li>
-        <li>Risk-adjusted severity weighting: prompt injection (0.3), jailbreaks (0.3), data exfiltration (0.2), toxicity (0.1), malware (0.1)</li>
+        <li><strong>Deny-by-default policies</strong> over tools, arguments, users, tenants, roles, and data labels</li>
+        <li><strong>One-time approvals</strong> bound to the exact action, plus atomic session budgets</li>
+        <li><strong>OpenAI and MCP adapters</strong>, policy replay, and redacted decision records</li>
       </ul>
       <p align="left">
-        <img src="https://img.shields.io/badge/Inspect_AI-UK_AISI-0e75b6?style=flat-square" alt="Inspect AI" />
-        <img src="https://img.shields.io/badge/Python-3.11-cc2200?style=flat-square&logo=python" alt="Python" />
-        <img src="https://img.shields.io/badge/Benchmark-Robustness-0e75b6?style=flat-square" alt="Benchmark" />
+        <img src="https://img.shields.io/badge/Status-Alpha-orange?style=flat-square" alt="Alpha" />
+        <img src="https://img.shields.io/badge/Python-3.11%2B-cc2200?style=flat-square&logo=python" alt="Python 3.11 or newer" />
+        <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/weighted-safety-refusal">💾 Codebase</a>
+        <a href="https://github.com/ppradyoth/railproof">Codebase</a>
       </p>
     </td>
-    <!-- Project 4 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">🎭 Intent Drift Playbook</h4>
-      <p align="left"><strong>Multi-Turn Jailbreak Taxonomy & Detection</strong></p>
-      <p align="left">A taxonomy of trajectory-based LLM jailbreak patterns — gradual drift, persona anchoring, trust escalation — that single-turn automated scanners structurally can't catch, plus concrete detection methods.</p>
+      <h4 align="left" style="margin-top: 0;">knowyourai</h4>
+      <p align="left"><strong>Inspect Model Artifacts. Pin What You Approved.</strong></p>
+      <p align="left">A zero-dependency CLI for inspecting open-weight model metadata, structure, and chat templates without loading or running a model. Check approved artifacts for changes with a model lockfile.</p>
       <ul align="left">
-        <li>9 named attack patterns, each grounded in cited research (Crescendo, Anthropic's many-shot jailbreaking)</li>
-        <li>Practical detection section: embedding-based drift scoring, trajectory-level judge scoring, tooling landscape</li>
+        <li><strong>GGUF, safetensors, Ollama, and Hugging Face</strong> model sources</li>
+        <li><strong>Offline by default</strong>, with optional registry comparison and remote header inspection</li>
+        <li><strong>ai.lock</strong> pins revisions and digests. <strong>check</strong> detects changes for CI</li>
       </ul>
       <p align="left">
+        <img src="https://img.shields.io/badge/Status-Alpha-orange?style=flat-square" alt="Alpha" />
+        <img src="https://img.shields.io/badge/Python-3.11%2B-cc2200?style=flat-square&logo=python" alt="Python 3.11 or newer" />
+        <img src="https://img.shields.io/badge/Dependencies-Zero-0e75b6?style=flat-square" alt="Zero dependencies" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/knowyourai">Codebase</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">agentscan</h4>
+      <p align="left"><strong>Static Security Checks for Agent Configurations</strong></p>
+      <p align="left">Scan MCP configurations, agent permissions, hooks, and instruction files for security signals before giving a coding agent access to a repository.</p>
+      <ul align="left">
+        <li><strong>Permission bypasses, wildcard tool grants, broad filesystem roots, and hardcoded secrets</strong></li>
+        <li><strong>Claude Code, Cursor, Cline/Roo, Windsurf, and Copilot</strong> configuration coverage</li>
+        <li><strong>No model calls or dependencies</strong>, with JSON/Markdown output and severity-based CI gates</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Python-Static_Analysis-cc2200?style=flat-square&logo=python" alt="Python static analysis" />
         <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT" />
-        <img src="https://img.shields.io/badge/AI%20Safety-Taxonomy-cc2200?style=flat-square" alt="AI Safety" />
-        <img src="https://img.shields.io/badge/Detection-Methodology-0e75b6?style=flat-square" alt="Detection" />
+        <img src="https://img.shields.io/badge/Dependencies-Zero-0e75b6?style=flat-square" alt="Zero dependencies" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/intent-drift-playbook">💾 Codebase</a>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <!-- Project 5 -->
-    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">🛡️ Akrivon AI</h4>
-      <p align="left"><strong>AI Scope & Intent Enforcement Proxy Gateway</strong></p>
-      <p align="left">An enterprise-grade safety proxy and automated red-teaming tool designed to keep deployed LLM applications safe, secure, and strictly aligned within their defined scopes.</p>
-      <ul align="left">
-        <li><strong>IntentScan</strong>: Automated red-teaming simulating Role Transformation, Gradual Drift, and Language Variation attacks</li>
-        <li><strong>IntentEnforce</strong>: Runtime reverse proxy utilizing LLM classification allow/block policies</li>
-      </ul>
-      <p align="left">
-        <img src="https://img.shields.io/badge/FastAPI-Python_3.11-0e75b6?style=flat-square&logo=fastapi" alt="FastAPI" />
-        <img src="https://img.shields.io/badge/Gemini_Pro-API-0e75b6?style=flat-square&logo=google&logoColor=white" alt="Gemini" />
-        <img src="https://img.shields.io/badge/Gateway-Proxy-cc2200?style=flat-square" alt="Gateway" />
-      </p>
-      <p align="left">
-        🔒 Stealth / Private Repository
+        <a href="https://github.com/ppradyoth/agentscan">Codebase</a>
       </p>
     </td>
-    <!-- Project 6 -->
     <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
-      <h4 align="left" style="margin-top: 0;">📚 AI Security Resources</h4>
-      <p align="left"><strong>The Definitive AI Security Practitioner's Guide</strong></p>
-      <p align="left">A curated, practitioner-depth guide to AI red teaming, runtime security, and MLSecOps — 14 specialized handbooks, not a link dump.</p>
+      <h4 align="left" style="margin-top: 0;">Agent Supply Chain Guard</h4>
+      <p align="left"><strong>Scan Skills & Manifests Before an Agent Reads Them</strong></p>
+      <p align="left">A local scanner for instruction-bearing supply-chain files: third-party skills, MCP manifests, plugins, and READMEs. Findings are review signals, not proof of exploitation.</p>
       <ul align="left">
-        <li>Deep-dive handbooks: manual red teaming, standards & compliance, benchmarks, 2026 incidents & CVEs</li>
-        <li>Zero-to-Hero 12-month curriculum + hands-on labs (FGSM, prompt injection, RAG hijacking)</li>
+        <li><strong>Hidden instructions, execution references, credential patterns, and broad permissions</strong></li>
+        <li><strong>Invisible Unicode controls</strong> and dangerous URL schemes</li>
+        <li><strong>Dependency-free rules and a GitHub Action</strong>, with optional provider-backed review</li>
       </ul>
       <p align="left">
-        <img src="https://img.shields.io/badge/License-CC0--1.0-lightgrey?style=flat-square" alt="CC0" />
-        <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
-        <img src="https://img.shields.io/badge/Guide-MLSecOps-7B1FA2?style=flat-square" alt="MLSecOps" />
+        <img src="https://img.shields.io/badge/Python-Local_Scanner-cc2200?style=flat-square&logo=python" alt="Python local scanner" />
+        <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0" />
+        <img src="https://img.shields.io/badge/CI-GitHub_Action-0e75b6?style=flat-square&logo=github" alt="GitHub Action" />
       </p>
       <p align="left">
-        <a href="https://github.com/ppradyoth/ai-security-resources">💾 Codebase</a>
+        <a href="https://github.com/ppradyoth/agent-supply-chain-guard">Codebase</a>
       </p>
     </td>
   </tr>
@@ -158,23 +155,33 @@ https://ppradyoth.com/
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 6) — Hands-on prompt injection and AI agent security CTF. 16 challenges covering all 10 OWASP LLM Top 10 (2025) risks, with a defender mode that shows the guardrail behind each attack. No signup, no API key.
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 7) — 46 AI security missions: 16 covering the OWASP LLM Top 10 (2025) and 30 covering the OWASP Agentic Top 10 (2026). Attack, inspect defenses, and replay controls. Default practice needs no signup or API key. Ranked runs require sign-in.
 
-**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 4) — Curated directory of state-of-the-art Adversarial AI Security tools, vulnerability scanners, safety benchmarks, guardrails, and compliance standards.
+**[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 4) — 182 public synthetic cases: 142 attacks and 40 benign controls across 7 attack categories. Evaluate generated tool calls, arguments, and canary disclosures against explicit execution contracts, with saved traces and dataset fingerprints.
 
-**[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 3) — The first benchmark targeting prompt injection attacks in agentic tool-use pipelines — tool output injection, goal hijacking, and multi-step attack chains. Dataset & Space on Hugging Face.
+**[ai-security-resources](https://github.com/ppradyoth/ai-security-resources)** (⭐ 4) — AI red-teaming tools, research, practical labs, and 7/30/100-day learning paths. Includes agent security, model scanning, standards, interview prep, and public attack taxonomies.
 
-**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** (⭐ 1) — Severity-weighted LLM safety evaluation suite. Measures absolute refusal robustness across prompt injection, jailbreaking, data exfiltration, toxicity, and malware generation using risk-adjusted weights.
+**[weighted-safety-refusal](https://github.com/ppradyoth/weighted-safety-refusal)** (⭐ 1) — Reference-free, severity-weighted evaluation of harmful refusal and matched benign compliance. Combines both axes into a calibrated safety score so refusing everything earns zero.
 
-**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** — 🧠 Organoid Intelligence Biocomputer Simulator — HH + Izhikevich neuron models, MEA burst detection, DishBrain Pong, Baltimore Declaration ethics monitor. Built by Antigravity (Google DeepMind).
+**[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** (⭐ 1) — Organoid intelligence simulator with Hodgkin–Huxley and Izhikevich neuron models, MEA burst detection, and DishBrain-inspired Pong.
 
-**[intent-drift-playbook](https://github.com/ppradyoth/intent-drift-playbook)** — A taxonomy of trajectory-based LLM jailbreak patterns (gradual drift, persona anchoring, trust escalation) that single-turn automated scanners structurally can't catch — plus concrete detection methods.
+**[railproof](https://github.com/ppradyoth/railproof)** — Alpha enforcement library for AI agent actions. Deny-by-default policies check tools, arguments, identity, data labels, provenance, approvals, and session budgets before wrapped tools execute.
 
-**[ai-security-tracker](https://github.com/ppradyoth/ai-security-tracker)** — Real-time security monitoring across 50+ AI/ML repositories — tracks vulnerabilities, CVEs, and security initiatives ecosystem-wide.
+**[knowyourai](https://github.com/ppradyoth/knowyourai)** — Zero-dependency model verification CLI for GGUF, safetensors, Ollama, and Hugging Face artifacts. Inspect metadata and chat templates without running a model, then pin approved artifacts in ai.lock and check for drift.
+
+**[agentscan](https://github.com/ppradyoth/agentscan)** — Static security scanner for AI-agent configurations, MCP servers, permission settings, hooks, and instruction files. Flags risky grants and exposed secrets without model calls or dependencies.
+
+**[on-device-ai-app-starter-kit](https://github.com/ppradyoth/on-device-ai-app-starter-kit)** — Browser-local GGUF inference, document retrieval, and source citations. Model setup downloads the artifacts; document processing and inference run locally in LOCAL MODE.
+
+**[agent-supply-chain-guard](https://github.com/ppradyoth/agent-supply-chain-guard)** — Local scanner for third-party agent skills, MCP manifests, plugins, and README files. Flags hidden instructions, execution references, credential patterns, broad permissions, and invisible Unicode controls.
+
+**[yolobench](https://github.com/ppradyoth/yolobench)** — Sandboxed benchmark for coding-agent judgment when a requested action has an ambiguous or destructive target. Published results currently cover the scripted reference backend, not real coding agents.
+
+**[intent-drift-playbook](https://github.com/ppradyoth/intent-drift-playbook)** — Research-grounded taxonomy of multi-turn intent drift, with conceptual detection approaches for tracking behavior against the original task and instructions.
+
+**[ai-security-tracker](https://github.com/ppradyoth/ai-security-tracker)** — Tracks public vulnerabilities, CVEs, and security activity across AI/ML repositories.
 
 **[llm-ops-workshop](https://github.com/ppradyoth/llm-ops-workshop)** — End-to-end MLOps workflow demonstrating model lifecycle, monitoring, and deployment practices.
-
-*Also building something in AI security — stealth mode 🔒*
 
 📋 [Full list of external contributions](./EXTERNAL_CONTRIBUTIONS.md) — repos outside my account where I've contributed (2020–present)
 <!-- OPENSYNC_END -->

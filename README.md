@@ -25,7 +25,7 @@ I work at the intersection of Applied AI and security engineering — red teamin
 
 pradyoth.jpg@gmail.com
 
-https://ppradyoth.web.app/
+https://ppradyoth.com/
 
 ---
 

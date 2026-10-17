@@ -27,6 +27,20 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 
 ---
 
+<h3 align="left">Merged External Contributions</h3>
+
+4 merged PRs across 3 AI security, evaluation, and privacy tools.
+
+| Repository | What the tool does | My merged contributions |
+|---|---|---|
+| [Presidio](https://github.com/data-privacy-stack/presidio) | Detects, redacts, and anonymizes sensitive personal data (PII) in text, images, and structured data. | [#2254](https://github.com/data-privacy-stack/presidio/pull/2254): Fixed YAML deny-list defaults that silently dropped matches at positive detection thresholds. |
+| [Promptfoo](https://github.com/promptfoo/promptfoo) | Evaluates and red teams LLM applications, agents, and RAG pipelines, with repeatable tests and CI integration. | [#9402](https://github.com/promptfoo/promptfoo/pull/9402): Fixed config merging that silently dropped distinct function-based providers from evaluations. |
+| [NVIDIA garak](https://github.com/NVIDIA/garak) | Scans LLMs for vulnerabilities including prompt injection, data leakage, jailbreaks, and harmful outputs. | [#1794](https://github.com/NVIDIA/garak/pull/1794): Fixed a z-rating evaluation crash caused by a removed calibration method.<br>[#1791](https://github.com/NVIDIA/garak/pull/1791): Added regression coverage for configuration-file deduplication in scan reports. |
+
+[Full contribution history](./EXTERNAL_CONTRIBUTIONS.md) · Merge status verified 17 Oct 2026.
+
+---
+
 <h3 align="left">🛡️ Featured AI Security Projects</h3>
 
 <p align="left">

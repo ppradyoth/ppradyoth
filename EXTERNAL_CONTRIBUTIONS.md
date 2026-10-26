@@ -119,4 +119,4 @@ _Updated on 2026-09-15 · Sources: GitHub contribution calendar (2020–2026), c
 |---|---|---|
 | [commaai/connect](https://github.com/commaai/connect) | commaai | JavaScript |
 
-_Generated on 2026-10-19 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_
+_Generated on 2026-10-26 · Sources: GitHub contribution calendar (2020–2026), collaborator API, PR history per repo_

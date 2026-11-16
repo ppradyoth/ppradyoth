@@ -19,11 +19,13 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 - Maintaining AgentInjectionBench: reproducible injection cases, benign controls, and inspectable tool-call traces.
 - Expanding hands-on training through 16 LLM security missions and 30 agentic security missions.
 - Checking model artifacts, agent configurations, and third-party skills before they reach a runtime.
+- Running [KnowYourAI](https://knowyourai.live): free IntentScan and IntentEnforce, bring your own Claude or Gemini key.
+- Building PAUSE for the Google Cloud AI Builder Cup 2026: treating a scam-coached payer like a prompt-injected agent.
 <!-- WORK_END -->
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · DEVUP 2026 speaker · SEP Engineer Committee Lead for 1,100+ early-career engineers
 
-[Portfolio](https://ppradyoth.com/) · [Research & evidence](https://ppradyoth.com/research) · [Email](mailto:ppradyoth64@gmail.com)
+[Portfolio](https://ppradyoth.com/) · [KnowYourAI](https://knowyourai.live) · [Research & evidence](https://ppradyoth.com/research) · [Email](mailto:ppradyoth64@gmail.com)
 
 ---
 
@@ -37,7 +39,7 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 | [Promptfoo](https://github.com/promptfoo/promptfoo) | Evaluates and red teams LLM applications, agents, and RAG pipelines, with repeatable tests and CI integration. | [#9402](https://github.com/promptfoo/promptfoo/pull/9402): Fixed config merging that silently dropped distinct function-based providers from evaluations. |
 | [NVIDIA garak](https://github.com/NVIDIA/garak) | Scans LLMs for vulnerabilities including prompt injection, data leakage, jailbreaks, and harmful outputs. | [#1794](https://github.com/NVIDIA/garak/pull/1794): Fixed a z-rating evaluation crash caused by a removed calibration method.<br>[#1791](https://github.com/NVIDIA/garak/pull/1791): Added regression coverage for configuration-file deduplication in scan reports. |
 
-[Full contribution history](./EXTERNAL_CONTRIBUTIONS.md) · Merge status verified 17 Oct 2026.
+[Full contribution history](./EXTERNAL_CONTRIBUTIONS.md) · Merge status verified 16 Nov 2026.
 
 ---
 
@@ -162,6 +164,42 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
       </p>
     </td>
   </tr>
+  <tr>
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">KnowYourAI Platform</h4>
+      <p align="left"><strong>Scan an AI API. Enforce What It's For.</strong></p>
+      <p align="left">The hosted home for these tools and my research. Two free services sit on top: one probes an AI endpoint, the other gates requests before the model sees them.</p>
+      <ul align="left">
+        <li><strong>IntentScan</strong> sends adversarial probes to any AI API and reports where it leaves its intended scope</li>
+        <li><strong>IntentEnforce</strong> proxies requests, classifies what each one is for, then allows, blocks, or asks for clarification</li>
+        <li><strong>Bring your own Claude or Gemini key</strong>, stored encrypted (AES-GCM) and never returned by the API</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Price-Free_(BYOK)-0e75b6?style=flat-square" alt="Free, bring your own key" />
+        <img src="https://img.shields.io/badge/Backend-FastAPI_on_Firebase-cc2200?style=flat-square&logo=firebase" alt="FastAPI on Firebase" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/knowyourai.live">Codebase</a> &nbsp;•&nbsp; <a href="https://knowyourai.live">knowyourai.live</a>
+      </p>
+    </td>
+    <td width="50%" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 16px; background-color: #0d1117;">
+      <h4 align="left" style="margin-top: 0;">Build & Break Models From Scratch</h4>
+      <p align="left"><strong>Build Each Piece of the Model Stack, Then Attack It</strong></p>
+      <p align="left">A gamified, CTF-style course. Each level, you implement one component yourself, then run a real published attack against your own implementation. Both test suites green is the flag.</p>
+      <ul align="left">
+        <li><strong>5 levels:</strong> tokenizer, embeddings and retrieval, attention, decoding, refusal fine-tuning</li>
+        <li><strong>Grounded attacks:</strong> glitch tokens, HotFlip poisoning, prompt injection, refusal-direction ablation</li>
+        <li><strong>Playable in the browser</strong>, no clone needed</li>
+      </ul>
+      <p align="left">
+        <img src="https://img.shields.io/badge/Python-3.11%2B-cc2200?style=flat-square&logo=python" alt="Python 3.11 or newer" />
+        <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT" />
+      </p>
+      <p align="left">
+        <a href="https://github.com/ppradyoth/build-break-models-from-scratch">Codebase</a> &nbsp;•&nbsp; <a href="https://ppradyoth.github.io/build-break-models-from-scratch/">Play it</a>
+      </p>
+    </td>
+  </tr>
 </table>
 
 ---
@@ -169,7 +207,7 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 <h3 align="left">Open Source</h3>
 
 <!-- OPENSYNC_START -->
-**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 8) — 46 AI security missions: 16 covering the OWASP LLM Top 10 (2025) and 30 covering the OWASP Agentic Top 10 (2026). Attack, inspect defenses, and replay controls. Default practice needs no signup or API key. Ranked runs require sign-in.
+**[prompt-injection-ctf](https://github.com/ppradyoth/prompt-injection-ctf)** (⭐ 12) — 46 AI security missions: 16 covering the OWASP LLM Top 10 (2025) and 30 covering the OWASP Agentic Top 10 (2026). Attack, inspect defenses, and replay controls. Default practice needs no signup or API key. Ranked runs require sign-in.
 
 **[AgentInjectionBench](https://github.com/ppradyoth/AgentInjectionBench)** (⭐ 4) — 182 public synthetic cases: 142 attacks and 40 benign controls across 7 attack categories. Evaluate generated tool calls, arguments, and canary disclosures against explicit execution contracts, with saved traces and dataset fingerprints.
 
@@ -179,17 +217,25 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 
 **[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** (⭐ 1) — Organoid intelligence simulator with Hodgkin–Huxley and Izhikevich neuron models, MEA burst detection, and DishBrain-inspired Pong.
 
+**[knowyourai.live](https://github.com/ppradyoth/knowyourai.live)** — Source for knowyourai.live: free AI security tools, the IntentScan and IntentEnforce platform, and published research. Bring your own Claude or Gemini key.
+
+**[pause-ai-builder-cup](https://github.com/ppradyoth/pause-ai-builder-cup)** — PAUSE, built with Subramanya Navada KR for the Google Cloud AI Builder Cup 2026. Stops coached-victim payment scams (UPI, PayNow, Zengin and more) by treating scammer-controlled text as untrusted input, with Gemini on Vertex AI behind a rules floor it can tighten but never loosen. [Live prototype](https://pause-aibuildercup-26.web.app).
+
 **[railproof](https://github.com/ppradyoth/railproof)** — Alpha enforcement library for AI agent actions. Deny-by-default policies check tools, arguments, identity, data labels, provenance, approvals, and session budgets before wrapped tools execute.
 
 **[knowyourai](https://github.com/ppradyoth/knowyourai)** — Zero-dependency model verification CLI for GGUF, safetensors, Ollama, and Hugging Face artifacts. Inspect metadata and chat templates without running a model, then pin approved artifacts in ai.lock and check for drift.
 
 **[agentscan](https://github.com/ppradyoth/agentscan)** — Static security scanner for AI-agent configurations, MCP servers, permission settings, hooks, and instruction files. Flags risky grants and exposed secrets without model calls or dependencies.
 
+**[jev-guard](https://github.com/ppradyoth/jev-guard)** — Static scanner that finds insecure use of Jev / TypeSafe guardrails in Python. Build-time, offline, no API key. Published on PyPI as `jevg`.
+
 **[on-device-ai-app-starter-kit](https://github.com/ppradyoth/on-device-ai-app-starter-kit)** — Browser-local GGUF inference, document retrieval, and source citations. Model setup downloads the artifacts; document processing and inference run locally in LOCAL MODE.
 
 **[agent-supply-chain-guard](https://github.com/ppradyoth/agent-supply-chain-guard)** — Local scanner for third-party agent skills, MCP manifests, plugins, and README files. Flags hidden instructions, execution references, credential patterns, broad permissions, and invisible Unicode controls.
 
 **[yolobench](https://github.com/ppradyoth/yolobench)** — Sandboxed benchmark for coding-agent judgment when a requested action has an ambiguous or destructive target. Published results currently cover the scripted reference backend, not real coding agents.
+
+**[build-break-models-from-scratch](https://github.com/ppradyoth/build-break-models-from-scratch)** — Build each piece of the model stack yourself, then break it with a published attack. Five levels from tokenizer to refusal ablation, playable in the browser.
 
 **[intent-drift-playbook](https://github.com/ppradyoth/intent-drift-playbook)** — Research-grounded taxonomy of multi-turn intent drift, with conceptual detection approaches for tracking behavior against the original task and instructions.
 

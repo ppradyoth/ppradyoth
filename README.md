@@ -20,7 +20,6 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 - Expanding hands-on training through 16 LLM security missions and 30 agentic security missions.
 - Checking model artifacts, agent configurations, and third-party skills before they reach a runtime.
 - Running [KnowYourAI](https://knowyourai.live): free IntentScan and IntentEnforce, bring your own Claude or Gemini key.
-- Building PAUSE for the Google Cloud AI Builder Cup 2026: treating a scam-coached payer like a prompt-injected agent.
 <!-- WORK_END -->
 
 **Recognition:** Inventor Recognition (Q4 2025) for filed patents · DEVUP 2026 speaker · SEP Engineer Committee Lead for 1,100+ early-career engineers
@@ -218,8 +217,6 @@ I'm an AI security engineer and red teamer focused on prompt injection, agent to
 **[synaptic-wetware](https://github.com/ppradyoth/synaptic-wetware)** (⭐ 1) — Organoid intelligence simulator with Hodgkin–Huxley and Izhikevich neuron models, MEA burst detection, and DishBrain-inspired Pong.
 
 **[knowyourai.live](https://github.com/ppradyoth/knowyourai.live)** — Source for knowyourai.live: free AI security tools, the IntentScan and IntentEnforce platform, and published research. Bring your own Claude or Gemini key.
-
-**[pause-ai-builder-cup](https://github.com/ppradyoth/pause-ai-builder-cup)** — PAUSE, built with Subramanya Navada KR for the Google Cloud AI Builder Cup 2026. Stops coached-victim payment scams (UPI, PayNow, Zengin and more) by treating scammer-controlled text as untrusted input, with Gemini on Vertex AI behind a rules floor it can tighten but never loosen. [Live prototype](https://pause-aibuildercup-26.web.app).
 
 **[railproof](https://github.com/ppradyoth/railproof)** — Alpha enforcement library for AI agent actions. Deny-by-default policies check tools, arguments, identity, data labels, provenance, approvals, and session budgets before wrapped tools execute.
 
